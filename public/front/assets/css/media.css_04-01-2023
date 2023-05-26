@@ -1,0 +1,2016 @@
+@media only screen and (max-width:2560px) {
+    .sticky-detail .detail-heading h2{
+        font-size: 22px;
+    }
+    .business-sale-warap.advisor .bussines-sale-box .business-detail-box .second-box h3 {
+        font-size: 16px;
+    }
+    .upload-file{
+        right: 20px;
+    }
+    .main-banner{
+        background-size: 1120px 930px;
+    }
+}
+
+@media only screen and (max-width:1920px) {
+    .banner-slider-wrapper:after {
+        top: 49%;
+    }
+}
+
+@media only screen and (max-width:1670px) {
+    .main-banner{
+        background-size: 920px 800px;
+    }
+    .save-detail {
+        margin-top: 30px;
+        width: 120px;
+        height: 35px;
+    }
+    .save-detail a {
+        font-size: 15px;
+        font-weight: 400;
+    }
+    .banner-slider-wrapper:after {
+        top: 47%;
+        height: 800px;
+        width: 200px;
+    }
+
+    .left-shape::before {
+        bottom: -68%;
+        height: 800px;
+        width: 200px;
+    }
+
+    .right-shape::before {
+        bottom: -72%;
+        height: 800px;
+        width: 200px;
+    }
+
+    .main-banner .left-text h1 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    .topbtn-group ul li a,
+    .banner-second a.green-btn {
+        min-width: 250px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .main-banner {
+        background-size: 870px 800px;
+        margin-bottom: 70px;
+    }
+
+    .mid-counter-main {
+        margin-bottom: 120px;
+        margin-top: 50px;
+    }
+
+    .mini-sliders {
+        margin-bottom: 120px;
+        margin-top: 70px;
+    }
+
+}
+
+@media only screen and (max-width:1540px) {
+    .sticky-detail .detail-heading h2{
+        font-size: 22px;
+    }
+    .main-banner {
+        padding-bottom: 50px;
+    }
+
+    .banner-slider-wrapper::after {
+        top: 50%;
+        height: 600px;
+        width: 120px;
+    }
+
+    .testimonial.right-shape::before {
+        bottom: 38%;
+    }
+
+    .left-shape::before {
+        bottom: -54%;
+        height: 600px;
+        width: 120px;
+    }
+
+    .right-shape::before {
+        bottom: -57%;
+        height: 600px;
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width:1400px) {
+    .profile-box-warp .profile-box-detail .profile-heading h1{
+        font-size: 18px;
+    }
+    .bread-camp-detail{ 
+       padding: 85px 0px 5px 0px;
+    }
+    .add-edit-detail .add-step-detail{
+        padding: 20px 0px;
+    }
+    .business-sale-warap{
+        padding: 20px 0px;
+    }
+    .accordion-body .form-check .form-check-label{
+        font-size: 14px;
+    }
+    .accordion-body .form-check{
+        margin-top: 0px;
+    }
+    .sticky-detail .social-info-detail ul li a{
+        font-size: 14px;
+    }
+    .my-dashbord .profile-box-warp .profile-box-detail .final-button .btn-primary{
+        font-size: 14px;
+    }
+    .sell-busi-activity .add-bussines-new a{
+        font-size: 14px;
+        width: 135px;
+        height: 33px;
+    }
+    .activity-hading {
+        font-size: 20px;
+    }
+    .business-option .form-check .form-check-input{
+        width: 13px;
+        height: 13px;
+    }
+
+    .mt-4 {
+        margin-top: 13px !important;
+    }
+
+    header .serch-bg {
+        min-width: 400px;
+    }
+
+    .navbar-brand {
+        width: 20%;
+    }
+    .main-banner {
+       background-size: 740px 620px;
+       margin-bottom: 0px;
+      height: 600px;
+    }
+    header .navbar-nav .nav-item .nav-link.active,
+    header .navbar-nav .nav-item .nav-link,
+    header .navbar-nav .nav-item .nav-link:hover {
+        font-size: 14px;
+    }
+
+    header .login-btn {
+        font-size: 14px;
+    }
+    .upload-file{
+        right: 0px;
+    }
+    .main-banner .left-text h1 {
+        font-size: 43px;
+        line-height: 47px;
+    }
+    .banner-second {
+        padding-top: 50px;
+    }
+    .topbtn-group ul li a,
+    .banner-second a.green-btn {
+        min-width: 220px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .left-img-1 img {
+        height: 250px;
+    }
+
+    .left-img-2 img {
+        height: 200px;
+    }
+
+    .left-img-3 img {
+        height: 150px;
+    }
+
+    .mid-counter-main {
+        margin-top: 20px;
+        margin-bottom: 100px;
+    }
+
+    .mid-counter-main .min-count-wrapper .right-desc h3 {
+        font-size: 47px;
+        font-weight: 700;
+        line-height: 30px;
+        margin-bottom: 12px;
+    }
+
+    .mid-counter-main .min-count-wrapper {
+        gap: 34px;
+    }
+
+    .mini-sliders .bussines-box-wrapper .box-header {
+        padding: 20px 15px;
+    }
+
+    .mini-sliders .bussines-box-wrapper .box-body {
+        padding: 15px;
+    }
+
+    .mini-sliders .box-footer-wrapper .box-right-footer {
+        padding: 20px;
+    }
+
+    .mini-sliders .bussines-box-wrapper .box-header .box-title {
+        margin-bottom: 20px;
+        font-size: 20px
+    }
+
+    .mini-sliders .box-logo {
+        height: 70px;
+        width: 70px;
+    }
+
+    .mini-sliders .box-footer-wrapper {
+        margin-top: 20px;
+    }
+
+    .mini-sliders .box-footer-wrapper .footer-img,
+    .box-right-footer h5 {
+        margin-bottom: 10px;
+    }
+
+    .mini-sliders .box-footer-wrapper .box-right-footer .box-view-btn {
+        margin-top: 10px;
+        height: 30px;
+        width: 90px;
+        font-size: 14px;
+    }
+    .mini-sliders .box-footer-wrapper .footer-img {
+        height: 60px;
+        width: 65px;
+    }
+    .testimonial .mid-title{
+        margin-bottom: 30px;
+    }
+
+    .box-bussines-right p {
+        font-size: 15px;
+    }
+
+    .mini-sliders .left-title {
+        font-size: 20px;
+    }
+
+    .mini-sliders .box-footer-wrapper .box-right-footer h5 {
+        margin-bottom: 5px;
+    }
+
+    .mini-sliders .box-footer-wrapper .view-all {
+        width: 220px;
+        height: 40px;
+    }
+
+    .left-shape::before {
+        bottom: -65%;
+        height: 600px;
+        width: 120px;
+    }
+
+    .right-shape::before {
+        bottom: -70%;
+        height: 600px;
+        width: 120px;
+    }
+
+    .mini-sliders {
+        margin-bottom: 60px;
+        margin-top: 60px;
+    }
+
+    .Categories .categorise-box .catergorie-list {
+        width: 150px;
+        height: 180px;
+    }
+
+    .testimonial {
+        margin-top: 70px;
+        margin-bottom: 20px;
+    }
+
+    .testimonial .owl-dots {
+        display: none;
+    }
+
+    .testimonial.right-shape::before {
+        bottom: 40%;
+    }
+
+    .footer {
+        padding: 30px 0px;
+    }
+
+    /* about responsive css */
+    .about-detail {
+        margin: 3 0px 0px;
+    }
+    .contact-inform .fix-height .form-control{
+        height: 40px;
+    }
+    .patners .patner-part ul, .press-part ul{
+        margin-top: 30px;
+    }
+
+    .about-detail .about-dec-warp {
+        width: 100%;
+    }
+
+    .about-detail .about-dec-warp p {
+        margin-top: 15px;
+        font-size: 15px;
+    }
+
+    .about-detail .about-dec-warp .honor-name {
+        padding-top: 10px;
+    }
+
+    .about-slider .about-slider-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .team,
+    .office-location {
+        margin: 60px 0px 60px 0px;
+    }
+
+    .team .team-text h3,
+    .office-location .team-text h3,
+    .get-touch,
+    .top-head {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .team-text p {
+        margin-top: 10px;
+    }
+
+    .team .team-member .team-memeber-image,
+    .office-location .team-member .team-memeber-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        padding: 0px;
+    }
+
+    .team .team-member .team-memeber-image img,
+    .office-location .team-member .team-memeber-image img {
+        object-fit: contain;
+    }
+
+    .team-member .member-detail {
+        margin-top: 10px;
+    }
+
+    .team-member .member-detail h4 {
+        font-size: 18px;
+        margin-bottom: 2px;
+    }
+
+    .team-member .member-detail h5 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .abour-press {
+        padding: 30px 0px;
+    }
+
+    .get-message {
+        text-align: left;
+    }
+
+    .get-touch .get-touch-img {
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+        margin: 0px 0px 0px auto;
+    }
+
+    .get-touch .get-message p {
+        margin: 10px 0px;
+        font-size: 16px;
+    }
+
+    .contact-business .main-warp .third-warp {
+        width: 44%;
+    }
+
+    .get-touch .input-group-text {
+        height: 40px;
+    }
+
+    .get-touch .input-group {
+        width: 410px;
+    }
+
+    .get-touch .form-control {
+        width: 260px;
+    }
+
+    .ft-main {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+    }
+
+    /* investment detail page */
+    .contact-business .detail-box ul li a {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .main-warp {
+        gap: 27px;
+    }
+
+    .contact-business .text-one h5,
+    .text-two p {
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+
+    .contact-business .detail-box ul li {
+        padding: 10px;
+    }
+
+    .detail-inner-warp .detail-warp-box {
+        padding: 20px;
+    }
+
+    .detail-inner-warp .detail-warp-box .left-detail-part .left-detail-warp .detail-inner h4,
+    .detail-warp-box .document-warp ul li a,
+    .investment-other-detail .options ul li {
+        font-size: 15px;
+    }
+
+    .detail-inner-warp .detail-warp-box .left-detail-part .left-detail-warp .detail-inner {
+        height: 38px;
+    }
+
+    .detail-warp-box .right-text .company-detail .rating-detail ul li,
+    .detail-warp-box .right-text .company-detail .rating-detail .rate,
+    .detail-warp-box .right-text .company-detail .Business-Name-detail ul li,
+    .detail-warp-box .right-text .company-detail .other-info-detail ul li,
+    .detail-warp-box .right-text .company-detail .User-info-detail ul li {
+        font-size: 14px;
+    }
+
+    .detail-warp-box .right-text .company-detail .rating-detail i {
+        margin-right: 2px;
+    }
+
+    .loging-detail .logo img {
+        width: 70%;
+    }
+
+    .loging-detail {
+        padding: 20px 10px;
+    }
+
+    .loging-detail .text-p p {
+        margin-top: 30px;
+    }
+
+    .loging-detail .form-control {
+        margin-bottom: 10px;
+    }
+
+    .verify-button {
+        margin-top: 0px;
+        padding: 10px 0px;
+    }
+
+    .login-page .loging-detail .signup,
+    .forget {
+        margin-top: 15px;
+    }
+
+    .accordion-button,
+    .business-option .sale-option,
+    .business-sale-warap .heading-second .right-text .btn {
+        font-size: 15px;
+    }
+
+    .business-sale-warap .bussines-sale-box .business-detail-box .second-box {
+        height: 40px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .team-text p {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .about-bread-camp .bread-text-head h1,
+    .contact-bread-camp .bread-text-head h1,
+    .bread-camp .bread-text-head h1,
+    .investor-bg .bread-text-head h1 {
+        margin-top: 10px;
+        font-size: 30px;
+        line-height: 37px;
+    }
+    .about-bread-camp .bread-text-head p{
+        margin-top: 10px;
+    }
+    .about-bread-camp,
+    .contact-bread-camp,
+    .bread-camp,
+    .bread-camp.investor-bg,
+    .bread-camp.advisor-bg {
+        padding-bottom: 30px;
+    }
+
+    /* add edit media quary */
+
+    /* .add-step-detail .other-detail {
+        padding: 20px 20px;
+    } */
+
+    .add-step-detail .other-detail .main-text p {
+        width: 600px;
+        margin-bottom: 0px;
+    }
+
+    .detail-form .form-control input {
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    .advisor-edit-detail .custom-upload-inner {
+        margin-top: 48px;
+    }
+
+    .add-edit-detail .adit-detail-step ul li a {
+        font-size: 15px;
+        margin-right: 30px;
+    }
+
+    .add-edit-detail .add-step-detail .profile-photo {
+        padding: 20px 0px;
+        gap: 10px;
+
+    }
+
+    .add-edit-detail .add-step-detail .profile-photo .profile-img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .add-step-detail .other-detail .main-text {
+        padding: 20px 0px 20px 20px;
+    }
+
+    .add-step-detail .other-detail .main-text .image-avtar {
+        height: 150px;
+        width: 130px;
+        right: -5px;
+    }
+
+    .investment-edit-detail .accordion-button,
+    .other-detail .detail-form .form-select,
+    .detail-form .options-select label,
+    .other-detail .detail-form .form-floating label,
+    .detail-form .top-head {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .upload-logo-text label {
+        font-size: 15px;
+    }
+
+    .save-detail {
+       
+        width: 80px;
+        height: 30px;
+    }
+    .save-detail a{
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .custom-upload-inner {
+        margin-top: 20px;
+    }
+
+    .intersted-part,
+    .invest-part,
+    .time-part {
+        margin-top: 25px;
+    }
+
+    .other-detail .detail-form .form-control {
+        margin-bottom: 5px;
+    }
+
+    .other-detail.third-step .selected-value ul {
+        margin-top: 20px;
+    }
+
+    .investior-contact {
+        gap: 20px;
+    }
+
+    .contact-business .detail-form ul .detail-line input {
+        width: 150px;
+    }
+
+    .detail-form.next-step ul .describe-line textarea {
+        width: 250px;
+    }
+
+    .contact-business .final-step .detail-box ul li {
+        padding: 10px 22px;
+    }
+
+    .contact-business .detail-form ul li .name-side {
+        text-align: center;
+    }
+
+    .contact-business .bussines-proposal p,
+    .contact-business .onther-text p {
+        font-size: 16px;
+    }
+
+    .investior-contact .detail-step-four {
+        width: 200px;
+    }
+
+    .investior-contact .detail-step-three {
+        width: 270px;
+    }
+
+    .investior-contact .detail-step-two {
+        width: 260px;
+    }
+
+    .investior-contact .detail-step-one {
+        width: 270px;
+    }
+
+    .contact-business .final-step .detail-box ul li {
+        padding: 10px;
+    }
+
+    .footer .scrool-up #myscrollbtn {
+        height: 50px;
+        width: 50px;
+        font-size: 16px
+    }
+
+    .business-sale-warap.advisor .bussines-sale-box .business-detail-box .second-box h3 {
+        font-size: 22px;
+    }
+
+    .letest-activity .business-detail-box .second-box h3 {
+        font-size: 16px;
+    }
+
+    .chating-box{
+        width: 350px;
+    }
+    .chating-box .cheating-header{
+        padding: 10px 10px;
+    }
+    .chating-box .cheating-area{
+        padding-top: 0px;
+    }
+
+    .sell-busi-box-warp .bussines-sell-box-detail .heading {
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .bussines-sell-box-detail {
+        width: 70%;
+    }
+    .chating-box .cheating-area{
+        height: 275px;
+    }
+    .testimonial .testmonial-slider .testmonail-item{
+        min-height: 280px ;
+    }
+    .final-step-detail ul{
+        justify-content: center;
+        gap: 30px;
+    }
+    .image-gallary .image-large{
+        width: 770px;
+    height: 350px;
+    }
+    .image-gallary .image-small .frist-img, .overly-image{
+        width: 310px;
+    height: 160px;
+    }
+    .Seeking-detail .heading h2, .company-detail .Business-Name h2, .company-detail .rating h2, .company-detail .other-info h2{
+        font-size: 15px;
+    }
+    .rating-detail-new ul .rate i{
+        font-size: 25px;
+    }
+    .rating-detail-new ul li a{
+        font-size: 16px;
+    }
+    .sticky-detail{
+        padding: 10px;
+    }
+    .sticky-detail .detail-heading h2{
+        font-size: 16px;
+    }
+    .company-detail .social-info-detail ul li a, .Seeking-detail .options ul li{
+        font-size: 15px;
+    }
+    .listing-detail-main .business-box-img{
+    width: 160px !important;
+    height: 140px !important;
+    min-width: 170px !important;
+    }
+    .listing-button-view a{
+        font-size: 13px !important;
+    }
+    .view-peofile-btn{
+        margin-top: 10px;
+    }
+    .insight-name p, .company-value-name ul li{
+        font-size: 16px !important;
+    }
+  
+    .about-bread-camp .btn {
+        width: 150px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 400;
+    }
+    .contact-inform form .btn{
+        width: 120px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .contact-inform{
+        padding-top: 20px;
+    }
+    .contact-inform .gental-inq h4, .contact-inform .contact-form h3{
+        font-size: 19px;
+    }
+    .wallet-warrap .wallet-inside-blance .balence-value{
+        font-size: 22px;
+        margin-bottom: 0px;
+    }
+    .wallet-warrap .wallet-inside-blance h3{
+        font-size: 18px;
+        margin-bottom: 0px;
+    }
+    .wallet-inside-blance .add-money a {
+        font-size: 14px;
+    }
+    .transaction-table .table-heading{
+        font-size: 18px;
+        padding: 10px;
+    }
+    .wallet-warrap .transaction-value-table tr th,  .wallet-warrap .transaction-value-table tr td{
+        font-size: 15px;
+    }
+    .wallet-warrap .wallet-inside-blance p{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .navbar-brand {
+        width: 16%;
+    }
+    .contact-inform{
+        padding: 20px 0px;
+    }
+    .my-dashbord .profile-box-warp .profile-box-detail .final-button .btn-primary{
+        font-size: 13px;
+    }
+    .patners .patner-part ul, .press-part ul{
+        margin-top: 20px;
+    }
+
+    .Categories .categorise-box .catergorie-list {
+        width: 140px;
+        height: 170px;
+    }
+
+    header .login-btn {
+        width: 70px;
+    }
+
+ 
+    .listing-detail-main .business-box-img{
+        width: 141px !important;
+    height: 125px !important;
+    min-width: 140px !important;
+    }
+    .patners .patner-image,
+    .abour-press .press-image {
+        gap: 0px;
+        justify-content: center;
+    }
+
+    .abour-press .press-image {
+        width: 190px;
+    }
+
+    .abour-press .press-image img {
+        width: 140px;
+        /* height: 90px; */
+        object-fit: contain;
+    }
+
+    .patners .patner-part .patner-image {
+        object-fit: cover;
+        width: 210px;
+        height: 60px;
+    }
+
+    .team .team-member .team-memeber-image,
+    .office-location .team-member .team-memeber-image {
+        height: 260px;
+    }
+
+    .team-member .member-detail {
+        margin-top: 10px;
+    }
+
+    .left-detail-warp.mt-4 {
+        margin-top: 0px !important;
+    }
+
+    .image-gallary {
+        margin-top: 20px;
+    }
+
+    .business-sale-warap .heading-second .right-text .btn {
+        width: 160px;
+    }
+
+    .business-sale-warap .heading-second .left-text p,
+    .business-sale-warap .bussines-sale-box .business-detail-box .frist-box p {
+        font-size: 13px;
+    }
+
+    .business-sale-warap .bussines-sale-box .business-detail-box .frist-box h2 {
+        font-size: 18px;
+    }
+
+    .business-sale-warap .bussines-sale-box .business-detail-box .second-box h3 {
+        font-size: 16px;
+    }
+
+    .business-sale-warap .bussines-sale-box .business-detail-box .second-box {
+        height: 40px;
+    }
+
+    .business-option .accordion-body label {
+        font-size: 15px;
+    }
+    
+    .contact-business .main-warp .third-warp {
+        width: 61%;
+    }
+
+    .contact-business .main-warp .frist-warp {
+        width: 30%;
+    }
+
+    .contact-business .main-warp .second-warp {
+        width: 31%;
+    }
+
+    .main-warp {
+        gap: 10px;
+    }
+
+    .add-step-detail .other-detail .main-text p {
+        width: 490px;
+        font-size: 14px;
+    }
+
+    .investment-edit-detail .second-step .detail-form .options-select label {
+        font-size: 12px;
+        line-height: 24px;
+    }
+
+    .detail-form .options-select {
+        height: 30px;
+        width: 190px;
+    }
+
+    .detail-form .form-check-input {
+        width: 15px;
+        height: 15px;
+    }
+
+    .investment-edit-detail .second-step .custom-upload-inner {
+        height: 130px;
+    }
+
+    .business-sale-warap.advisor .bussines-sale-box .business-detail-box .second-box h3 {
+        font-size: 16px;
+    }
+
+    .my-dashbord .profile-box-warp .profile-box-detail .profile-heading h1 {
+        font-size: 18px;
+    }
+    .add-step-detail .other-detail .main-text .image-avtar{
+        height: 182px;
+    }
+    .final-step-detail ul{
+        gap: 8px;
+    }
+    .company-value-name ul li, .insight-name p{
+        font-size: 18px !important;
+    }
+    .social-info-detail ul{
+        margin: 0px !important;
+    }
+    .sticky-detail .social-info-detail ul li a{
+        font-size: 14px;
+    }
+    .about-bread-camp .bread-text-head p{
+        margin-top: 15px;
+    }
+    .about-bread-camp .bread-text-head p{
+        font-size: 15px;
+    }
+
+}
+
+@media only screen and (max-width:1080px) {
+    .banner-second a.green-btn {
+        min-width: 170px;
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    .ft-logo-view {
+        display: none;
+    }
+
+    .logo-respnosive {
+        display: block;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .notification-baar{
+        margin-right: 0px;
+    }
+    .notification-dot-here{
+        left: 147px;
+    }
+    .modal.chat-header-btn-popup .modal-dialog{
+        bottom: 0;
+    }
+    .team, .office-location{
+        margin: 40px 0px;
+    }
+    .contact-inform .contact-form h3, .contact-inform .gental-inq h4{
+        font-size: 18px;
+    }
+    .main-banner:after,
+    .right-shape::before,
+    .left-shape::before,
+    .banner-slider-wrapper::after {
+        display: none;
+    }
+    .footer .payment, .usefull-links{
+        justify-content: space-between;
+    }
+    .add-step-detail form{
+        margin-top: 15px;
+    }
+    .add-edit-detail .add-step-detail{
+        padding: 0px;
+        padding-bottom: 20px;
+    }
+    .main-banner {
+        background-size: 51% 100%;
+        padding-bottom: 0px !important;
+    }
+
+    .topbtn-group ul li a,
+    .banner-second a.green-btn {
+        margin-bottom: 15px;
+    }
+
+    .navbar-brand img {
+        width: 200px;
+    }
+
+    header .login-btn {
+        margin-top: 15px;
+        width: 150px;
+    }
+
+    .btn.login-btn.ms-2 {
+        margin-left: 0px !important;
+    }
+
+    .main-banner {
+        padding: 115px 0px;
+        margin-bottom: 0px;
+    }
+
+    .banner-second {
+        margin-top: 40px;
+    }
+
+    .row-padding {
+        padding-top: 0px;
+    }
+
+    .main-banner .left-text h1 {
+        font-size: 28px;
+        line-height: 30px;
+    }
+
+    .main-banner .left-text h1,
+    .main-banner .left-text p {
+        margin-bottom: 20px;
+    }
+
+    .navbar-light .navbar-toggler {
+        border: none;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+    .add-step-detail .other-detail{
+        margin-top: 20px;
+      }
+
+
+    .Categories .categorise-box .catergorie-list p {
+        font-size: 14px !important;
+    }
+
+    .navbar-brand {
+        width: 50%;
+    }
+
+    .Categories .categorise-box .catergorie-list {
+        width: 99px;
+        height: 130px;
+    }
+
+    .Categories .categorise-box.less-mr {
+        margin-top: -20px;
+    }
+
+    .ft-bottom .copy-right p {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .mini-sliders .left-title {
+        font-size: 20px;
+    }
+
+    .mini-sliders .box-footer-wrapper .box-right-footer {
+        padding: 10px;
+    }
+
+    .mini-sliders .box-footer-wrapper .box-right-footer .box-view-btn {
+        margin-top: 10px;
+        height: 28px;
+        width: 90px;
+        font-size: 14px;
+    }
+   
+
+    .g-5,
+    .gx-5 {
+        --bs-gutter-x: 1rem;
+    }
+
+    .mini-sliders .box-footer-wrapper .footer-img {
+        height: 50px;
+        width: 50px;
+        margin-bottom: 10px;
+    }
+
+    .mid-counter-main .min-count-wrapper .right-desc h3 {
+        font-size: 27px;
+        line-height: 16px;
+    }
+
+    .mid-counter-main .min-count-wrapper {
+        gap: 14px;
+    }
+
+    .banner-second .text-end {
+        text-align: start !important;
+    }
+
+    .patners .patner-part ul,
+    .press-part ul {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .business-sale-warap .heading-second {
+        margin-top: 30px;
+    }
+
+    .navbar .navbar-collapse {
+        top: 77px;
+        right: -340px;
+        bottom: 0px;
+        position: fixed;
+        width: calc(100% - 60px);
+        max-width: 320px;
+        height: auto !important;
+        background: #f8f8f8;
+        padding: 10px 20px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .navbar .navbar-collapse.show {
+        right: 0px;
+        transition: 0.3s ease-in-out;
+        overflow-y: scroll;
+    }
+
+    .contact-bread-camp {
+        background-size: cover;
+    }
+
+    .add-step-detail .other-detail .main-text .image-avtar {
+        display: none;
+    }
+
+    .add-step-detail .other-detail .main-text p {
+        width: 100%;
+    }
+
+    .add-edit-detail {
+        padding-top: 80px;
+    }
+
+    .add-step-detail .other-detail .main-text {
+        padding: 10px;
+    }
+
+    .investment-edit-detail .accordion-button {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 17px;
+    }
+
+    .other-detail .detail-form .selected-value.location .form-control {
+        height: 45px;
+    }
+
+    .get-touch .get-message p {
+        font-size: 13px;
+    }
+
+    .main-warp {
+        flex-wrap: wrap;
+    }
+
+    .contact-business .main-warp .frist-warp {
+        width: 50%;
+    }
+
+    .contact-business .main-warp .second-warp {
+        width: 45%;
+    }
+
+    .contact-business .main-warp .third-warp {
+        width: 100%;
+    }
+
+    .investor-detail .pad-bottom {
+        padding-bottom: 10px;
+    }
+
+    .detail-step-one,
+    .detail-step-two,
+    .detail-step-three {
+        width: 32% !important;
+    }
+
+    .detail-step-four {
+        width: 100% !important;
+    }
+
+    .contact-business .detail-form ul .detail-line input {
+        width: 100%;
+    }
+
+    .contact-business .detail-form ul li .detail-line {
+        display: block;
+    }
+
+    .contact-business .detail-form ul .detail-line label,
+    .contact-business .detail-form.next-step ul .detail-line label,
+    .contact-business .final-step .check p {
+        width: 100%;
+    }
+
+    .contact-business .detail-box ul li {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .profile-box-warp {
+        margin-top: 18px;
+    }
+
+    .chating-box {
+        
+        width: 330px;
+    }
+.wallet-warrap{
+    margin-top: 20px;
+}
+.wallet-warrap .wallet-inside-blance h3{
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+.wallet-warrap .wallet-inside-blance .balence-value{
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+.wallet-warrap .wallet-inside-blance p, .wallet-inside-blance .add-money a{
+    font-size: 16px;
+}
+.wallet-inside-blance .add-money {
+    padding: 5px 10px;
+}
+.transaction-table .table{
+    width: 650px;
+}
+header .serch-bg{
+    min-width: 100%;
+}
+.connection-btn-design{
+    font-size: 15px;
+}
+.wallet-warrap .wallet-inside-blance h3 {
+    font-size: 16px;
+}
+.wallet-warrap .wallet-inside-blance .balence-value {
+    font-size: 19px;
+   margin-top: 5px;
+}
+ .wallet-inside-blance .add-money a {
+    font-size: 14px;
+}
+}
+
+@media only screen and (max-width: 1199px) and (min-width:992px) {
+    .image-gallary .image-large {
+        width: 700px;
+    }
+}
+
+@media only screen and (max-width:991px) {
+
+    .main-banner:after,
+    .right-shape::before,
+    .left-shape::before {
+        display: none;
+    }
+    .add-profile .dropdown-menu{
+        min-height: 100%;
+        left: 0;
+        margin-top: 1%;
+    }
+    .navbar-collapse .add-profile, .my-profile, .serch-wrap{
+        margin-right: 0px;
+    }
+   .navbar-collapse .add-profile, .my-profile{
+    margin-top: 10px;
+   }
+    .image-gallary .image-large {
+        width: 450px;
+        height: 300px;
+    }
+
+    .image-gallary .image-small .frist-img,
+    .overly-image,
+    .image-gallary .overly-text {
+        height: 135px;
+        width: 185px;
+    }
+
+    .right-text .investment-other-detail .heading h2 {
+        font-size: 16px;
+        font-weight: 900;
+    }
+
+    .footer ul li.footer-item-li {
+        width: 30%;
+    }
+
+    .detail-warp-box .document-warp ul li a img {
+        height: 25px;
+        width: 17px;
+        margin-right: 15px;
+    }
+
+    .detail-warp-box .document-warp ul li {
+        margin-top: 10px;
+    }
+
+    .get-touch .get-touch-img {
+        height: 230px;
+        width: 230px;
+    }
+
+    .investment-edit-detail .second-step .intersted-part ul li,
+    .investment-edit-detail .second-step .entity-part ul li {
+        width: 100%;
+        margin-bottom: 3px;
+        font-size: 14px;
+    }
+
+    .investment-edit-detail .other-detail .selected-value ul li,
+    .advisor-edit-detail .other-detail .selected-value ul li {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .entity-part {
+        margin-top: 15px !important;
+    }
+
+    .investment-edit-detail .other-detail .selected-value ul {
+        gap: 10px;
+    }
+    .business-sale-warap{
+        padding: 10px 0px;
+    }
+    .contact-business-model-frist .modal-dialog{
+        max-width: 760px !important;
+    }
+    .contact-business-model .model-frist-image{
+        width: 100%;
+    }
+    .notofication-chat{
+        margin-top: 10px;
+    }
+    .chat-dropdown{
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width:768px) {
+    .border-bottom-line{
+        display: inherit;
+    }
+    .company-detail .rating{
+        margin-top: 15px;
+    }
+    .new-saling-text ul{
+        flex-wrap: wrap;
+    }
+    .left-img-1 img {
+        height: 170px;
+    }
+    .left-img-2 img {
+        height: 150px;
+    }
+    .left-img-3 img {
+        height: 120px;
+    }
+    .testimonial .testmonial-slider .testmonail-item {
+        min-height: 210px;
+    }
+    .main-banner {
+        background: linear-gradient(160deg, rgba(225, 229, 233, 0.66), rgba(105, 185, 101, 0.8)), transparent url(../images/banner-bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 120px 0px 50px 0px;
+        margin-bottom: 50px;
+    }
+    .detail-form .options-select label{
+        font-size: 14px !important;
+    }
+    .my-dashbord{
+        padding-top: 70px;
+    }
+    .invest-part, .time-part{
+        margin-top: 0px;
+    }
+    .main-banner .left-text h1 {
+        font-size: 33px;
+        line-height: 44px;
+    }
+
+    .main-banner .left-text p {
+        color: black;
+    }
+
+    .banner-second h2 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .banner-second .min-count-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .Categories .categorise-box .catergorie-list {
+        width: 140px;
+        height: 170px;
+    }
+
+    .Categories .categorise-box.less-mr {
+        margin-top: 20px;
+    }
+
+    .Categories .categorise-box {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .yellow-slider .owl-nav {
+        justify-content: center;
+    }
+
+    .green-slider .owl-nav {
+        justify-content: center !important;
+    }
+
+    .blue-slider .owl-nav {
+        justify-content: center;
+    }
+
+    .mini-sliders .bussines-box-wrapper .box-header .box-title,
+    .detail-inner-warp .detail-warp-box .detail-heading p,
+    .detail-warp-box .right-text .company-detail h2 {
+        font-size: 16px;
+    }
+
+    .detail-warp-box .right-text .company-detail h2 {
+        margin-bottom: 0px;
+    }
+
+    .right-text .pad-bottom {
+        margin-bottom: 15px;
+    }
+
+    .team-member {
+        margin-bottom: 20px;
+    }
+
+    .heading-second {
+        flex-wrap: wrap;
+    }
+
+    .business-sale-warap .heading-second .right-text,
+    .investment-other-detail {
+        margin-top: 20px !important;
+    }
+
+    .mini-sliders {
+        margin-bottom: 60px;
+        margin-top: 30px;
+    }
+
+    .mid-counter-main {
+        margin-bottom: 20px;
+    }
+
+    .mid-title {
+        margin-bottom: 30px;
+    }
+
+    .detail-inner-warp .detail-warp-box .detail-heading h2 {
+        font-size: 18px;
+        padding-bottom: 0px;
+    }
+
+    .detail-inner-warp .detail-warp-box .detail-heading p {
+        padding-bottom: 10px;
+    }
+
+    .left-detail-warp.mt-4 {
+        margin-top: 20px !important;
+    }
+
+    .image-gallary .image-small .frist-img,
+    .overly-image,
+    .image-gallary .overly-text {
+        height: 100px;
+        width: 120px;
+    }
+
+    .image-gallary .image-small .frist-img {
+        margin-bottom: 21px;
+    }
+
+    .image-gallary .image-large {
+        height: 220px;
+    }
+
+    .detail-warp-box .right-text .company-detail .rating-detail ul {
+        margin-bottom: 0px;
+    }
+
+    .User-info-detail ul li {
+        margin-right: 10px;
+    }
+
+    .investment-other-detail .options ul li {
+        font-size: 14px;
+    }
+
+    .right-text .investment-other-detail .Seeking-detail ul {
+        margin-left: 20px;
+    }
+
+    .get-touch .respnsive-img {
+        display: none;
+    }
+
+    .add-edit-detail .adit-detail-step ul li a {
+        margin-right: 20px;
+    }
+    .d-flex-contain{
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+    .d-flex-contain label, .d-flex-contain .input-error-type{
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width:767px) {
+    .get-touch-img {
+        display: none !important;
+    }
+    .contace-business-model-detail{
+        padding: 20px;
+    }
+    .contace-business-model-detail h2{
+        font-size: 22px;
+    }
+    .banner-second{
+        padding-top: 0;
+        margin-top: 10px;
+    }
+}
+
+
+@media only screen and (max-width:576px) {
+    .listing-button-view a{
+        font-size: 11px !important;
+    }
+    .connection-btn-design{
+        width: 30%;
+        float: right;
+        font-size: 13px;
+        height: 33px;
+    }
+    .business-box-img{
+        display: none !important;
+    }
+    .about-bread-camp,
+    .contact-bread-camp,
+    .bread-camp {
+        padding-bottom: 50px;
+    }
+   
+    .add-step-detail form{
+        padding: 10px;
+        padding-top: 1px;
+    }
+    .ul-flex li{
+        width: 100%;
+    }
+
+    .contact-business .detail-box ul li {
+        padding: 10px;
+    }
+
+    .banner-second h2 {
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .get-touch .input-group {
+        width: 330px;
+    }
+
+    .get-touch .form-control {
+        width: 170px;
+    }
+
+    .get-touch .input-group-text {
+        width: 110px;
+    }
+
+    .footer .payment,
+    .usefull-links {
+        display: block;
+        text-align: center;
+    }
+
+    .footer .payment-logo {
+        width: 100%;
+        margin: 0px 0px;
+    }
+
+    .footer .payment-logo img {
+        width: 40px;
+        margin-right: 10px;
+    }
+ 
+
+    .footer .usefull-links {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer .usefull-links a {
+        font-size: 14px;
+    }
+
+    .testimonial .owl-carousel .owl-nav .owl-prev,
+    .testimonial .owl-carousel .owl-nav .owl-next,
+    .green-slider .owl-carousel .owl-nav,
+    .blue-slider .owl-carousel .owl-nav,
+    .yellow-slider .owl-carousel .owl-nav {
+        display: none;
+    }
+
+    .Categories .categorise-box .catergorie-list {
+        width: 130px;
+        height: 160px;
+    }
+
+    .testimonial {
+        margin-top: 30px;
+    }
+
+    .patners .patner-part ul,
+    .press-part ul {
+        margin-top: 10px;
+    }
+
+    .abour-press .press-image {
+        width: 130px;
+    }
+
+    .patners .patner-part .patner-image {
+        width: 180px;
+    }
+
+    .logo-respnosive {
+        text-align: left;
+    }
+
+    .footer ul li.footer-item-li {
+        width: 45%;
+    }
+
+    .file-upload-img ul .img-upload {
+        height: 50px;
+    }
+
+    .save-detail {
+        width: 150px;
+    }
+
+    .investment-edit-detail .other-detail .selected-value ul li,
+    .investment-edit-detail .other-detail .selected-value ul li .save-detail a {
+        font-size: 14px;
+
+    }
+
+    .detail-form .select-panal {
+        flex-wrap: wrap;
+    }
+
+    .advisor-edit-detail .detail-form .select-panal {
+        gap: 5px;
+    }
+
+    .advisor-edit-detail .other-detail.third-step .selected-value ul,
+    .advisor-edit-detail .other-detail.fourth-step .selected-value ul {
+        gap: 10px;
+    }
+
+    .advisor-edit-detail .other-detail.third-step .selected-value ul li,
+    .advisor-edit-detail .other-detail.fourth-step .selected-value ul li {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .right-text .pad-bottom {
+        padding-bottom: 0px !important;
+    }
+    .contact-business .main-warp .frist-warp, .contact-business .main-warp .second-warp{
+        width: 100%;
+    }
+    .contact-business .detail-box ul li{
+        flex: 0;
+    }
+
+    .contact-business .main-warp .frist-warp,
+    .contact-business .main-warp .second-warp {
+        width: 100%;
+    }
+
+    .contact-business .detail-box ul li {
+        flex: 0;
+    }
+    .business-sale-warap .bussines-sale-box .business-detail-box .second-box h3, .business-sale-warap .bussines-sale-box .business-detail-box .second-box h5{
+        font-size: 15px;
+    }
+    .business-sale-warap .bussines-sale-box .business-detail-box .second-box, .business-sale-warap .bussines-sale-box .business-detail-box .contact-btn{
+        height: 35px;
+    }
+    .business-sale-warap .bussines-sale-box .business-detail-box .second-box{
+        padding: 10px;
+    }
+
+}
+
+@media only screen and (max-width:480px) {
+    .letest-activity{
+        padding: 8px;
+    }
+    .contact-inform{
+        padding: 10px 0px;
+    }
+    .contact-inform .gental-inq .contact-part{
+        padding-left: 0px;
+    }
+    .listing-button-view .btn{
+        padding: 5px !important;
+    }
+    .connection-btn-design{
+        width: 40%;
+    }
+    .about-bread-camp .bread-text-head h1,
+    .contact-bread-camp .bread-text-head h1,
+    .bread-camp .bread-text-head h1 {
+        font-size: 25px;
+        line-height: 31px;
+        margin-top: 0px;
+    }
+    .contact-business-model .model-frist-image{
+        width: 100%;
+        display: none;
+    }
+    .about-bread-camp, .contact-bread-camp, .bread-camp, .bread-camp.investor-bg, .bread-camp.advisor-bg{
+        padding-bottom: 10px;
+    }
+    .add-edit-detail {
+        padding-top: 75px;
+    }
+    .contact-business .detail-box ul li {
+        padding: 5px;
+    }
+
+    .contact-business .detail-box ul li a i {
+        margin-right: 4px;
+    }
+
+    .main-banner {
+        margin-bottom: 20px;
+    }
+
+    .main-banner .left-text h1 {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .login-page .profile-register .register-btn-group ul li a {
+        min-width: 100%;
+    }
+
+    .add-profile-page .loging-detail {
+        width: 90%;
+    }
+
+    .mid-counter-main {
+        margin-bottom: 20px;
+    }
+
+    .mini-sliders {
+        margin-top: 20px;
+    }
+
+    .navbar-brand img {
+        width: 100%;
+    }
+
+    .mid-title {
+        margin-bottom: 20px;
+    }
+
+    .Categories .categorise-box .catergorie-list {
+        width: 140px;
+        height: 140px;
+    }
+
+    .Categories .categorise-box {
+        gap: 10px;
+    }
+
+    .patners .patner-part .patner-image {
+        width: 130px;
+    }
+
+    .business-sale-warap.advisor .bussines-sale-box .business-detail-box .second-box h3 {
+        font-size: 15px;
+    }
+
+}
+
+@media only screen and (max-width:400px) {
+    .final-step-detail .second-box p{
+        font-size: 12px !important;
+    }
+    .listing-button-view{
+        flex-wrap: wrap !important;
+    }
+    .navbar .navbar-collapse{
+        top: 72px;
+    }
+    .login-page .loging-detail {
+        width: 95%;
+    }
+
+    .main-banner {
+        background: linear-gradient(160deg, rgba(225, 229, 233, 0.66), rgba(105, 185, 101, 0.8)), transparent url(../images/banner-bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 100px 0px 30px 0px;
+    }
+
+    .add-edit-detail .adit-detail-step ul li a {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+  
+
+    .investment-edit-detail .other-detail .selected-value ul li,
+    .investment-edit-detail .other-detail .selected-value ul li {
+        font-size: 13px;
+    }
+
+    .letest-activity .sell-busi-activity,
+    .sell-yiur-bussinrs-activity-listing {
+        flex-direction: column;
+    }
+
+    .sell-yiur-bussinrs-activity-listing .left-text {
+        margin-bottom: 20px;
+    }
+
+    .business-sale-warap .heading-second .right-text,
+    .business-sale-warap .heading-second .right-text .btn {
+        width: 100%;
+    }
+    .wallet-warrap .wallet-inside-blance{
+        flex-wrap: wrap;
+    }
+    .wallet-inside-blance .add-money{
+        margin-top: 15px;
+    }
+    .letest-activity .sell-busi-activity, .sell-yiur-bussinrs-activity-listing{
+        flex-direction: column;
+    }
+    .sell-yiur-bussinrs-activity-listing .left-text{
+        margin-bottom: 20px;
+    }
+    .business-sale-warap .heading-second .right-text, .business-sale-warap .heading-second .right-text .btn{
+        width: 100%;
+    }
+    .Categories .categorise-box .catergorie-list img{
+        width: 40px;
+        height: 40px;
+    }
+}
+@media only screen and (max-width:400px){
+
+}
+
+@media only screen and (max-width:360px) {
+    .connection-btn-design{
+        width: 50%;
+    }
+    .notification-dot-here {
+        left: 140px;
+    }
+    .sticky-detail{
+        top: 63px;
+    }
+    .navbar .navbar-collapse{
+        top: 65px;
+    }
+    .get-touch .input-group {
+        width: 280px;
+    }
+
+    .get-touch .form-control {
+        width: 150px;
+    }
+
+    .get-touch .input-group-text {
+        width: 90px;
+    }
+
+    .add-profile-page .loging-detail {
+        width: 85%;
+    }
+
+    .about-detail .about-dec-warp .honor-name {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-detail .about-dec-warp .sign-img {
+        text-align: center;
+    }
+
+    .about-detail .about-dec-warp .sign-img img {
+        width: 250px;
+        object-fit: contain;
+    }
+
+    .get-touch .get-touch-img img {
+        height: 280px;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .ft-main {
+        justify-content: start;
+        gap: 30px;
+    }
+
+    .testimonial .testmonial-slider .testmonail-item .test-icon {
+        height: 28px;
+        width: 30px;
+        margin: 7px auto;
+    }
+    .chating-box {
+        width: 291px;
+    }
+
+    .Categories .categorise-box.less-mr {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width:322px){
+    .navbar .navbar-collapse{
+        top: 62px;
+    }
+    .my-dashbord{
+        padding-top: 70px;
+    }
+    .add-edit-detail {
+        padding-top: 60px;
+    }
+    .notification-dot-here {
+        left: 120px;
+    }
+}
