@@ -200,6 +200,13 @@ class Investment extends Model
         return true;
     }
 
+    public static function add_memberrole($data) {
+        
+        return DB::table('investmentMemberRoles')->insertGetId($data); 
+
+    }
+
+
     public static function add_toDocument($data) {
         $lastID=DB::table('investmentDocuments')->insertGetId($data);
         return $lastID;
@@ -207,6 +214,11 @@ class Investment extends Model
     public static function update_toDocument(array $where = [], array $data = []) {
         $update = DB::table('investmentDocuments');
         $update->where($where)->update($data);
+        return true;
+    }
+
+    public static function delete_memberrole(array $where = []) {
+        $delete = DB::table('investmentMemberRoles')->where('iInvestmentProfileId', $where['iInvestmentProfileId'])->delete();
         return true;
     }
 
@@ -272,6 +284,14 @@ class Investment extends Model
     }
     public static function get_location_data($criteria = array()) {
         $SQL = DB::table("investmentLocation");
+        if($criteria['iInvestmentProfileId']) {
+            $SQL->where("iInvestmentProfileId", $criteria["iInvestmentProfileId"]);
+        }
+        return $result = $SQL->get();
+    }
+
+    public static function get_memberrole_data($criteria = array()) {
+        $SQL = DB::table("investmentMemberRoles");
         if($criteria['iInvestmentProfileId']) {
             $SQL->where("iInvestmentProfileId", $criteria["iInvestmentProfileId"]);
         }

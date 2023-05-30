@@ -213,6 +213,7 @@ Route::group(['middleware' => ['userlogin']], function() {
     /* Investments page */    
     Route::get('business-instruction',[InvestmentController::class, 'business_details'])->name('front.investment.business_details');
     Route::get('investment-add',[InvestmentController::class, 'add'])->name('front.investment.add');
+    Route::get('investment-add-new',[InvestmentController::class, 'addnew'])->name('front.investment.addnew');
     Route::post('investment-store',[InvestmentController::class, 'store'])->name('front.investment.store');
     Route::post('investment-token-store',[InvestmentController::class, 'token_store'])->name('front.investment-token.store');
     Route::post('investment-review',[InvestmentController::class, 'review_store'])->name('front.investment.review');

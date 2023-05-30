@@ -302,6 +302,15 @@ class InvestmentController extends Controller
         return view('front.investment.add')->with($data);
     }
 
+    public function addnew() 
+    {
+        // $data['location'] = Investment::get_location();
+        $data['countries'] = Country::where(['eIsDeleted' => 'No','eStatus' => 'Active'])->orderBy('vCountry', 'asc')->get();
+        $data['industries'] = Industry::get_all_data();
+        $data['iTempId']=time();
+        return view('front.investment.addnew')->with($data);
+    }
+
     public function business_details() 
     {
         $data = array();
@@ -315,6 +324,7 @@ class InvestmentController extends Controller
         $data['countries'] = Country::where(['eIsDeleted' => 'No','eStatus' => 'Active'])->get();
         $data['industries'] = Industry::get_all_data();
         $data['investment'] = Investment::get_by_id($criteria);
+        $data['selected_memberrole'] = Investment::get_memberrole_data(['iInvestmentProfileId'=>$data['investment']->iInvestmentProfileId]);
         $data['selected_industries'] = Investment::get_industries_data(['iInvestmentProfileId'=>$data['investment']->iInvestmentProfileId]);
         $data['selected_location'] = Investment::get_location_data(['iInvestmentProfileId'=>$data['investment']->iInvestmentProfileId]);
         $data['documents'] = Investment::get_document(['iInvestmentProfileId'=>$data['investment']->iInvestmentProfileId]);
@@ -388,6 +398,10 @@ exit();*/
         $data['vInvestmentAmountStake'] = $request->vInvestmentAmountStake;
         $data['tInvestmentReason'] = $request->tInvestmentReason;
         $data['eFindersFee'] = $request->eFindersFee;
+        $data['tRevenueAndFinancials'] = $request->tRevenueAndFinancials;
+        $data['tMarketAnalysis'] = $request->tMarketAnalysis;
+        $data['vBusinessStage'] = $request->vBusinessStage;
+        $data['vWebsiteLink'] = $request->vWebsiteLink;
         
         
         $data['eStatus'] = 'Active';
@@ -473,6 +487,8 @@ exit();*/
                 ];
                 Investment::add_locations($location_data);
             }
+            $criteria_delete_memberrole['iInvestmentProfileId'] = $investment_id;
+            Investment::delete_memberrole($criteria_delete_memberrole);
         }
         else
         {
@@ -540,6 +556,22 @@ exit();*/
                 ];
                 Investment::add_locations($location_data);
             }
+        }
+        
+        if ($request->vMemberName && !empty($request->vMemberName)) {
+            foreach ($request->vMemberName as $key => $vMemberName) {
+                if (!empty($vMemberName)) {
+                    $member_data = [
+                        'iInvestmentProfileId' => $investment_id,
+                        'vMemberName' => $vMemberName,
+                        'vMemberRole' => $request->vMemberRole[$key],
+                        'dtAddedDate' => date("Y-m-d h:i:s"),
+                    ];
+                    Investment::add_memberrole($member_data);
+                }
+                
+            }
+
         }
         $payment_setting = GeneralHelper::setting_info('Currency');
         if (!empty($get_id)) {
