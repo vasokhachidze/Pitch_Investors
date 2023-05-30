@@ -38,7 +38,7 @@ ol {
 
 p {
     color: var(--graycolor);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -121,14 +121,17 @@ section.left-shape {
 
 /* header css  start*/
 .fixed-top {
-    background-color: #fff;
+    background: linear-gradient(rgba(242, 157, 28, 0.4));
+
     box-shadow: 0px 0px 5px #0000002b;
+    background: rgba(242, 157, 28, 0.4);
+    transition: all 0.3s;
 }
 header .navbar-nav .nav-item .nav-link {
     color: var(--graycolor);
     border-bottom: 1px solid transparent;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: normal;
 }
 .nabbar-toggler {
     border: 0;
@@ -191,11 +194,16 @@ header .navbar .container-fluid {
     padding-left: 0px;
     padding-right: 0px;
 }
-
+header .navbar .navbar-brand {
+    padding: 0;
+}
+header .navbar .navbar-brand img {
+    width: 250px;
+}
 header .navbar-nav .nav-item .nav-link.active,
 header .navbar-nav .nav-item .nav-link:hover {
     color: var(--bluecolor);
-    font-size: 18px;
+    font-size: 16px;
     border-bottom: 1px solid var(--bluecolor);
 }
 
@@ -203,6 +211,10 @@ header .head-search {
     position: relative;
     z-index: 1;
     height: 40px;
+}
+header .head-search .input-group-text {
+    width: 40px;
+    display: block;
 }
 header .head-search .form-control {
     border-radius: 0px;
@@ -231,14 +243,14 @@ header .head-search i {
 
 header .login-btn {
     color: #fff;
-    background-color: var(--yellowcolor);
+    background-color: var(--greencolor);
     border-radius: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     -ms-border-radius: 0px;
     -o-border-radius: 0px;
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: normal;
     transition: 0.6s;
     width: 132px;
     height: 40px;
@@ -248,7 +260,7 @@ header .login-btn {
 }
 
 header .login-btn:hover {
-    background-color: var(--greencolor);
+    background-color: var(--yellowcolor);
     color: white;
 }
 
@@ -286,7 +298,7 @@ header .login-btn:hover {
     background-repeat: no-repeat;
     margin-bottom: 130px;
     height: 945px;
-    background-position: right;
+    background-position: right top;
 }
 
 .main-banner .left-text h1 {
@@ -3585,8 +3597,8 @@ header .serch-bg input.serch-txt {
 }
 .chat-heading {
     font-weight: 500;
-    font-size: 22px;
-    padding: 10px 0px 10px 15px;
+    font-size: 20px;
+    padding: 10px 0 10px 15px;
     margin-bottom: 0px;
 }
 hr {
