@@ -1,0 +1,667 @@
+@extends('layouts.app.front-app')
+@section('title', 'Home ' . env('APP_NAME'))
+
+@section('content')
+    <!-- {{ asset('uploads/front/count/green-count.jpg') }} -->
+
+    <!-- banner start -->
+   
+        <div class="banner-slider-wrapper">
+            <div class="banner-slider owl-carousel owl-theme" data-aos="fade-down" data-aos-duration="800"
+                data-aos-easing="ease-in-sine">
+             @foreach ($banner as $key => $vbanner)
+                @php
+                    $Bannerimage = asset('uploads/default/no-image.png');
+                    if (isset($vbanner)) {
+                        if ($vbanner->vBannerImage != '') {
+                            $Bannerimage = asset('uploads/banner/' . $vbanner->vBannerImage);
+                        }
+                    }
+                @endphp
+                <div class="item">
+                    <div class="main-banner" style="background-image:url('{{ $Bannerimage }}')">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 me-auto">
+                                    <div class="left-text" data-aos="fade-down" data-aos-duration="800"
+                                        data-aos-easing="ease-in-sine">
+                                        <h1>{{ $vbanner->vBannerTitle }}.</h1>
+                                        <p> {{ $vbanner->vSubTitle }}.</p>
+
+                                        <div class="topbtn-group">
+                                            <ul class="m-0 p-0 list-unstyled">
+                                                <li>
+                                                    <a href="{{ url('investment') }}" class="yellow-btn">
+                                                        Business Investments
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('investor') }}" class="blue-btn">
+                                                        Business Investor
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('advisor') }}" class="green-btn">
+                                                        Business Advisor
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            </div>
+        </div>
+        </a>
+    <!-- banner End -->
+    <!-- banner second start-->
+    <section class="banner-second right-shape">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 me-auto" data-aos="fade-down" data-aos-duration="800">
+                    <h2>
+                       Explore our pre-approved investors and get in touch today.
+                    </h2>
+                    <p>
+                        The first step in getting investors is letting them know 
+                        about your business. Use our platform to introduce your 
+                        business and engage potential investors. We strive to have:
+                    </p>
+                </div>
+                <div class="col-lg-2 text-end" data-aos="fade-down" data-aos-duration="800">
+                    <a href="{{ url('investor') }}" class="green-btn">
+                        Explore investor
+                    </a>
+                </div>
+            </div>
+
+            <!-- mid-counter section -->
+            <div class="mid-counter-main">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 align-self-end">
+                        <div class="min-count-wrapper">
+                            <div class="left-img-1" data-aos="fade-down" data-aos-duration="800"
+                                data-aos-easing="ease-in-sine">
+                                <img src="{{ asset('uploads/front/count/green-count.jpg') }}" alt="">
+                            </div>
+                            <div class="right-desc">
+                                <h3 class="green-color">{{ $advisor_count[0]->total_advisor }} +</h3>
+                                <p>
+                                    Investments to choose from
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 align-self-end">
+                        <div class="min-count-wrapper">
+                            <div class="left-img-2" data-aos="fade-down" data-aos-duration="800"
+                                data-aos-easing="ease-in-sine">
+                                <img src="{{ asset('uploads/front/count/blue-count.jpg') }}" alt="">
+                            </div>
+                            <div class="right-desc">
+                                <h3 class="blue-color">{{ $investor_count[0]->total_investor }} +</h3>
+                                <p>
+                                   Investors on our website
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 align-self-end">
+                        <div class="min-count-wrapper">
+                            <div class="left-img-3" data-aos="fade-down" data-aos-duration="800"
+                                data-aos-easing="ease-in-sine">
+                                <img src="{{ asset('uploads/front/count/yellow-count.jpg') }}" alt="">
+                            </div>
+                            <div class="right-desc">
+                                <h3 class="yellow-color">{{ $investment_count[0]->total_investment }} +</h3>
+                                <p>
+                                    Business advisors  to choose from
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- mid-counter End -->
+        </div>
+    </section>
+    <!-- banner secon end -->
+    @if (count($investment_data) > 0)
+        <!-- Business for sale slider -->
+        <section class="business-slider-wrapper mini-sliders yellow-slider left-shape">
+            <div class="container">
+                <div class="business-for-sale-slider owl-carousel owl-theme" data-aos="fade-down" data-aos-duration="800"
+                    data-aos-easing="ease-in-sine">
+                    <!-- item-1 -->
+                    @foreach ($investment_data as $key => $value)
+                        @php
+                            $current_image = '';
+                        @endphp
+                        @if (!empty($value->vImage))
+                            @php
+                                $current_image = 'uploads/investment/profile/' . $value->vImage;
+                            @endphp
+                        @else
+                            @php
+                                $current_image = 'uploads/no-image.png';
+                            @endphp
+                        @endif
+                        <div class="item">
+                            <div class="row g-5">
+                                <div class="col-lg-5 col-md-5 col-sm-12">
+                                    <div class="bussines-box-wrapper">
+                                        <div class="box-header">
+                                            <h5 class="box-title">{{ $value->vBusinessName }}. </h5>
+                                            <div class="box-logo">
+                                                <img src="{{ asset($current_image) }}">
+                                            </div>
+                                            <p class="box-desc">
+                                                @if (!empty($value->tBusinessDetail))
+                                                    {{ strip_tags($value->tBusinessDetail) }}
+                                                @else
+                                                    {{ 'N/A' }}
+                                                @endif
+                                            </p>
+                                            <ul class="box-rating">
+                                                <li class="rating">
+                                                    <p class="m-0"><i class="fas fa-star"></i>
+                                                    @if($value->vAverageRating == NULL || $value->vAverageRating == 0)
+                                                            {{'No Rating'}}
+                                                        @else
+                                                            {{$value->vAverageRating}}
+                                                        @endif
+                                                    </p>
+                                                </li>
+                                                <li class="location">
+                                                    <p class="m-0"><i class="fas fa-map-marker-alt"></i>
+                                                          @php
+                                                        $nullValue = '';
+                                                    @endphp
+                                                    @foreach ($location_investment as $key => $lvalue)
+                                                        @if (!empty($lvalue[0]->vLocationName) && $lvalue[0]->iInvestmentProfileId == $value->iInvestmentProfileId)
+                                                            {{ $lvalue[0]->vLocationName }}
+                                                            @if (count($lvalue) > 1)
+                                                                + {{ count($lvalue) - 1 }} More
+                                                            @endif
+                                                        @else
+                                                            @php
+                                                                $nullValue = 'N/A';
+                                                            @endphp
+                                                        @endif
+                                                    @endforeach
+                                                    @if (!empty($nullValue))
+                                                        {{ $nullValue }}
+                                                    @endif
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="box-body yellow-1">
+                                            <p class="m-0">Financial Investment</p>
+                                            <h5 class="left-title">
+                                                @if (!empty($value->vInvestmentAmountStake))
+                                                   {{ \App\Helper\GeneralHelper::rupees_format_thaousand_billion_million($value->vInvestmentAmountStake) }}
+                                                @else
+                                                    {{ 'N/A' }}
+                                                @endif
+                                            </h5>
+                                        </div>
+                                        <div class="box-body yellow-2">
+                                            <p class="m-0">Run Rate Sales</p>
+                                            <h5 class="left-title">
+                                                @php 
+
+                                                $avgSales= str_replace(',', '', $value->vAverateMonthlySales);
+                                                @endphp
+                                                @if (!empty($value->vAverateMonthlySales))
+                                                    {{ \App\Helper\GeneralHelper::rupees_format_thaousand_billion_million($value->vAverateMonthlySales) }}
+                                                @else
+                                                    {{ 'N/A' }}
+                                                @endif
+                                            </h5>
+                                        </div>
+                                        <div class="box-body yellow-3">
+                                            <p class="m-0">EBITDA Margin</p>
+                                            <h5 class="left-title">
+                                                @if (!empty($value->vProfitMargin))
+                                                    {{ $value->vProfitMargin }} %
+                                                @else
+                                                    {{ 'N/A' }}
+                                                @endif
+                                            </h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-sm-12">
+                                    <div class="box-height">
+                                        <div class="box-bussines-right">
+                                            <h5 class="left-title">Business Investments</h5>
+
+                                            <p class="mt-4">Are you a startup looking for investors to take your 
+                                                startup to the next level? Do you own a company in distress, looking 
+                                                for an investor to inject some capital to help the company stabilize as 
+                                                sales re-bounce or the business expands? Are you looking for an investor 
+                                                to help your business expand into new markets? Or are you trying to sell 
+                                                your business? If you are one of the above, then sign up today and start
+                                                 engaging with potential investors. 
+                                            </p>
+                                           
+                                        </div>
+                                        <div class="box-footer-wrapper">
+                                            <div class="row g-5">
+                                                <div class="col-md-6">
+                                                    <div class="box-right-footer">
+                                                        <div class="footer-img">
+                                                            <img src="{{ asset('uploads/front/roket.png') }}" alt=""
+                                                                class="img-fluid">
+                                                        </div>
+                                                        <h5>Startup</h5>
+                                                        <p class="m-0">Click here to find angel investors interested in startups with high growth potential.</p>
+                                                        <a href="#" class="box-view-btn">View More</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="box-right-footer">
+                                                        <div class="footer-img">
+                                                            <img src="{{ asset('uploads/front/frame.png') }}" alt=""
+                                                                class="img-fluid">
+                                                        </div>
+                                                        <h5>Growth</h5>
+                                                        <p class="m-0">Get funds to take your business to the next level</p>
+                                                        <a href="#" class="box-view-btn">View More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        <!-- Business for sale slider end-->
+    @endif
+
+    @if (count($advisor_data) > 0)
+            <!-- Business Advisor -->
+            <section class="business-slider-wrapper mini-sliders green-slider right-shape" data-aos="fade-down"
+                data-aos-duration="800" data-aos-easing="ease-in-sine">
+                <div class="container">
+                    <div class="business-for-sale-slider owl-carousel owl-theme">
+                        <!-- item-1 -->
+                        @foreach ($advisor_data as $key => $value)
+                            @php
+                                $current_image = '';
+                            @endphp
+                            @if (!empty($value->vImage))
+                                @php
+                                    $current_image = 'uploads/business-advisor/profile/' . $value->vImage;
+                                @endphp
+                            @else
+                                @php
+                                    $current_image = 'uploads/default/no-image.png';
+                                @endphp
+                            @endif
+                            <div class="item">
+                                <div class="row g-5">
+                                    <div class="col-md-7 align-self-center">
+                                        <div class="box-bussines-right">
+                                            <h5 class="left-title">Business Advisor</h5>
+
+                                            <p class="mt-4">Do you have the passion to help SMEs grow? Do you have a 
+                                                degree in finance, CFA, CPA or any other finance certification? Do you 
+                                                know how to develop business plans, business valuation models, and other 
+                                                robust financial models? Sign up today and help SMEs grow as you earn something.
+                                            </p>
+                                            <p class="mt-4"> Do you need a business advisor, business plan, business valuation or
+                                                 audit? Do you need someone to look into your books and advice on tax matters? Click
+                                                  the link below to see a list of our financial advisors.
+                                            </p>
+                                        </div>
+                                        <div class="box-footer-wrapper">
+                                            <a href="#" class="view-all">
+                                                View All Advisor
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="bussines-box-wrapper">
+                                            <div class="box-header">
+                                                <h5 class="box-title">
+                                                    @if (!empty($value->vAdvisorProfileTitle))
+                                                        {{ $value->vAdvisorProfileTitle }}
+                                                    @else
+                                                        {{ 'N/A' }}
+                                                    @endif
+                                                </h5>
+                                                <div class="box-logo">
+                                                    <img src="{{ asset($current_image) }}">
+                                                </div>
+                                                <p class="box-desc">
+                                                    @if (!empty($value->tEducationDetail))
+                                                        {{ strip_tags($value->tEducationDetail) }}
+                                                    @else
+                                                        {{ 'N/A' }}
+                                                    @endif
+                                                </p>
+
+                                                <ul class="box-rating">
+                                                    <li class="rating">
+                                                        <p class="m-0"><i class="fas fa-star"></i>8.5</p>
+                                                    </li>
+                                                    <li class="location">
+                                                        <p class="m-0"><i class="fas fa-map-marker-alt"></i>Maharashtra</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="box-body green-1">
+                                                <p class="m-0">Investment Size</p>
+                                                <h5 class="left-title">
+                                                    @if (!empty($value->vHowMuchInvest))
+                                                        {{ strtolower(trans($value->vHowMuchInvest)) }}
+                                                    @else
+                                                        {{ 'N/A' }}
+                                                    @endif
+                                                </h5>
+                                            </div>
+                                            <div class="box-body green-2">
+                                                <p class="m-0">Locations</p>
+                                                <h5 class="left-title">
+                                                    @php
+                                                        $nullValue = '';
+                                                    @endphp
+                                                    @foreach ($location_advisor as $key => $lvalue)
+                                                        @if (!empty($lvalue[0]->vLocationName) && $lvalue[0]->iAdvisorProfileId == $value->iAdvisorProfileId)
+                                                            {{ $lvalue[0]->vLocationName }}
+                                                            @if (count($lvalue) > 1)
+                                                                + {{ count($lvalue) - 1 }} More
+                                                            @endif
+                                                        @else
+                                                            @php
+                                                                $nullValue = 'N/A';
+                                                            @endphp
+                                                        @endif
+                                                    @endforeach
+                                                    @if (!empty($nullValue))
+                                                        {{ $nullValue }}
+                                                    @endif
+                                                </h5>
+                                            </div>
+                                            <div class="box-body green-3">
+                                                <p class="m-0">Industries</p>
+
+                                                <h5 class="left-title">
+                                                    @php
+                                                        $nullValue2 = '';
+                                                    @endphp
+                                                    @foreach ($industries_advisor as $key => $ivalue)
+                                                        @if (!empty($ivalue[0]->vIndustryName) && $ivalue[0]->iAdvisorProfileId == $value->iAdvisorProfileId)
+                                                            {{ $nullValue2 = '' }}
+                                                            {{ $ivalue[0]->vIndustryName }}
+                                                            @if (count($ivalue) > 1)
+                                                                + {{ count($ivalue) - 1 }} More
+                                                            @endif
+                                                        @else
+                                                            @php
+                                                                $nullValue2 = 'N/A';
+                                                            @endphp
+                                                        @endif
+                                                    @endforeach
+                                                    @if (!empty($nullValue2))
+                                                        {{ $nullValue2 }}
+                                                    @endif
+                                                </h5>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+            <!-- Business Advisor end-->
+    @endif
+
+    @if (count($investor_data) > 0)
+        <!-- Business Investors slider -->
+        <section class="business-slider-wrapper mini-sliders blue-slider left-shape" data-aos="fade-down"
+            data-aos-duration="800" data-aos-easing="ease-in-sine">
+            <div class="container">
+                <div class="business-for-sale-slider owl-carousel owl-theme">
+                    <!-- item-1 -->
+                    @foreach ($investor_data as $key => $value)
+                        @php
+                            $current_image = '';
+                        @endphp
+                        @if (!empty($value->vImage))
+                            @php
+                                $current_image = 'uploads/investor/profile/' . $value->vImage;
+                            @endphp
+                        @else
+                            @php
+                                $current_image = 'uploads/default/no-image.png';
+                            @endphp
+                        @endif
+                        <div class="item">
+                            <div class="row g-5">
+                                <div class="col-md-5">
+                                    <div class="bussines-box-wrapper">
+                                        <div class="box-header">
+                                            <h5 class="box-title">
+                                                @if (!empty($value->vProfileTitle))
+                                                    {{ $value->vProfileTitle }}
+                                                @else
+                                                    {{ 'N/A' }}
+                                                @endif
+                                            </h5>
+                                            <div class="box-logo">
+                                                <img src="{{ asset($current_image) }}">
+                                            </div>
+                                            <p class="box-desc">
+                                                @if (!empty($value->tAboutCompany))
+                                                    {{ $value->tAboutCompany }}
+                                                @else
+                                                    {{ 'N/A' }}
+                                                @endif
+                                            </p>
+
+                                            <ul class="box-rating">
+                                                <li class="rating">
+                                                    <p class="m-0"><i class="fas fa-star"></i>8.5</p>
+                                                </li>
+                                                <li class="location">
+                                                    <p class="m-0"><i class="fas fa-map-marker-alt"></i>Maharashtra</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="box-body blue-1">
+                                            <p class="m-0">Investment Size</p>
+                                            <h5 class="left-title">
+                                                @if (!empty($value->vHowMuchInvest))
+                                                    {{ $value->vHowMuchInvest }}
+                                                @else
+                                                    {{ 'N/A' }}
+                                                @endif
+                                            </h5>
+                                        </div>
+                                        <div class="box-body blue-2">
+                                            <p class="m-0">Locations</p>
+                                            <h5 class="left-title">
+                                                @php
+                                                    $nullValue = '';
+                                                    $noLocation = 0;
+                                                @endphp
+                                                @foreach ($location_investor as $key => $lvalue)
+                                                    @if (!empty($lvalue[0]->vLocationName) && $lvalue[0]->iInvestorProfileId == $value->iInvestorProfileId)
+                                                        @php
+                                                            $nullValue = '';
+                                                            $noLocation = 1;
+                                                        @endphp
+                                                        {{ $lvalue[0]->vLocationName }}
+                                                        @if (count($lvalue) > 1)
+                                                            + {{ count($lvalue) - 1 }} More
+                                                        @endif
+                                                    @else
+                                                        @php
+                                                            $nullValue = 'N/A';
+                                                        @endphp
+                                                    @endif
+                                                @endforeach
+                                                @if ($nullValue == 'N/A' && $noLocation == 0)
+                                                    {{ $nullValue }}
+                                                @endif
+                                            </h5>
+                                        </div>
+                                        <div class="box-body blue-3">
+                                            <p class="m-0">Industries</p>
+                                            <h5 class="left-title">
+                                                @php
+                                                    $nullValue2 = '';
+                                                    $noIndustry = 0;
+                                                @endphp
+                                                @foreach ($industries_investor as $key => $ivalue)
+                                                    @if (!empty($ivalue[0]->vIndustryName) && $ivalue[0]->iInvestorProfileId == $value->iInvestorProfileId)
+                                                        @php
+                                                            $nullValue2 = '';
+                                                            $noIndustry = 1;
+                                                        @endphp
+                                                        {{ $ivalue[0]->vIndustryName }}
+                                                        @if (count($ivalue) > 1)
+                                                            + {{ count($ivalue) - 1 }} More
+                                                        @endif
+                                                    @else
+                                                        @php
+                                                            $nullValue2 = 'N/A';
+                                                        @endphp
+                                                    @endif
+                                                @endforeach
+                                                @if (!empty($nullValue2) && $noIndustry == 0)
+                                                    {{ $nullValue2 }}
+                                                @endif
+                                            </h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-7 align-self-center">
+                                    <div class="box-bussines-right">
+                                        <h5 class="left-title">Business Investor</h5>
+
+                                        <p class="mt-4">Are you looking for investment opportunities 
+                                            to invest in? Find a list of startups, distressed companies
+                                            and businesses for sale on our platform. Choose from different
+                                            locations and industries and decide on the best place to put your money.
+                                        </p>
+                                        <p class="mt-4"> All the businesses on our platform are screened and pre-approved by our analysts. This ensures that only trusted and qualified businesses are on the platform.
+                                        </p>
+                                    </div>
+                                    <div class="box-footer-wrapper">
+                                        <a href="#" class="view-all">
+                                            View All Advisor
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        <!-- Business Investors slider end-->
+    @endif
+
+    @if (count($industries) > 0)
+        <!-- Categories start -->
+        <section class="Categories">
+            <div class="container">
+                <h3 class="mid-title">
+                    Categories
+                </h3>
+                <div class="cat-wrapper" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
+                    @php
+                        $start = 1;
+                        $end = 6;
+                    @endphp
+
+                    @foreach ($industries as $key => $value)
+                        @php
+                            $image = asset('uploads/default/no-image.png');
+                            if (isset($value)) {
+                                if ($value->vImage != '') {
+                                    $image = asset('uploads/industry/' . $value->vImage);
+                                }
+                            }
+                        @endphp
+
+                        @if ($start == 1)
+                            <ul class="categorise-box">
+                        @endif
+                        <!-- <li class="catergorie-list"> -->
+                        <li class="catergorie-list">
+                            <img src="{{url($image)}}">
+                            <p class="m-0">{{ $value->vName }}</p>
+                        </li>
+                        @if ($end == $start)
+                            </ul>
+                        @endif
+
+                        @if ($start == $end)
+                            @if ($end == 6)
+                                @php $end = 5; @endphp
+                            @else
+                                @php $end = 6; @endphp
+                            @endif
+                            @php $start = 1; @endphp
+                        @else
+                            @php $start +=1; @endphp
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        <!-- Categories end -->
+    @endif
+
+    @if (count($testimonial) > 0)
+        <!--  Testimonial start-->
+        <section class="testimonial right-shape">
+            <h3 class="mid-title">
+                Testimonial
+            </h3>
+
+            <div class="container">
+                <div class="testmonial-slider owl-carousel">
+                    <!-- item-1 -->
+                    @foreach ($testimonial as $key => $value)
+                        <div class="testmonial-wrapper" data-aos="fade-down" data-aos-easing="linear"
+                            data-aos-duration="900">
+                            <div class="testmonail-item">
+                                <div class="test-icon">
+                                    <img src="{{ asset('uploads/front/testimonial/slider-cmt.png') }}" alt="">
+                                </div>
+                                <p class="m-0 text-center testimonial-write">
+                                    {{ strip_tags($value->tDescription) }}
+                                </p>
+                            </div>
+                            <div class="test-content text-center">
+                                <h6 class="m-0">{{ $value->vName }}</h6>
+
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        <!--  Testimonial end-->
+    @endif
+@endsection
