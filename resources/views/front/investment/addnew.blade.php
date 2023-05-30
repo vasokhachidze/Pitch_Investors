@@ -230,76 +230,28 @@ if (isset($documents)) {
                                                         <div id="vWebsiteLink_error" class="error mt-1" style="color:red;display: none;">Provide the URL of your business website or any relevant online presence</div>
                                                     </div>    
                                                 </div>
+
+                                                <div class="col-lg-12 d-flex-contain positon-relative">
+                                                    <label class="top-head" for="vPhysicalAssetValue">Business Location</label>
+                                                    <div class="input-error-type">
+                                                        <input type="text" class="form-control rounded-pill" name="vLocation" id="vLocation" class="form-control numeric money" placeholder="Provide the URL of your business website or any relevant online presence" value="@if(isset($investment)){{$investment->vWebsiteLink}}@endif">
+                                                            <div class="validination-info">
+                                                            <i class="" id="vLocation"></i>
+                                                        </div>
+                                                        <div id="vLocation" class="error mt-1" style="color:red;display: none;">Provide business location</div>
+                                                    </div>    
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <br>
-                            <div class="card">
+                            <!-- <br> -->
+                            <div class="card" style="display:none">
                                 <div class="card-header"><p><b>Business Location</b></p></div>
                                 <div class="card-body">
                                     <div class="detail-form">
-                                        <div class="row">
-                                        {{--
-                                                <div class="col-lg-12 mt-3 mb-2 form-group ">
-                                                    <label>Business Location</label>
-                                                    
-                                                    <select name="locations[]" id="locations" class="form-control" multiple="multiple" style="width: 100%; height: 40px;">
-                                                        @foreach ($location as $key => $value)
-                                                            @php
-                                                                $region_select = '';
-                                                                $county_select = '';
-                                                                $subcounty_select = '';
-                                                            @endphp
-
-                                                                @if(isset($selected_location)) 
-                                                                @foreach ($selected_location as $key => $lvalue)
-                                                                    @if($lvalue->iLocationId == $value['regionId'] && $lvalue->eLocationType == 'Region')
-                                                                    @php
-                                                                        $region_select = 'selected';                                
-                                                                        @endphp
-                                                                    @endif
-                                                                @endforeach
-                                                                @endif
-                                                                <option class="region_option" value="Region_{{$value['regionId']}}-{{$value['regionName']}}" {{$region_select }}>{{$value['regionName']}}</option>
-                                                                @foreach ($value as $key1 => $value1)
-                                                                @if(in_array($key1, ['regionId', 'regionName']))
-                                                                    @continue
-                                                                @endif
-                                                                
-                                                                @if(isset($selected_location)) 
-                                                                    @foreach ($selected_location as $key => $lvalue)
-                                                                    @if($lvalue->iLocationId == $value1['countyId'] && $lvalue->eLocationType == 'County')
-                                                                        @php
-                                                                            $county_select = 'selected';                                
-                                                                        @endphp
-                                                                    @endif
-                                                                    @endforeach
-                                                                @endif
-                                                                <option class="county_option" value="County_{{$value1['countyId']}}-{{$value1['countyName']}}" {{$county_select }}>-{{$value1['countyName']}}</option>
-                                                                @foreach ($value1 as $key2 => $value2)
-                                                                    @if(in_array($key2, ['countyId', 'countyName']))
-                                                                    @continue
-                                                                    @endif
-
-                                                                @if(isset($selected_location)) 
-                                                                    @foreach ($selected_location as $key => $lvalue)
-                                                                        @if($lvalue->iLocationId == $value2['subCountyName'] && $lvalue->eLocationType == 'Sub County')
-                                                                        @php
-                                                                            $subcounty_select = 'selected';                                
-                                                                            @endphp
-                                                                        @endif
-                                                                    @endforeach
-                                                                    @endif
-                                                                    <option class="subCounty_option" value="Sub County_{{$value2['iSubCountId']}}-{{$value2['subCountyName']}}" {{$subcounty_select}}>--{{$value2['subCountyName']}}</option>
-                                                                @endforeach
-                                                                @endforeach
-                                                            @endforeach
-                                                    </select>
-                                                    <div id="locations_error" class="error mt-1" style="color:red;display: none;">Please Select Location</div>
-                                                </div>
-                                            --}}
+                                        <div class="row">                                        
                                             <div class="col-lg-6 mb-2 form-group custom-select positon-relative">
                                                 <label class="top-head">Select Country</label>
                                                 <select id="country_id" name="iCountryId" class="add_select2 form-control">
@@ -877,44 +829,44 @@ if (isset($documents)) {
                 $("#industriesError").addClass('fas fa-check-circle');
             }
         
-            var iRegionId = $("#iRegionId").val();
-             if (iRegionId.length == 0) {
-                $("#region_id_error").show();
-                $("#iRegionId").addClass('has-error');
-                $("#iRegionIdError").addClass('fas fa-exclamation-circle');
-                error = true;
-            } else {
-                $("#region_id_error").hide();
-                $("#iRegionId").removeClass('has-error');
-                $("#iRegionIdError").removeClass('fas fa-exclamation-circle');                
-                $("#iRegionIdError").addClass('fas fa-check-circle');
-            }
+            // var iRegionId = $("#iRegionId").val();
+            //  if (iRegionId.length == 0) {
+            //     $("#region_id_error").show();
+            //     $("#iRegionId").addClass('has-error');
+            //     $("#iRegionIdError").addClass('fas fa-exclamation-circle');
+            //     error = true;
+            // } else {
+            //     $("#region_id_error").hide();
+            //     $("#iRegionId").removeClass('has-error');
+            //     $("#iRegionIdError").removeClass('fas fa-exclamation-circle');                
+            //     $("#iRegionIdError").addClass('fas fa-check-circle');
+            // }
         
-            var iCountryId = $("#country_id").val();
-            if (iCountryId.length == 0) {
-                $("#country_id").addClass('has-error');
-                $("#iCountryId_error").show();
-                $("#iCountryIdError").addClass('fas fa-exclamation-circle');                
-                 error = true;
-            } else {
-                $("#iCountryId_error").hide();
-                $("#country_id").removeClass('has-error');
-                $("#iCountryIdError").removeClass('fas fa-exclamation-circle');                
-                $("#iCountryIdError").addClass('fas fa-check-circle');
-            }
+            // var iCountryId = $("#country_id").val();
+            // if (iCountryId.length == 0) {
+            //     $("#country_id").addClass('has-error');
+            //     $("#iCountryId_error").show();
+            //     $("#iCountryIdError").addClass('fas fa-exclamation-circle');                
+            //      error = true;
+            // } else {
+            //     $("#iCountryId_error").hide();
+            //     $("#country_id").removeClass('has-error');
+            //     $("#iCountryIdError").removeClass('fas fa-exclamation-circle');                
+            //     $("#iCountryIdError").addClass('fas fa-check-circle');
+            // }
         
-            var iSubCountyId = $("#iSubCountyId").val();
-            if (iSubCountyId.length == 0) {
-                $("#sub_county_id_error").show();
-                $("#iSubCountyId").addClass('has-error');
-                $("#iSubCountyIdError").addClass('fas fa-exclamation-circle');                
-                error = true;
-            } else {
-                $("#sub_county_id_error").hide();
-                $("#iSubCountyId").removeClass('has-error');
-                $("#iSubCountyIdError").removeClass('fas fa-exclamation-circle');                
-                $("#iSubCountyIdError").addClass('fas fa-check-circle');
-            }
+            // var iSubCountyId = $("#iSubCountyId").val();
+            // if (iSubCountyId.length == 0) {
+            //     $("#sub_county_id_error").show();
+            //     $("#iSubCountyId").addClass('has-error');
+            //     $("#iSubCountyIdError").addClass('fas fa-exclamation-circle');                
+            //     error = true;
+            // } else {
+            //     $("#sub_county_id_error").hide();
+            //     $("#iSubCountyId").removeClass('has-error');
+            //     $("#iSubCountyIdError").removeClass('fas fa-exclamation-circle');                
+            //     $("#iSubCountyIdError").addClass('fas fa-check-circle');
+            // }
         
             // var tBusinessDetail = $("#tBusinessDetail").val();
             //  if (tBusinessDetail.length == 0) {
