@@ -769,7 +769,7 @@
                                                 </label>
                                             </li>
                                         </ul>
-                                        <div id="termsrule_error" class="error mt-1" style="color:red;display: none;">Please accept terms of engagement</div>
+                                        <div id="termsrule_error" class="error mt-1" style="color:red;display: none; font-size: small;">Please accept terms of engagement</div>
                                     </div>
                                     <div class="row margin-left-button" id="submit">
                                        <label class="save-detail mt-0"><a href="javascript:;">Save</a></label>
