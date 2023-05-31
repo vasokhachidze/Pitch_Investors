@@ -104,29 +104,48 @@ your business grow with the support of our community.
                                                 </p>
                                                 <ul>
                                             <li>
-                                            <input class="prices" amount="" onclick="$('#terns').hide();checkTermsCondition(this)" type="checkbox" name="isNewsletterService" id="isNewsletterService" value="1" />
-                                                
-                                                <b>Misuse of investment Funds</b><br>
-                                                <span id="terns" style="color:red; display:none">Please accept the investment use terms<br></span>
-                                                    <p>Please note that investment funds received through PitchInvestors should only be used for the intended purposes of the business, which may include expenses such as research and development, marketing, and the payment of salaries.<br> Any misuse of investment funds for personal use or other unauthorized purposes is a violation of our terms and conditions and may result in legal action. We take this matter seriously and will not hesitate to take legal action against any user found to be misusing investment funds. <br>Thank you for your understanding and cooperation in maintaining the integrity of the PitchInvestors platform.</p>
-                                                
+                                                <span style="margin-right:5px"><input class="prices" amount="" onclick="$('#terns').hide();" type="checkbox"  value="1" /></span>                                                
+                                                Please note that investment funds received through PitchInvestors should only be used for the intended purposes of the business, which may include expenses such as research and development, marketing, and the payment of salaries.<br> Any misuse of investment funds for personal use or other unauthorized purposes is a violation of our terms and conditions and may result in legal action. We take this matter seriously and will not hesitate to take legal action against any user found to be misusing investment funds. <br>Thank you for your understanding and cooperation in maintaining the integrity of the PitchInvestors platform.
+                                            </li>                                        
+                                            <li>
+                                                <span style="margin-right:5px"><input class="prices" amount="" onclick="$('#terns').hide();" type="checkbox"  value="1" /></span>
+                                                I confirm that the information provided in my business profile is accurate and up-to-date.
+                                            </li>                                        
+                                            <li>
+                                                <span style="margin-right:5px"><input class="prices" amount="" onclick="$('#terns').hide();" type="checkbox"  value="1" /></span>
+                                                <span>I understand that engaging in any outside deals or transactions outside of PitchInvestors will result in automatic disqualification and a ban from the platform.</span>
+                                            </li>                                        
+                                            <li>
+                                            <span style="margin-right:5px"><input class="prices" amount="" onclick="$('#terns').hide();" type="checkbox"  value="1" /></span>
+                                                I agree to cooperate and provide any necessary documentation or additional information requested during the due diligence process.
+                                            </li>                                        
+                                            <li>
+                                                <span style="margin-right:5px"><input class="prices" amount="" onclick="$('#terns').hide();" type="checkbox"  value="1" /></span>
+                                                I acknowledge that PitchInvestors reserves the right to conduct due diligence on my business to ensure its legitimacy and trustworthiness.
+                                            </li>                                        
+                                            <li>
+                                                <span style="margin-right:5px"><input class="prices" amount="" onclick="$('#terns').hide();" type="checkbox"  value="1" /></span>
+                                                I understand that the valuation report provided by PitchInvestors is an estimate and does not guarantee the actual value of my business.
+                                            </li>                                        
+                                            <li>
+                                                <span style="margin-right:5px"><input class="prices" amount="" onclick="$('#terns').hide();" type="checkbox"  value="1" /></span>
+                                                I agree to pay the specified fees for due diligence and valuation services if applicable.
                                             </li>
-                                                
                                         </ul>
-                                               
-                                            </div>
-                                          
-                                        </div>
+                                        <span id="terns" style="color:red; display:none">Please accept the investment use terms<br></span>
                                     </div>
                                     
-                                                           
                                 </div>
+                            </div>
+                            
+                                                    
+                        </div>
                                 
                           
                       </div>
                       <!-- investment tab end-->
-                      <a style = "margin:20px;" href="javascript:void(0);" onclick="$('#terns').show()" disabled id = "proceed_disable" class="btn btn-primary bg-blue">Proceed</a>
-                      <a style = "margin:20px; display:none;" href="{{ url('/investment-add') }}"  id = "proceed" class="btn btn-primary bg-blue">Proceed</a>
+                      <a style = "margin:20px;" href="javascript:void(0);" onclick="checkRules();"  id = "proceed_disable" class="btn btn-primary bg-blue">Proceed</a>
+                      <!-- <a style = "margin:20px; display:none;" href="{{ url('/investment-add') }}"  id = "proceed" class="btn btn-primary bg-blue">Proceed</a> -->
                       
                   </div>
               </div>
@@ -139,13 +158,30 @@ your business grow with the support of our community.
 
 <script type="text/javascript">
 
-function checkTermsCondition(obj) {            
-  if ($(obj).is(":checked")) {
-            $("#proceed_disable").hide();  
-            $("#proceed").show();  
-  } else {
-    $("#proceed_disable").show();  
-      $("#proceed").hide();  
-  }
+function checkRules()
+{
+  var rule_check = 1;
+  $(".prices").each(function(){
+      if (!$(this).is(":checked")) {
+          rule_check = 0;
+          }
+        
+			});
+    if (rule_check == 0) {
+        is_error = 1;
+        $('#terns').show();
+    } else {
+        window.location.href = "{{ url('/investment-add') }}";
+    }
 }
+
+// function checkTermsCondition(obj) {            
+//   if ($(obj).is(":checked")) {
+//             $("#proceed_disable").hide();  
+//             $("#proceed").show();  
+//   } else {
+//     $("#proceed_disable").show();  
+//       $("#proceed").hide();  
+//   }
+// }
 </script>
