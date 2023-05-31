@@ -736,6 +736,41 @@
                                         --}}
 
                                     </div>
+                                    <div class="term-accpet" style="margin-bottom:20px">
+                                        <ul>
+                                            <li>
+                                                <label>
+                                                    <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox" value="1" @if(isset($investor)){{'checked'}}@endif /></span>
+                                                    I confirm that the information provided in my investor profile is accurate and up-to-date.
+                                                </label>
+                                            </li>                                                
+                                            <li>
+                                                <label>
+                                                    <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox"  value="1" @if(isset($investor)){{'checked'}}@endif /></span>
+                                                    I acknowledge that the due diligence performed by PitchInvestors is not a substitute for my own assessment of the investment opportunities.
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                    <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox" value="1" @if(isset($investor)){{'checked'}}@endif /></span>
+                                                    I agree to use the information and reports provided by PitchInvestors solely for the purpose of evaluating investment opportunities on the platform.
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                    <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox" value="1" @if(isset($investor)){{'checked'}}@endif /></span>
+                                                    I understand that my investments on PitchInvestors are subject to the terms and conditions set forth by the individual businesses I choose to invest in.
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                    <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox" value="1" @if(isset($investor)){{'checked'}}@endif /></span>
+                                                    I agree to comply with all applicable laws and regulations related to investments and financial transactions.
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <div id="termsrule_error" class="error mt-1" style="color:red;display: none;">Please accept terms of engagement</div>
+                                    </div>
                                     <div class="row margin-left-button" id="submit">
                                        <label class="save-detail mt-0"><a href="javascript:;">Save</a></label>
                                     </div>
@@ -1241,7 +1276,21 @@
                 $("#tFactorsInBusiness_error").removeClass('has-error');
                 $("#tFactorsInBusinessError").removeClass('fas fa-exclamation-circle');
                 $("#tFactorsInBusinessError").addClass('fas fa-check-circle');
-            }            
+            }       
+            var rule_check = 1;
+            $(".terms_conditions").each(function(){
+                if (!$(this).is(":checked")) {
+                    rule_check = 0;
+                    }
+                });
+                if (rule_check == 0) {
+                    $("#termsrule_error").show();
+                    $("#termsrule_error").addClass('has-error');
+                    $("#termsrule_error").addClass('has-error');    
+                } else {
+                        $("#termsrule_error").hide();
+                      $("#termsrule_error").removeClass('has-error');
+                }     
             setTimeout(function() {
                 if (error == true) {
                     $('.has-error').first().focus();
@@ -1727,3 +1776,4 @@ ele.addEventListener('keydown', function (e) {
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 @endsection
+
