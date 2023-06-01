@@ -19,7 +19,7 @@ $display_dashboard_left_page = 'style=display:block;';
         <div class="row">
             
             <div class="col-lg-12 col-md-6">
-                <div class="profile-box-warp active">
+                <div class="profile-box-warp active left-box">
                     <div class="profile-box-detail">
                         <div class="btn-group dropstart my-change-dropdown" role="group">
                             <a type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
@@ -88,7 +88,7 @@ $display_dashboard_left_page = 'style=display:block;';
                          </div> --}}
                     </div>
                 </div>
-                <div class="accordion-item left-side-acc-rdion">
+                <div class="accordion-item left-side-acc-rdion left-box">
                     <h2 class="accordion-header" id="headingtwo">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwo" aria-expanded="true" aria-controls="collapseOne">
                             <div class="heading">
@@ -119,12 +119,13 @@ $display_dashboard_left_page = 'style=display:block;';
                         </div>
                     </div>
                 </div>
+                <div class="primary-chat left-box">
+                    @if ($session_data !== '')
+                    @include('layouts.front.chat_inbox_connection_listing')
+                    @endif
+                </div>
             </div>
-            <div class="primary-chat">
-            @if ($session_data !== '')
-            @include('layouts.front.chat_inbox_connection_listing')
-            @endif
-            </div>
+         
            
         </div>
     </div>

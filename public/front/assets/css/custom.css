@@ -124,7 +124,8 @@ section.left-shape {
     background: linear-gradient(rgba(242, 157, 28, 0.4));
 
     box-shadow: 0px 0px 5px #0000002b;
-    background: rgba(242, 157, 28, 0.4);
+    /* background: rgba(242, 157, 28, 0.4); */
+    background: #fff;
     transition: all 0.3s;
 }
 header .navbar-nav .nav-item .nav-link {
@@ -1084,16 +1085,25 @@ button:focus:not(:focus-visible) {
     display: flex;
     align-items: center;
 }
-
+.left-side-acc-rdion .accordion-header .accordion-button {
+    background: var(--bluecolor);
+    min-height: 48px;
+    color: #fff;
+}
+.left-side-acc-rdion .accordion-header .accordion-button b {
+    font-weight: normal;
+}
 .accordion-button::after {
-    content: "\f0da";
+    content: "\f054";
     font-family: "Font Awesome 5 Pro";
     background-image: none;
+    transition: 0.5s ease-in-out !important;
+    color: #fff;
 }
 
 .accordion-button:not(.collapsed)::after {
-    content: "\f0da" !important;
-    margin-top: 20px !important;
+    content: "\f054" !important;
+    margin-top: 17px !important;
     font-family: "Font Awesome 5 Pro" !important;
     transform: rotate(90deg) !important;
     transition: 0.5s ease-in-out !important;
@@ -2488,9 +2498,28 @@ a[data-fancybox] img {
 }
 
 .add-step-detail form {
-    padding: 20px;
-    padding-top: 30px;
     background-color: white;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d9d9d9;
+    padding: 0 0 24px;
+}
+.add-step-detail .input-error-type {
+    position: relative;
+}
+.add-step-detail .error {
+    color: red;
+}
+.add-step-detail form .top-head {
+    font-weight: normal;
+    display: block;
+    padding: 0;
+    color: var(--bs-body-color);
+}
+.add-step-detail form h5 {
+    color: var(--bluecolor);
+    padding: 16px 24px;
+    margin: 0 0 16px;
+    border-bottom: 1px solid var(--bluecolor);
 }
 .add-step-detail .other-detail .main-text {
     background-color: #fed495;
@@ -2739,6 +2768,7 @@ a[data-fancybox] img {
 .dropzone {
     border: none !important;
     background-color: #eaf8ff !important;
+    border: 1px solid rgba(0, 0, 0, 0.125) !important;
 }
 .custom-upload-inner1.logo-height {
     height: 180px;
@@ -3349,7 +3379,8 @@ header .serch-bg input.serch-txt {
 .profile-box-warp:hover,
 .profile-box-warp.active {
     box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
-    border-bottom: 3px solid #4e4d50;
+    border: 1px solid #d9d9d9;
+    border-bottom: 3px solid var(--bluecolor);
     transition: 0.5s;
 }
 .my-dashbord .profile-box-warp.investment-businss:hover,
@@ -3366,10 +3397,12 @@ header .serch-bg input.serch-txt {
 }
 
 .profile-box-warp .profile-box-detail .profile-icon {
-    height: 100px;
-    width: 100px;
+    height: 140px;
+    width: 140px;
     object-fit: contain;
     margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
 }
 .my-dashbord .profile-box-warp .profile-box-detail .profile-number {
     height: 100px;
@@ -3396,7 +3429,7 @@ header .serch-bg input.serch-txt {
     margin-bottom: 5px;
 }
 .profile-box-warp .profile-box-detail .other-detail {
-    text-align: center;
+    text-align: left;
 }
 .add-step-detail .profile-box-warp .profile-box-detail .other-detail {
     padding: 0px !important;
@@ -3411,14 +3444,22 @@ header .serch-bg input.serch-txt {
 }
 .my-dashbord .profile-box-warp .profile-box-detail .other-detail ul li a,
 .add-step-detail .profile-box-warp .profile-box-detail .other-detail ul li a {
-    color: black;
-    margin-top: 10px;
+    margin-top: 4px;
     color: #4e4d50;
+    position: relative;
+    padding: 5px 16px 5px 32px;
+    display: block;
 }
 .my-dashbord .profile-box-warp .profile-box-detail .other-detail ul li a i,
 .add-step-detail .profile-box-warp .profile-box-detail .other-detail ul li a i {
     margin-right: 5px;
-    color: #4e4d50;
+    color: #2b7090;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 32px;
+    text-align: center;
+    font-size: 16px;
 }
 .my-dashbord .profile-box-warp .profile-box-detail .final-button {
     margin-top: 10px;
@@ -3580,7 +3621,7 @@ header .serch-bg input.serch-txt {
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background-color: #868686;
+    background-color: #2b7090;
 }
 .my-change-dropdown {
     position: absolute;
@@ -3596,10 +3637,14 @@ header .serch-bg input.serch-txt {
     padding-bottom: 10px;
 }
 .chat-heading {
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: normal;
+    font-size: 18px;
     padding: 10px 0 10px 15px;
     margin-bottom: 0px;
+    height: 48px;
+    background: var(--bluecolor);
+    color: #fff;
+    line-height: 30px;
 }
 hr {
     margin: 0 !important;
@@ -3838,6 +3883,7 @@ hr {
 }
 .chat-peopel {
     position: relative;
+    padding: 16px 16px 0;
 }
 
 .letest-activity .sell-busi-activity {
@@ -4093,6 +4139,16 @@ hr {
 }
 .lef-panal-side .profile-box-warp {
     padding: 20px 15px;
+    margin-bottom: 32px;
+}
+.lef-panal-side .left-box {
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d9d9d9;
+    border-bottom: 3px solid var(--bluecolor);
+    transition: 0.5s;
+    margin: 0 0 32px;
+    border-radius: 0;
+    background: #fff;
 }
 .sell-busi-box-warp .toggler-icon {
     width: 4px;
@@ -4237,6 +4293,7 @@ hr {
 .other-detail .detail-form .form-control {
     font-size: 13px;
     position: relative;
+    color: var(--bs-body-color);
 }
 .positon-relative {
     position: relative;
@@ -4672,19 +4729,19 @@ label.kes {
     border-radius: 0px !important;
 }
 .left-side-acc-rdion .accordion-body {
-    padding: 5px !important;
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
+    padding: 8px 16px !important;
+    margin-top: 4px;
 }
 .left-side-acc-rdion .accordion-collapse {
     border-top: 1px solid gray;
 }
 .left-side-acc-rdion .accordion-collapse .form-check {
-    padding: 5px !important;
+    padding: 8px 16px !important;
     background-color: whitesmoke;
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
+/* <i class="fad fa-angle-down"></i> */
 .left-side-acc-rdion .accordion-collapse .form-check label {
     font-size: 16px !important;
 }
@@ -5067,4 +5124,62 @@ label.kes {
 }
 .thankyou-page .thankyou-icon svg path + path {
     fill: var(--greencolor);
+}
+
+/* investment-edit-detail */
+.investment-edit-detail .right-panal-side .card {
+    border: 0;
+    margin: 0 24px;
+}
+.investment-edit-detail .right-panal-side .card-header {
+    background: transparent;
+    padding: 8px 0;
+}
+.investment-edit-detail .right-panal-side .card-header h4 {
+    font-size: 18px;
+}
+.investment-edit-detail .right-panal-side .card-header .captions {
+    font-size: 13px;
+    margin: 0;
+}
+.investment-edit-detail .right-panal-side .delete-role,
+.investment-edit-detail .right-panal-side .memeber-role {
+    margin-top: 23.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 33.5px;
+    color: var(--bluecolor);
+}
+.investment-edit-detail .right-panal-side i,
+.investment-edit-detail .right-panal-side .memeber-role i {
+    margin-right: 8px;
+}
+.investment-edit-detail .term-accpet {
+    padding: 0 24px;
+}
+.investment-edit-detail .term-accpet p {
+    margin: 0;
+    font-size: 13px;
+}
+.investment-edit-detail .term-accpet .both-services-offer {
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+    margin: 0;
+    display: block;
+}
+.investment-edit-detail .term-accpet .price-cont {
+    font-size: 16px;
+    margin: 16px 24px 0;
+}
+.investment-edit-detail .save-detail-btn {
+    padding: 16px 24px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow {
+    top: 4px !important;
 }
