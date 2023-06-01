@@ -71,7 +71,7 @@ if (isset($documents)) {
             <div class="container">
                 <div class="row">
                     @include('layouts.front.left_dashboard')
-                    <div class="col-lg-8 col-md-12">
+                    <div class="col-lg-8 col-md-12 ">
 
                     
                         <form id="frm" action="{{ url('investment-store') }}" method="POST" enctype="multipart/form-data">

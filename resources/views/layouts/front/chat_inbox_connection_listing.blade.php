@@ -12,10 +12,9 @@ $allow_dashboard_left_page = ['dashboard','investmentDashboard','advisorDashboar
 @endphp
 
 <div class="col-lg-12 col-md-6 ">
-    <div class="chat-box-warp mt-3">
+    <div class="chat-box-warp">
         <h3 class="chat-heading">Inbox</h3>
-        <hr>
-        {{-- <div class="search-baar-chats">
+           {{-- <div class="search-baar-chats">
             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="search">
         </div> --}}
         <div class="chat-peopel">
