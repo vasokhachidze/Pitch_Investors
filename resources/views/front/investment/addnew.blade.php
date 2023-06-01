@@ -71,7 +71,7 @@ if (isset($documents)) {
             <div class="container">
                 <div class="row">
                     @include('layouts.front.left_dashboard')
-                    <div class="col-lg-8 col-md-12">
+                    <div class="col-lg-8 col-md-12 right-panal-side">
 
                     
                         <form id="frm" action="{{ url('investment-store') }}" method="POST" enctype="multipart/form-data">
@@ -84,7 +84,9 @@ if (isset($documents)) {
                         <div id="first-step" class="other-detail investment_forms frist-steps">
                             <h5>{{ isset($investment) ? 'Edit' : 'Add' }}  Business Profile</h5>                           
                             <div class="card">
-                                <div class="card-header"><p><b>Business Information</b></p><p>Information entered here is displayed publicly to match you with the right set of investors and buyers. Do not mention business name/information which can identify the business.</p></div>
+                                <div class="card-header">
+                                    <h4>Business Information</h4>
+                                    <p class="captions">Information entered here is displayed publicly to match you with the right set of investors and buyers. Do not mention business name/information which can identify the business.</p></div>
                                 
                                 <div class="card-body">
 
@@ -100,7 +102,7 @@ if (isset($documents)) {
                                                             <i class="" id="vBusinessNameError"></i>
                                                         </div>
 
-                                                        <div id="vBusinessName_error" class="error mt-1" style="color:red;display: none;">Enter the name of your business. </div>
+                                                        <div id="vBusinessName_error" class="error mt-1" style="display: none;">Enter the name of your business. </div>
                                                         </div>
                                                 </div>
                                                 <div class="col-lg-12 d-flex-contain positon-relative">
@@ -136,7 +138,8 @@ if (isset($documents)) {
                                                     <div id="industries_error" class="error mt-1" style="color:red;display: none;">Specify the industry or sector your business operates in</div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
+                                                 
+                                                <div class="col-md-12 d-flex-contain positon-relative mt-3">
                                                     <label class="top-head" for="tBusinessProfileDetail">Business Description</label>
                                                     <div class="input-error-type">
                                                     <textarea class="form-control" id="tBusinessProfileDetail" name="tBusinessProfileDetail" placeholder="Business Description" cols='60' rows='8' style="height: 100px">@if(isset($investment)){{$investment->tBusinessProfileDetail}}@endif</textarea>
@@ -148,48 +151,46 @@ if (isset($documents)) {
                                                     <div id="tBusinessProfileDetail_error" class="error mt-1" style="color:red;display: none;">Briefly describe your business and its products/services </div>
                                                     </div>
                                                 </div>
-
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    <label class="top-head" for="tBusinessStage">Business Stage</label>
-                                                    <div class="input-error-type">   
-                                                    <select id="vBusinessStage" name="vBusinessStage" class="add_select2 form-control rounded-pill">
-                                                        <option  value="">Select Stage</option>
-                                                        <option <?php if(isset($investment) && $investment->vBusinessStage == 'Startup'){ echo 'selected';  } ?> value="Startup">Startup</option>
-                                                        <option <?php if(isset($investment) && $investment->vBusinessStage == 'Growth'){ echo 'selected';  } ?> value="Growth">Growth</option>
-                                                        <option  <?php if(isset($investment) && $investment->vBusinessStage == 'Established'){ echo 'selected';  } ?> value="Established">Established</option>
-                                                    </select>
-                                                    <div class="validination-info">
-                                                        <i class="" id="tBusinessStage"></i>
-                                                    </div>
-                                                    <div id="vBusinessStage_error" class="error mt-1" style="color:red;display: none;">Select the stage of your business's development</div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    <label class="top-head" for="vInvestmentAmountStake"> Funding Amount</label>
-                                                    <div class="input-error-type">
-                                                        <input type="text" class="form-control rounded-pill" name="vInvestmentAmountStake" id="vInvestmentAmountStake" class="form-control numeric money" placeholder="Enter the amount of funding you are seeking in USD" value="@if(isset($investment)){{$investment->vInvestmentAmountStake}}@endif">
+                                      
+                                                    <div class="col-lg-12 d-flex-contain positon-relative mt-3">
+                                                        <label class="top-head" for="tBusinessStage">Business Stage</label>
+                                                        <div class="input-error-type">   
+                                                        <select id="vBusinessStage" name="vBusinessStage" class="add_select2 form-control rounded-pill">
+                                                            <option  value="">Select Stage</option>
+                                                            <option <?php if(isset($investment) && $investment->vBusinessStage == 'Startup'){ echo 'selected';  } ?> value="Startup">Startup</option>
+                                                            <option <?php if(isset($investment) && $investment->vBusinessStage == 'Growth'){ echo 'selected';  } ?> value="Growth">Growth</option>
+                                                            <option  <?php if(isset($investment) && $investment->vBusinessStage == 'Established'){ echo 'selected';  } ?> value="Established">Established</option>
+                                                        </select>
                                                         <div class="validination-info">
-                                                        <i class="" id="vInvestmentAmountStakeError"></i>
+                                                            <i class="" id="tBusinessStage"></i>
+                                                        </div>
+                                                        <div id="vBusinessStage_error" class="error mt-1" style="color:red;display: none;">Select the stage of your business's development</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 d-flex-contain positon-relative mt-3">
+                                                        <label class="top-head" for="vInvestmentAmountStake"> Funding Amount</label>
+                                                        <div class="input-error-type">
+                                                            <input type="text" class="form-control rounded-pill" name="vInvestmentAmountStake" id="vInvestmentAmountStake" class="form-control numeric money" placeholder="Enter the amount of funding you are seeking in USD" value="@if(isset($investment)){{$investment->vInvestmentAmountStake}}@endif">
+                                                            <div class="validination-info">
+                                                            <i class="" id="vInvestmentAmountStakeError"></i>
+                                                            </div>
+
+                                                            <div id="vInvestmentAmountStake_error" class="error mt-1" style="color:red;display: none;">Enter the amount of funding you are seeking in USD</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 d-flex-contain positon-relative mt-3">
+                                                        <label class="top-head">Funding Purpose</label>
+                                                        <div class="input-error-type">
+                                                        <textarea class="form-control" id="tInvestmentReason" name="tInvestmentReason" placeholder="Describe how you plan to use the investment funds" cols='60' rows='8' style="height: 100px">@if(isset($investment)){{$investment->tInvestmentReason}}@endif</textarea>
+                                                        <div class="validination-info">
+                                                            <i class="" id="tInvestmentReasonError"></i>
                                                         </div>
 
-                                                        <div id="vInvestmentAmountStake_error" class="error mt-1" style="color:red;display: none;">Enter the amount of funding you are seeking in USD</div>
+                                                        <div id="ttInvestmentReason_error" class="error mt-1" style="color:red;display: none;">Describe how you plan to use the investment funds </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-
-
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    <label class="top-head">Funding Purpose</label>
-                                                    <div class="input-error-type">
-                                                    <textarea class="form-control" id="tInvestmentReason" name="tInvestmentReason" placeholder="Describe how you plan to use the investment funds" cols='60' rows='8' style="height: 100px">@if(isset($investment)){{$investment->tInvestmentReason}}@endif</textarea>
-                                                    <div class="validination-info">
-                                                        <i class="" id="tInvestmentReasonError"></i>
-                                                    </div>
-
-                                                    <div id="ttInvestmentReason_error" class="error mt-1" style="color:red;display: none;">Describe how you plan to use the investment funds </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
+                                       
+                                                <div class="col-lg-12  d-flex-contain positon-relative mt-3">
                                                     <label class="top-head" for="vPhysicalAssetValue">Business Valuation</label>
                                                     <div class="input-error-type">
                                                         <input type="text" class="form-control rounded-pill" name="vPhysicalAssetValue" id="vPhysicalAssetValue" class="form-control numeric money" placeholder="Provide an estimate of your business's value in USD" value="@if(isset($investment)){{$investment->vPhysicalAssetValue}}@endif">
@@ -199,7 +200,7 @@ if (isset($documents)) {
                                                         <div id="vPhysicalAssetValue_error" class="error mt-1" style="color:red;display: none;">Provide an estimate of your business's value in USD</div>
                                                     </div>    
                                                 </div>
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
+                                                <div class="col-lg-12 d-flex-contain positon-relative mt-3">
                                                     <label class="top-head" for="tRevenueAndFinancials">Revenue and Financials</label>
                                                     <div class="input-error-type">
                                                     <textarea class="form-control" id="tRevenueAndFinancials" name="tRevenueAndFinancials" placeholder="Provide details about your business's financial performance, revenue, and growth" cols='60' rows='8' style="height: 100px">@if(isset($investment)){{$investment->tRevenueAndFinancials}}@endif</textarea>
@@ -210,7 +211,7 @@ if (isset($documents)) {
                                                         <div id="tRevenueAndFinancials_error" class="error mt-1" style="color:red;display: none;">Provide details about your business's financial performance, revenue, and growth</div>
                                                     </div>    
                                                 </div>
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
+                                                <div class="col-lg-12 d-flex-contain positon-relative mt-3">
                                                     <label class="top-head" for="tMarketAnalysis">Market Analysis</label>
                                                     <div class="input-error-type">
                                                     <textarea class="form-control" id="tMarketAnalysis" name="tMarketAnalysis" placeholder="Describe your target market, competition, and market opportunity" cols='60' rows='8' style="height: 100px">@if(isset($investment)){{$investment->tMarketAnalysis}}@endif</textarea>
@@ -220,7 +221,7 @@ if (isset($documents)) {
                                                         <div id="tMarketAnalysis_error" class="error mt-1" style="color:red;display: none;">Describe your target market, competition, and market opportunity</div>
                                                     </div>    
                                                 </div>
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
+                                                <div class="col-lg-12 d-flex-contain positon-relative mt-3">
                                                     <label class="top-head" for="vPhysicalAssetValue">Website or Online Presence</label>
                                                     <div class="input-error-type">
                                                         <input type="text" class="form-control rounded-pill" name="vWebsiteLink" id="vWebsiteLink" class="form-control numeric money" placeholder="Provide the URL of your business website or any relevant online presence" value="@if(isset($investment)){{$investment->vWebsiteLink}}@endif">
@@ -230,76 +231,27 @@ if (isset($documents)) {
                                                         <div id="vWebsiteLink_error" class="error mt-1" style="color:red;display: none;">Provide the URL of your business website or any relevant online presence</div>
                                                     </div>    
                                                 </div>
+                                                <div class="col-lg-12 positon-relative mt-3">
+                                                    <label class="top-head" for="vPhysicalAssetValue">Business Location</label>
+                                                    <div class="input-error-type">
+                                                        <input type="text" class="form-control rounded-pill" name="vLocation" id="vLocation" class="form-control numeric money" placeholder="Provide the URL of your business website or any relevant online presence" value="@if(isset($investment)){{$investment->vWebsiteLink}}@endif">
+                                                            <div class="validination-info">
+                                                            <i class="" id="vLocation"></i>
+                                                        </div>
+                                                        <div id="vLocation" class="error mt-1" style="color:red;display: none;">Provide business location</div>
+                                                    </div>    
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <br>
-                            <div class="card">
-                                <div class="card-header"><p><b>Business Location</b></p></div>
+                            <!-- <br> -->
+                            <div class="card" style="display:none">
+                                <div class="card-header"><h4>Business Location</h4></div>
                                 <div class="card-body">
                                     <div class="detail-form">
-                                        <div class="row">
-                                        {{--
-                                                <div class="col-lg-12 mt-3 mb-2 form-group ">
-                                                    <label>Business Location</label>
-                                                    
-                                                    <select name="locations[]" id="locations" class="form-control" multiple="multiple" style="width: 100%; height: 40px;">
-                                                        @foreach ($location as $key => $value)
-                                                            @php
-                                                                $region_select = '';
-                                                                $county_select = '';
-                                                                $subcounty_select = '';
-                                                            @endphp
-
-                                                                @if(isset($selected_location)) 
-                                                                @foreach ($selected_location as $key => $lvalue)
-                                                                    @if($lvalue->iLocationId == $value['regionId'] && $lvalue->eLocationType == 'Region')
-                                                                    @php
-                                                                        $region_select = 'selected';                                
-                                                                        @endphp
-                                                                    @endif
-                                                                @endforeach
-                                                                @endif
-                                                                <option class="region_option" value="Region_{{$value['regionId']}}-{{$value['regionName']}}" {{$region_select }}>{{$value['regionName']}}</option>
-                                                                @foreach ($value as $key1 => $value1)
-                                                                @if(in_array($key1, ['regionId', 'regionName']))
-                                                                    @continue
-                                                                @endif
-                                                                
-                                                                @if(isset($selected_location)) 
-                                                                    @foreach ($selected_location as $key => $lvalue)
-                                                                    @if($lvalue->iLocationId == $value1['countyId'] && $lvalue->eLocationType == 'County')
-                                                                        @php
-                                                                            $county_select = 'selected';                                
-                                                                        @endphp
-                                                                    @endif
-                                                                    @endforeach
-                                                                @endif
-                                                                <option class="county_option" value="County_{{$value1['countyId']}}-{{$value1['countyName']}}" {{$county_select }}>-{{$value1['countyName']}}</option>
-                                                                @foreach ($value1 as $key2 => $value2)
-                                                                    @if(in_array($key2, ['countyId', 'countyName']))
-                                                                    @continue
-                                                                    @endif
-
-                                                                @if(isset($selected_location)) 
-                                                                    @foreach ($selected_location as $key => $lvalue)
-                                                                        @if($lvalue->iLocationId == $value2['subCountyName'] && $lvalue->eLocationType == 'Sub County')
-                                                                        @php
-                                                                            $subcounty_select = 'selected';                                
-                                                                            @endphp
-                                                                        @endif
-                                                                    @endforeach
-                                                                    @endif
-                                                                    <option class="subCounty_option" value="Sub County_{{$value2['iSubCountId']}}-{{$value2['subCountyName']}}" {{$subcounty_select}}>--{{$value2['subCountyName']}}</option>
-                                                                @endforeach
-                                                                @endforeach
-                                                            @endforeach
-                                                    </select>
-                                                    <div id="locations_error" class="error mt-1" style="color:red;display: none;">Please Select Location</div>
-                                                </div>
-                                            --}}
+                                        <div class="row">                                        
                                             <div class="col-lg-6 mb-2 form-group custom-select positon-relative">
                                                 <label class="top-head">Select Country</label>
                                                 <select id="country_id" name="iCountryId" class="add_select2 form-control">
@@ -355,24 +307,24 @@ if (isset($documents)) {
                             </div>
                             <br>        
                             <div class="card">
-                                <div class="card-header"><p><b>Team Members</div>
+                                <div class="card-header"><h4>Team Members</h4></div>
                                     <div class="card-body">
                                     <div class="detail-form member-data">
                                     <div class = "member-1" style = "display:none;">
                                         <div class="row ">
                                             <div class="col-md-5 positon-relative">
-                                                <label for="floatingPassword">Member</label>
+                                                <label for="floatingPassword" class="top-head">Member</label>
                                                 <input type="text" class="form-control rounded-pill"  name="vMemberName[]" placeholder="Member name" value="">                                                
                                             </div>
 
                                             <div class="col-md-5 positon-relative">
-                                                <label for="floatingPassword">Role</label>
+                                                <label for="floatingPassword" class="top-head">Role</label>
                                                 <input type="text" class="form-control rounded-pill"  name="vMemberRole[]" placeholder="Member Role" value="">
                                                 <div class="validination-info">
                                                     <i class="" ></i>
                                                 </div>                                                
                                             </div>                                            
-                                            <div onclick ="delete_role(this)" class="col-md-2 positon-relative" style="margin-top:25px;cursor:pointer; color:red">
+                                            <div onclick ="delete_role(this)" class="col-md-2 positon-relative delete-role" style=" color:red">
                                                 <i class="fa fa-trash-o"></i> Delete
                                             </div>
                                         </div>
@@ -382,20 +334,20 @@ if (isset($documents)) {
                                                 @foreach ($selected_memberrole as $key => $memberdata)
                                         <div class="row ">
                                             <div class="col-md-5 positon-relative">
-                                                <label for="floatingPassword">Member</label>
+                                                <label for="floatingPassword" class="top-head">Member</label>
                                                 <input type="text" class="form-control rounded-pill"  name="vMemberName[]" placeholder="Member name" value="{{$memberdata->vMemberName}}">
                                                 
                                             </div>
 
                                             <div class="col-md-5 positon-relative">
-                                                <label for="floatingPassword">Role</label>
+                                                <label for="floatingPassword" class="top-head">Role</label>
                                                 <input type="text" class="form-control rounded-pill"  name="vMemberRole[]" placeholder="Member Role" value="{{$memberdata->vMemberRole}}">
                                                 <div class="validination-info">
                                                     <i class="" ></i>
                                                 </div>
                                                 
                                             </div>
-                                            <div class="memeber-role col-md-2" style="margin-top:25px;cursor:pointer">
+                                            <div class="memeber-role col-md-2">
                                                 <i class="fa fa-plus"></i> Add New
                                             </div>                                            
                                         </div>
@@ -403,20 +355,20 @@ if (isset($documents)) {
                                     @else
                                         <div class="row ">
                                             <div class="col-md-5 positon-relative">
-                                                <label for="floatingPassword">Member</label>
+                                                <label for="floatingPassword" class="top-head">Member</label>
                                                 <input type="text" class="form-control rounded-pill"  name="vMemberName[]" placeholder="Member name" value="">
                                                 
                                             </div>
 
                                             <div class="col-md-5 positon-relative">
-                                                <label for="floatingPassword">Role</label>
+                                                <label for="floatingPassword" class="top-head">Role</label>
                                                 <input type="text" class="form-control rounded-pill"  name="vMemberRole[]" placeholder="Member Role" value="">
                                                 <div class="validination-info">
                                                     <i class="" ></i>
                                                 </div>
                                                 
                                             </div>
-                                            <div class="memeber-role col-md-2" style="margin-top:25px;cursor:pointer">
+                                            <div class="memeber-role col-md-2">
                                                 <i class="fa fa-plus"></i> Add New
                                             </div>                                            
                                         </div>
@@ -427,12 +379,12 @@ if (isset($documents)) {
                            
                             <br>
                             <div class="card">
-                                <div class="card-header"><p><b>Contact Information</div>
+                                <div class="card-header"><h4>Contact Information</h4></div>
                                     <div class="card-body">
                                     <div class="detail-form">
                                         <div class="row">
                                             <div class="col-md-6 positon-relative">
-                                                <label for="floatingPassword">First Name</label>
+                                                <label for="floatingPassword" class="top-head">First Name</label>
                                                 <input type="text" class="form-control rounded-pill" id="vFirstName" name="vFirstName" placeholder="First name" value="@if(isset($investment)){{$investment->vFirstName}}@elseif(!empty($userData)) {{$userData->vFirstName}}@else{{$session_data['vFirstName']}}@endif">
                                                 <div class="validination-info">
                                                     <i class="" id="fNameError"></i>
@@ -441,7 +393,7 @@ if (isset($documents)) {
                                             </div>
 
                                             <div class="col-md-6 positon-relative">
-                                                <label for="floatingPassword">Last Name</label>
+                                                <label for="floatingPassword" class="top-head">Last Name</label>
                                                 <input type="text" class="form-control rounded-pill" id="vLastName" name="vLastName" placeholder="Last Name" value="@if(isset($investment)){{$investment->vLastName}}@elseif(!empty($userData)) {{$userData->vLastName}}@else{{$session_data['vLastName']}}@endif">
                                                 <div class="validination-info">
                                                     <i class="" id="lNameError"></i>
@@ -450,7 +402,7 @@ if (isset($documents)) {
                                             </div>
 
                                             <div class="col-md-6 positon-relative">
-                                                <label for="floatingPassword">Email Address</label>
+                                                <label for="floatingPassword" class="top-head">Email Address</label>
                                                 <input type="text" class="form-control rounded-pill" id="vEmail" name="vEmail" placeholder="Email" value="@if(isset($investment)){{$investment->vEmail}}@else{{$session_data['vEmail']}}@endif">
                                                 <div class="validination-info">
                                                     <i class="" id="vEmailError"></i>
@@ -461,7 +413,7 @@ if (isset($documents)) {
                                             </div>
 
                                             <div class="col-md-6 positon-relative">
-                                                <label for="floatingPassword">Phone Number</label>
+                                                <label for="floatingPassword" class="top-head">Phone Number</label>
                                                 <input type="text" class="form-control rounded-pill numeric" id="vPhone" maxlength="10" name="vPhone" placeholder="Phone No." value="@if(isset($investment)){{$investment->vPhone}}@elseif(!empty($userData)) {{$userData->vPhone}}@else{{$session_data['vPhone']}}@endif">
                                                 <div class="validination-info">
                                                     <i class="" id="vPhoneError"></i>
@@ -475,12 +427,14 @@ if (isset($documents)) {
                             </div>
                             <br>
                             <div class="card">
-                                <div class="card-header"><p><b>Photos, Documents & Proof</b></p><p>Photos are an important part of your profile and are publicly displayed. Documents help us verify and approve your profile faster. Documents names entered here are publicly visible but are accessible only to introduced members.</p></div>
+                                <div class="card-header">
+                                    <h4>Photos, Documents & Proof</h4>
+                                    <p class="captions">Photos are an important part of your profile and are publicly displayed. Documents help us verify and approve your profile faster. Documents names entered here are publicly visible but are accessible only to introduced members.</p></div>
                                 <div class="card-body">    
                                 <input type="hidden" name="documentId" id="documentId">                                    
                                     <div class="detail-form">
                                             <div class="row">
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
+                                                <div class="col-lg-12 positon-relative">
                                                     <label class="mb-1">Business Plan or Pitch Deck</label>
                                                     <div class="input-error-type">
                                                     <div style="font-weight:normal" id="business_plan_dropzone" name='business_plan_dropzone' class="dropzone mb-2"></div>
@@ -522,20 +476,12 @@ if (isset($documents)) {
                                     </div>
                                 </div>
                             </div>
-                           <br>
+                       
                                             <!-- close display image code -->
                                    
                                     <div class="term-accpet">
-                                        <ul>
-                                            <li>
-                                                <label for="eFindersFee">
-                                                    <input type="checkbox" name="eFindersFee" id="eFindersFee" value="Yes" @if(isset($investment)){{'checked'}}@endif />
-                                                    <p>I accept 1% finder's fee (payable post transaction) and other <a href="#"> Terms of engagement</a></p>
-                                                </label>
-                                            </li>
-                                                <div id="eFindersFee_error" class="error mt-1" style="color:red;display: none;">Please accept terms of engagement</div>
-                                        </ul>
-                                        <span style="font-size:15pt;font-weight:bold;color:red">Subscribe to both services now, and get a 20% discount</span>
+                                      
+                                        <span class="both-services-offer">Subscribe to both services now, and get a 20% discount</span>
                                         <ul>
                                             <li>
                                                 <label for="isNewsletterService">
@@ -556,10 +502,21 @@ if (isset($documents)) {
                                             </li>
                                                 
                                         </ul>
-                                        <span id="price_cont" style="display:none">Total amount to pay: <span id="total_price"></span> KES <span id="discount" style="display:none; color:red">(20% discount applied)</span></span>
-                                    </div>
-                                    <div class="row margin-left-button" id="submit">
-                                        <label class="save-detail"><a href="javascript:;" >Save</a></label>
+                                        <div id="price_cont" class="price-cont" style="display:none">
+                                        Total amount to pay: <span id="total_price"></span> KES <span id="discount" style="display:none; color:red">(20% discount applied)</span></div>
+                                   
+                                      <ul>
+                                            <li>
+                                                <label for="eFindersFee">
+                                                    <input type="checkbox" name="eFindersFee" id="eFindersFee" value="Yes" @if(isset($investment)){{'checked'}}@endif />
+                                                    <p>I accept 1% finder's fee (payable post transaction) and other <a href="#"> Terms of engagement</a></p>
+                                                </label>
+                                            </li>
+                                                <div id="eFindersFee_error" class="error mt-1" style="color:red;display: none;">Please accept terms of engagement</div>
+                                        </ul>
+                                         </div>
+                                    <div class="margin-left-button save-detail-btn">
+                                        <label class="save-detail"><a  id="submit" href="javascript:;" >Save</a></label>
                                     </div>
                                 </div>
                         
@@ -877,44 +834,44 @@ if (isset($documents)) {
                 $("#industriesError").addClass('fas fa-check-circle');
             }
         
-            var iRegionId = $("#iRegionId").val();
-             if (iRegionId.length == 0) {
-                $("#region_id_error").show();
-                $("#iRegionId").addClass('has-error');
-                $("#iRegionIdError").addClass('fas fa-exclamation-circle');
-                error = true;
-            } else {
-                $("#region_id_error").hide();
-                $("#iRegionId").removeClass('has-error');
-                $("#iRegionIdError").removeClass('fas fa-exclamation-circle');                
-                $("#iRegionIdError").addClass('fas fa-check-circle');
-            }
+            // var iRegionId = $("#iRegionId").val();
+            //  if (iRegionId.length == 0) {
+            //     $("#region_id_error").show();
+            //     $("#iRegionId").addClass('has-error');
+            //     $("#iRegionIdError").addClass('fas fa-exclamation-circle');
+            //     error = true;
+            // } else {
+            //     $("#region_id_error").hide();
+            //     $("#iRegionId").removeClass('has-error');
+            //     $("#iRegionIdError").removeClass('fas fa-exclamation-circle');                
+            //     $("#iRegionIdError").addClass('fas fa-check-circle');
+            // }
         
-            var iCountryId = $("#country_id").val();
-            if (iCountryId.length == 0) {
-                $("#country_id").addClass('has-error');
-                $("#iCountryId_error").show();
-                $("#iCountryIdError").addClass('fas fa-exclamation-circle');                
-                 error = true;
-            } else {
-                $("#iCountryId_error").hide();
-                $("#country_id").removeClass('has-error');
-                $("#iCountryIdError").removeClass('fas fa-exclamation-circle');                
-                $("#iCountryIdError").addClass('fas fa-check-circle');
-            }
+            // var iCountryId = $("#country_id").val();
+            // if (iCountryId.length == 0) {
+            //     $("#country_id").addClass('has-error');
+            //     $("#iCountryId_error").show();
+            //     $("#iCountryIdError").addClass('fas fa-exclamation-circle');                
+            //      error = true;
+            // } else {
+            //     $("#iCountryId_error").hide();
+            //     $("#country_id").removeClass('has-error');
+            //     $("#iCountryIdError").removeClass('fas fa-exclamation-circle');                
+            //     $("#iCountryIdError").addClass('fas fa-check-circle');
+            // }
         
-            var iSubCountyId = $("#iSubCountyId").val();
-            if (iSubCountyId.length == 0) {
-                $("#sub_county_id_error").show();
-                $("#iSubCountyId").addClass('has-error');
-                $("#iSubCountyIdError").addClass('fas fa-exclamation-circle');                
-                error = true;
-            } else {
-                $("#sub_county_id_error").hide();
-                $("#iSubCountyId").removeClass('has-error');
-                $("#iSubCountyIdError").removeClass('fas fa-exclamation-circle');                
-                $("#iSubCountyIdError").addClass('fas fa-check-circle');
-            }
+            // var iSubCountyId = $("#iSubCountyId").val();
+            // if (iSubCountyId.length == 0) {
+            //     $("#sub_county_id_error").show();
+            //     $("#iSubCountyId").addClass('has-error');
+            //     $("#iSubCountyIdError").addClass('fas fa-exclamation-circle');                
+            //     error = true;
+            // } else {
+            //     $("#sub_county_id_error").hide();
+            //     $("#iSubCountyId").removeClass('has-error');
+            //     $("#iSubCountyIdError").removeClass('fas fa-exclamation-circle');                
+            //     $("#iSubCountyIdError").addClass('fas fa-check-circle');
+            // }
         
             // var tBusinessDetail = $("#tBusinessDetail").val();
             //  if (tBusinessDetail.length == 0) {
