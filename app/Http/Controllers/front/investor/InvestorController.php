@@ -403,6 +403,27 @@ class InvestorController extends Controller
         $data['iTempId']=time();
         return view('front.investor.add')->with($data);
     }
+    public function add1() 
+    {
+        $criteria = array();
+        /* $criteria["iCountryId"] = 110; // Kenya  */
+        $criteria["eStatus"] = 'Active';
+        $criteria["eIsDeleted"] = 'No';
+        $data['industries'] = Industry::get_all_data();
+        $data['countries'] = Country::get();
+        // dd($data['countries']);
+        /* $data['location'] = Investor::get_location(); */
+        /* $data['countries'] = Country::get_country_code($criteria); */
+        $data['subRegion'] = SubCounty::get_all_data($criteria);
+        
+        $session_data = session('user');
+        $userId = $session_data['iUserId'];
+
+        $criteria['iUserId']=$userId;
+        $data['loginuserdata']= User::get_by_id($criteria);
+        $data['iTempId']=time();
+        return view('front.investor.add1')->with($data);
+    }
 
     public function edit($vUniqueCode)
     {
@@ -461,6 +482,21 @@ class InvestorController extends Controller
         $data['tInvestorProfileDetail']        = $request->tInvestorProfileDetail;
         $data['eStatus']                = 'Active';
         $data['eIsDeleted'] = 'No';
+        $data['vFullName'] = $request->vFullName;
+        $data['vInvestmentStage'] = $request->vInvestmentStage;
+        $data['vInvestmentTimeline'] = $request->vInvestmentTimeline;
+        $data['tPreviousInvestMentExperience'] = $request->tPreviousInvestMentExperience;
+        $data['vTypeOfInvestmentMade'] = $request->vTypeOfInvestmentMade;
+        $data['vRiskToleranceLevel'] = $request->vRiskToleranceLevel;
+        $data['vExpectedInvestmentReturns'] = $request->vExpectedInvestmentReturns;
+        $data['vEstimatedNetWorth'] = $request->vEstimatedNetWorth;
+        $data['tBackgroundExpertise'] = $request->tBackgroundExpertise;
+        $data['tIndustryKnowledge'] = $request->tIndustryKnowledge;
+        $data['vInvestmentLocation'] = $request->vInvestmentLocation;
+        $data['tAdditionalComments'] = $request->tAdditionalComments;
+        $data['tInvestmentTrackRecord'] = $request->tInvestmentTrackRecord;
+        $data['tAvailabilityOfInvestableFunds'] = $request->tAvailabilityOfInvestableFunds;
+        
         
 
         $message = $investor_id = '';

@@ -235,6 +235,7 @@ Route::group(['middleware' => ['userlogin']], function() {
 
     /* Investor page */
     Route::get('investor-add',[InvestorController::class, 'add'])->name('front.investor.add');
+    Route::get('investor-add1',[InvestorController::class, 'add1']);
     Route::post('investor-store',[InvestorController::class, 'store'])->name('front.investor.store');
     Route::post('investor-upload',[InvestorController::class, 'upload'])->name('front.investor.upload');
     Route::post('investor-delete-document',[InvestorController::class, 'delete_documents'])->name('front.investor.deleteDocument');

@@ -8,7 +8,7 @@ $userData = App\Helper\GeneralHelper::get_user_by_id($session_data['iUserId']);
 $url = Request::segment(1);
 $display_dashboard_left_page = 'style=display:none;';
 
-$allow_dashboard_left_page = ['dashboard','investmentDashboard','advisorDashboard','investorDashboard','investor-add','investment-add', 'investment-add-new','advisor-add','editUser','changePassword','investment-edit','investor-edit','advisor-edit','investor-request','advisor-request','investment-request','business-instruction','premium-detail'];
+$allow_dashboard_left_page = ['dashboard','investmentDashboard','advisorDashboard','investorDashboard','investor-add','investor-add1','investment-add', 'investment-add-new','advisor-add','editUser','changePassword','investment-edit','investor-edit','advisor-edit','investor-request','advisor-request','investment-request','business-instruction','premium-detail'];
 
 if (in_array($url,$allow_dashboard_left_page)) {
 $display_dashboard_left_page = 'style=display:block;';
