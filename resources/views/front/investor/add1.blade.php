@@ -267,8 +267,12 @@
                                        
                                         <div class="col-md-6 positon-relative">                                                                                        
                                             <label for="tAboutCompany">Expected Investment Returns</label>
-                                                <!-- <textarea class="form-control no-space-control" placeholder="Leave a comment here" id="tAboutCompany" name="tAboutCompany" style="height: 120px">@if (isset($investor)){{ $investor->tAboutCompany }}@endif</textarea> -->
-                                                <input type="text" name="vExpectedInvestmentReturns" id="vExpectedInvestmentReturns" class="form-control" placeholder="Specify your expected investment returns" value="@if (isset($investor)){{$investor->vExpectedInvestmentReturns}}@endif">
+                                                <select class="form-select" aria-label="Default select example" id="vExpectedInvestmentReturns" name="vExpectedInvestmentReturns">
+                                                    <option  value="">Select Investment Returns</option>
+                                                    <option <?php if(isset($investor) && $investor->vExpectedInvestmentReturns == '100K-10M'){ echo 'selected';  } ?> value="100K-10M">100K-10M</option>
+                                                    <option <?php if(isset($investor) && $investor->vExpectedInvestmentReturns == '10M-100M'){ echo 'selected';  } ?> value="10M-100M">10M-100M</option>
+                                                    <option  <?php if(isset($investor) && $investor->vExpectedInvestmentReturns == '100M+'){ echo 'selected';  } ?> value="100M+">100M+</option>
+                                                    </select>
                                                 <div class="validination-info">
                                                      <i class="" id="vExpectedInvestmentReturnsError"></i>
                                                  </div>
@@ -286,12 +290,13 @@
                                             <div class="row">
                                                 <div class="col-md-12 positon-relative">
                                                     <div>
-                                                        <label for='vEstimatedNetWorth'>Estimated Net Worth</label>
-                                                        <input type="text" id="vEstimatedNetWorth" name="vEstimatedNetWorth" class="form-control" placeholder="Provide an estimation of your net worth" value="@if (isset($investor)) {{ $investor->vEstimatedNetWorth }} @endif">
+                                                        <label for='vEstimatedNetWorth'>Estimated Net Worth(Should be in percentage)</label>
+                                                        <input type="text" id="vEstimatedNetWorth" name="vEstimatedNetWorth" class="form-control percent" placeholder="Provide an estimation of your net worth" value="@if (isset($investor)) {{ $investor->vEstimatedNetWorth }} @endif">
                                                     </div>
                                                     <div class="validination-info">
                                                         <i class="" id="vEstimatedNetWorthError"></i>
                                                     </div>
+                                                    <div id="vEstimatedNetWorth_percent_error" class="error mt-1" style="color:red;display: none; font-size: small;">Please Enter percentage Value</div>
                                                     <div id="vEstimatedNetWorth_error" class="error mt-1" style="color:red;display: none; font-size: small;">Provide an estimation of your net worth</div>
                                                 </div>
                                                 <div class="col-md-12 positon-relative">                                                
@@ -601,13 +606,14 @@
             }
 
             if(vEstimatedNetWorth.length == 0) {
-            $("#vEstimatedNetWorth_error").show();
-            $( "#vEstimatedNetWorth" ).addClass('has-error');
-            $("#vEstimatedNetWorthError").addClass('fas fa-exclamation-circle');
-            error = true;            
+                $("#vEstimatedNetWorth_percent_error").hide();
+                $("#vEstimatedNetWorth_error").show();
+                $( "#vEstimatedNetWorth" ).addClass('has-error');
+                $("#vEstimatedNetWorthError").addClass('fas fa-exclamation-circle');
+                error = true;            
             } else {
-                $("#vFirstName_error").hide();
-                $("#vFirstName").removeClass('has-error');
+                $("#vEstimatedNetWorth_error").hide();
+                $("#vEstimatedNetWorth").removeClass('has-error');
                 $("#vEstimatedNetWorthError").removeClass('fas fa-exclamation-circle');
                 $("#vEstimatedNetWorthError").addClass('fas fa-check-circle');
             }
@@ -724,6 +730,21 @@
                     $("#vRiskToleranceLevelError").addClass('fas fa-check-circle');
                 }
             });
+
+            $(document).on('change blur', '#vExpectedInvestmentReturns', function() {
+                var vExpectedInvestmentReturns = $("#vExpectedInvestmentReturns").val();                
+                 if (vExpectedInvestmentReturns.length == 0) {
+                    $("#vExpectedInvestmentReturns_error").show();
+                    $( "#vExpectedInvestmentReturns" ).addClass('has-error');
+                    $("#vExpectedInvestmentReturnsError").addClass('fas fa-exclamation-circle');
+                     error = true;                
+                } else {
+                    $("#vExpectedInvestmentReturns_error").hide();
+                    $("#vExpectedInvestmentReturns").removeClass('has-error');
+                    $("#vExpectedInvestmentReturnsError").removeClass('fas fa-exclamation-circle');
+                    $("#vExpectedInvestmentReturnsError").addClass('fas fa-check-circle');
+                }
+            });
             
             $(document).on('change blur', '.intrestCheckbox', function() {
                  var intrestCheckbox = $(".intrestCheckbox:checkbox:checked").length;
@@ -756,7 +777,13 @@
                 this.value = this.value.replace(/\D/g, '');
             }
         });
+        $('.percent').keyup(function(e) {
+            if (/[^0-9.]/g.test(this.value)) {
+                this.value = this.value.replace(/[^0-9.]/g, '');
+            }
+        });
 
+        
         function validateEmail(sEmail) {
             var filter =
                 /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
