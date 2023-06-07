@@ -17,9 +17,8 @@ $display_dashboard_left_page = 'style=display:block;';
 <div class="col-lg-3" {{$display_dashboard_left_page}}>
     <div class="lef-panal-side">
         <div class="row">
-            
             <div class="col-lg-12 col-md-6">
-                <div class="profile-box-warp active">
+                <div class="profile-box-warp active" style="background: #FFFFFF; border-bottom: 2px solid #2B7292; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
                     <div class="profile-box-detail">
                         <div class="btn-group dropstart my-change-dropdown" role="group">
                             <a type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,6 +31,7 @@ $display_dashboard_left_page = 'style=display:block;';
                                 <li><a href="{{ route('front.dashboard.changePassword') }}" class="dropdown-item" type="button">Change Password</a></li>
                             </ul>
                         </div>
+
                         <div class="profile-icon">
                             @php
                             $image = asset('front/assets/images/defaultuser.png');
@@ -44,16 +44,20 @@ $display_dashboard_left_page = 'style=display:block;';
                             }
                             }
                             @endphp
-                            <img src="{{ $image }}" alt="">
+                            <img style="border-radius:50%;" src="{{ $image }}" alt="">
+                        </div>
+                        
+                        <div style="color:#313538; font-size: 16px; font-weight: 500;" class="text-center pt-3" >
+                        shota sgvilava
                         </div>
                         @if (isset($userData->vFirstName) && isset($userData->vLastName))
-                        <div class="profile-heading">
-                            <a href="{{ route('front.dashboard.dashboard') }}">
+                        <div class="profile-heading text-center">
+                            <a href="{{ route('front.dashboard.dashboard') }}" style="color:#313538; font-size: 16px; font-weight: 500;">
                                 <h1>{{ $userData->vFirstName . ' ' . $userData->vLastName }}</h1>
                             </a>
                         </div>
                         @endif
-                        <div class="other-detail">
+                        <div class="text-center">
                             <ul>
                                 <!-- 
                                     @if (isset($userData->vFirstName) && isset($userData->vLastName))
@@ -63,7 +67,7 @@ $display_dashboard_left_page = 'style=display:block;';
                                     @endif 
                                 -->
                                 <li>
-                                    <a class="user-id-login" href="javascript:;"><i class="fal fa-envelope"></i>
+                                    <a class="user-id-login" href="javascript:;" style="color: #313538; opacity: 0.6; font-size: 16px;">
                                         @if ($userData !== '')
                                         @if (strlen($userData->vEmail) > 28)
                                         {{ substr($userData->vEmail, 0, 28) . '...' }}
@@ -88,31 +92,34 @@ $display_dashboard_left_page = 'style=display:block;';
                          </div> --}}
                     </div>
                 </div>
-                <div class="accordion-item left-side-acc-rdion">
+
+                <div class="accordion-item left-side-acc-rdion mt-4 add-card" style="border-radius:0;">
                     <h2 class="accordion-header" id="headingtwo">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwo" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="accordion-button border-top" style="padding-left:15px; " type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwo" aria-expanded="true" aria-controls="collapseOne">
                             <div class="heading">
-                                <span><b>Connection</b></span>
+                                <span class="add-card-title" style="font-size:18px;"><b>Connection</b></span>
                             </div>
                         </button>
+                        <div class="px-3">
+                            <div class="border-bottom"></div>  
+                        </div>
                     </h2>
-                    <div id="collapsetwo" class="accordion-collapse collapse show" aria-labelledby="headingtwo" data-bs-parent="#accordionExample" style="">
-                        <div class="accordion-body" style="cursor:pointer;">
+                    <div id="collapsetwo" class="accordion-collapse collapse show px-2 border-0" aria-labelledby="headingtwo" data-bs-parent="#accordionExample" style="">
+                        <div class="accordion-body m-0" style="cursor:pointer;">
                             <div class="in-detail">
-
                                 <a href="{{ route('front.dashboard.investmentDashboardTabview') }}">
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="1" style="color: #f29d1c;cursor:pointer;"> Business Connection </label>
+                                    <div class="form-check bg-transparent">
+                                        <label class="form-check-label" for="1" style=""> Business Connection </label>
                                     </div>
                                 </a>
                                 <a href="{{ route('front.dashboard.advisorDashboardTabview') }}">
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="2" style="color:#69B965;cursor:pointer;"> Advisor Connection </label>
+                                    <div class="form-check bg-transparent">
+                                        <label class="form-check-label" for="2" style=""> Advisor Connection </label>
                                     </div>
                                 </a>
                                 <a href="{{ route('front.dashboard.investorDashboardTabview') }}">
-                                    <div class="form-check">
-                                         <label class="form-check-label" for="3" style="color:#2B7090;cursor:pointer;"> Investor Connection </label>
+                                    <div class="form-check bg-transparent">
+                                         <label class="form-check-label" for="3" style=""> Investor Connection </label>
                                     </div>
                                 </a>
                             </div>

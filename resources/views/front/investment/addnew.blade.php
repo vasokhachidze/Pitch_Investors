@@ -48,13 +48,60 @@ if (isset($documents)) {
         .rounded-pill {
             border-radius : 0 !important;
         }
+
+        .add-card-title{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 27px;
+            color: #2B7292;
+        }
+
+        .add-card{
+            background: #FFFFFF;
+            border-bottom: 2px solid #2B7292;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .add-card-body{
+            padding:24px;
+        }
+
+        .add-new{
+            width:160px;
+            height:30px;
+            background-color:#D5E3E9;
+            color:#2B7292;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        .add-selected-arrow .select2-selection__arrow b{
+            display:none;
+        }
+
+        .add-selected-arrow .select2-selection__arrow {
+            width: 100px;
+            height: 17px;
+            overflow: hidden;
+            overflow: -moz-hidden-unscrollable !important;
+            background: url('/front/assets/images/arrow.svg' ) no-repeat right white;
+            display: inline-block;
+            position: relative;
+            margin-right:5px;
+            margin-top:3px;
+        }
     </style>
 
 @endsection
 @section('content')
 
-    <section class="add-edit-detail lite-gray investment-edit-detail">
-        <div class="adit-detail-step">
+    <section class="add-edit-detail lite-gray investment-edit-detail add-selected-arrow">
+        <div class="adit-detail-step border-0 pb-md-2 pb-0">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -67,14 +114,14 @@ if (isset($documents)) {
                 </div>
             </div>
         </div>
-        <div class="add-step-detail">
+
+        <div class="add-step-detail pt-md-3">
             <div class="container">
                 <div class="row">
                     @include('layouts.front.left_dashboard')
-                    <div class="col-lg-8 col-md-12">
 
-                    
-                        <form id="frm" action="{{ url('investment-store') }}" method="POST" enctype="multipart/form-data">
+                    <div class="col-lg-8 col-md-12">
+                        <form id="frm" action="{{ url('investment-store') }}" method="POST" enctype="multipart/form-data" style="background-color: transparent; padding:0;">
                             @csrf
                             <input type="hidden" id="vUniqueCode" name="vUniqueCode" value="@if(isset($investment)){{$investment->vUniqueCode}}@endif">
                             <input type="hidden" id="iTempId" name="iTempId" value="@if (isset($iTempId)){{$iTempId}}@endif">
@@ -82,64 +129,68 @@ if (isset($documents)) {
 
                             <!-- frist-step -->
                         <div id="first-step" class="other-detail investment_forms frist-steps">
-                            <h5>{{ isset($investment) ? 'Edit' : 'Add' }}  Business Profile</h5>                           
-                            <div class="card">
-                                <div class="card-header"><p><b>Business Information</b></p><p>Information entered here is displayed publicly to match you with the right set of investors and buyers. Do not mention business name/information which can identify the business.</p></div>
-                                
-                                <div class="card-body">
-
+                                                       
+                            <div class="add-card">
+                                <div class="add-card-body">
+                                    <h5 class="add-card-title">{{ isset($investment) ? 'Edit' : 'Add' }}  Business Profile</h5>
+                                    <div class="add-card-header"><p style="color: #313538; opacity: 0.6; font-size: 14px; line-height: 16px;">Information entered here is displayed publicly to match you with the right set of investors and buyers. Do not mention business name/information which can identify the business.</p></div>
                                     <!-- second step -->
                                     <div id="second-step" class="other-detail investment_forms second-steps">
                                         <div class="detail-form">
                                             <div class="row">
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                        <label class="top-head" for="vBusinessName">Business Name</label>
-                                                        <div class="input-error-type">
+                                                <div class="col-lg-6 positon-relative">
+                                                    <label class="top-head pb-2" for="vBusinessName">Business Name</label>
+
+                                                    <div class="input-error-type">
                                                         <input type="text" class="form-control rounded-pill" id="vBusinessName" name="vBusinessName" placeholder="Enter the name of your business." value="@if(isset($investment)){{$investment->vBusinessName}}@endif">
                                                         <div class="validination-info">
                                                             <i class="" id="vBusinessNameError"></i>
                                                         </div>
 
                                                         <div id="vBusinessName_error" class="error mt-1" style="color:red;display: none;">Enter the name of your business. </div>
-                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    
-                                                    <label class="top-head" for="industries">Business Industry</label>
-                                                    <div class="input-error-type">   
-                                                    <select name="industries" id="industries" class="form-control rounded-pill">
-                                                        @php
-                                                            // dd($selected_industries);
-                                                            $industry_select = '';
-                                                        @endphp
-                                                        <option value="">Select Industry</option>
 
-                                                        @foreach ($industries as $value)
+                                                <div class="col-lg-6 positon-relative">
+                                                    <label class="top-head pb-2 " for="industries">Business Industry</label>
+
+                                                    <div class="input-error-type">   
+                                                        <select name="industries" id="industries" class="form-control rounded-pill">
                                                             @php
+                                                                // dd($selected_industries);
                                                                 $industry_select = '';
                                                             @endphp
-                                                            @if(isset($selected_industries))
-                                                                @foreach ($selected_industries as $industry)
-                                                                    @if($industry->iIndustryId == $value->iIndustryId)
-                                                                        @php
-                                                                            $industry_select = 'selected';
-                                                                        @endphp
-                                                                    @endif
-                                                                @endforeach
-                                                            @endif
-                                                            <option value="{{$value->vName }}_{{$value->iIndustryId }}" {{ $industry_select }}>{{ $value->vName}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <div class="validination-info">
-                                                        <i class="" id="industriesError"></i>
-                                                    </div>
-                                                    <div id="industries_error" class="error mt-1" style="color:red;display: none;">Specify the industry or sector your business operates in</div>
+                                                            <option value="">Select Industry</option>
+
+                                                            @foreach ($industries as $value)
+                                                                @php
+                                                                    $industry_select = '';
+                                                                @endphp
+                                                                @if(isset($selected_industries))
+                                                                    @foreach ($selected_industries as $industry)
+                                                                        @if($industry->iIndustryId == $value->iIndustryId)
+                                                                            @php
+                                                                                $industry_select = 'selected';
+                                                                            @endphp
+                                                                        @endif
+                                                                    @endforeach
+                                                                @endif
+                                                                <option value="{{$value->vName }}_{{$value->iIndustryId }}" {{ $industry_select }}>{{ $value->vName}}</option>
+                                                            @endforeach
+                                                        </select>
+
+                                                        <div class="validination-info">
+                                                            <i class="" id="industriesError"></i>
+                                                        </div>
+
+                                                        <div id="industries_error" class="error mt-1" style="color:red;display: none;">Specify the industry or sector your business operates in</div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    <label class="top-head" for="tBusinessProfileDetail">Business Description</label>
+                                                   
+                                                <div class="col-lg-12 positon-relative">
+                                                    <label class="top-head py-2" for="tBusinessProfileDetail">Business Description</label>
                                                     <div class="input-error-type">
-                                                    <textarea class="form-control" id="tBusinessProfileDetail" name="tBusinessProfileDetail" placeholder="Business Description" cols='60' rows='8' style="height: 100px">@if(isset($investment)){{$investment->tBusinessProfileDetail}}@endif</textarea>
+                                                    <textarea class="form-control" id="tBusinessProfileDetail" name="tBusinessProfileDetail" placeholder="Business Description" cols='60' rows='8' style="height: 100px; resize:none;">@if(isset($investment)){{$investment->tBusinessProfileDetail}}@endif</textarea>
                                                     {{-- <input type="text" class="form-control" id="tBusinessProfileDetail" name="tBusinessProfileDetail" placeholder="Business Description" value="@if(isset($investment)){{$investment->tBusinessProfileDetail}}@endif"> --}}
                                                     <div class="validination-info">
                                                         <i class="" id="tBusinessProfileDetailError"></i>
@@ -149,8 +200,8 @@ if (isset($documents)) {
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    <label class="top-head" for="tBusinessStage">Business Stage</label>
+                                                <div class="col-lg-6 positon-relative">
+                                                    <label class="top-head py-2" for="tBusinessStage">Business Stage</label>
                                                     <div class="input-error-type">   
                                                     <select id="vBusinessStage" name="vBusinessStage" class="add_select2 form-control rounded-pill">
                                                         <option  value="">Select Stage</option>
@@ -165,8 +216,8 @@ if (isset($documents)) {
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    <label class="top-head" for="vInvestmentAmountStake"> Funding Amount</label>
+                                                <div class="col-lg-6 positon-relative">
+                                                    <label class="top-head py-2" for="vInvestmentAmountStake"> Funding Amount</label>
                                                     <div class="input-error-type">
                                                         <input type="text" class="form-control rounded-pill" name="vInvestmentAmountStake" id="vInvestmentAmountStake" class="form-control numeric money" placeholder="Enter the amount of funding you are seeking in USD" value="@if(isset($investment)){{$investment->vInvestmentAmountStake}}@endif">
                                                         <div class="validination-info">
@@ -178,10 +229,10 @@ if (isset($documents)) {
                                                 </div>
 
 
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    <label class="top-head">Funding Purpose</label>
+                                                <div class="col-lg-12 positon-relative">
+                                                    <label class="top-head py-2">Funding Purpose</label>
                                                     <div class="input-error-type">
-                                                    <textarea class="form-control" id="tInvestmentReason" name="tInvestmentReason" placeholder="Describe how you plan to use the investment funds" cols='60' rows='8' style="height: 100px">@if(isset($investment)){{$investment->tInvestmentReason}}@endif</textarea>
+                                                    <textarea class="form-control" id="tInvestmentReason" name="tInvestmentReason" placeholder="Describe how you plan to use the investment funds" cols='60' rows='8' style="height: 100px; resize:none;">@if(isset($investment)){{$investment->tInvestmentReason}}@endif</textarea>
                                                     <div class="validination-info">
                                                         <i class="" id="tInvestmentReasonError"></i>
                                                     </div>
@@ -189,8 +240,9 @@ if (isset($documents)) {
                                                     <div id="ttInvestmentReason_error" class="error mt-1" style="color:red;display: none;">Describe how you plan to use the investment funds </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    <label class="top-head" for="vPhysicalAssetValue">Business Valuation</label>
+
+                                                <div class="col-lg-12 positon-relative">
+                                                    <label class="top-head py-2" for="vPhysicalAssetValue">Business Valuation</label>
                                                     <div class="input-error-type">
                                                         <input type="text" class="form-control rounded-pill" name="vPhysicalAssetValue" id="vPhysicalAssetValue" class="form-control numeric money" placeholder="Provide an estimate of your business's value in USD" value="@if(isset($investment)){{$investment->vPhysicalAssetValue}}@endif">
                                                             <div class="validination-info">
@@ -199,10 +251,11 @@ if (isset($documents)) {
                                                         <div id="vPhysicalAssetValue_error" class="error mt-1" style="color:red;display: none;">Provide an estimate of your business's value in USD</div>
                                                     </div>    
                                                 </div>
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    <label class="top-head" for="tRevenueAndFinancials">Revenue and Financials</label>
+
+                                                <div class="col-lg-12 positon-relative">
+                                                    <label class="top-head py-2" for="tRevenueAndFinancials">Revenue and Financials</label>
                                                     <div class="input-error-type">
-                                                    <textarea class="form-control" id="tRevenueAndFinancials" name="tRevenueAndFinancials" placeholder="Provide details about your business's financial performance, revenue, and growth" cols='60' rows='8' style="height: 100px">@if(isset($investment)){{$investment->tRevenueAndFinancials}}@endif</textarea>
+                                                    <textarea class="form-control" id="tRevenueAndFinancials" name="tRevenueAndFinancials" placeholder="Provide details about your business's financial performance, revenue, and growth" cols='60' rows='8' style="height: 100px;">@if(isset($investment)){{$investment->tRevenueAndFinancials}}@endif</textarea>
                                                         <!-- <input type="text" class="form-control rounded-pill" name="tRevenueAndFinancials" id="tRevenueAndFinancials" class="form-control numeric money" placeholder="Provide details about your business's financial performance, revenue, and growth" value="@if(isset($investment)){{$investment->tRevenueAndFinancials}}@endif"> -->
                                                             <div class="validination-info">
                                                             <i class="" id="tRevenueAndFinancialsError"></i>
@@ -210,8 +263,9 @@ if (isset($documents)) {
                                                         <div id="tRevenueAndFinancials_error" class="error mt-1" style="color:red;display: none;">Provide details about your business's financial performance, revenue, and growth</div>
                                                     </div>    
                                                 </div>
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    <label class="top-head" for="tMarketAnalysis">Market Analysis</label>
+
+                                                <div class="col-lg-12 positon-relative">
+                                                    <label class="top-head py-2" for="tMarketAnalysis">Market Analysis</label>
                                                     <div class="input-error-type">
                                                     <textarea class="form-control" id="tMarketAnalysis" name="tMarketAnalysis" placeholder="Describe your target market, competition, and market opportunity" cols='60' rows='8' style="height: 100px">@if(isset($investment)){{$investment->tMarketAnalysis}}@endif</textarea>
                                                             <div class="validination-info">
@@ -220,8 +274,9 @@ if (isset($documents)) {
                                                         <div id="tMarketAnalysis_error" class="error mt-1" style="color:red;display: none;">Describe your target market, competition, and market opportunity</div>
                                                     </div>    
                                                 </div>
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    <label class="top-head" for="vPhysicalAssetValue">Website or Online Presence</label>
+                                                
+                                                <div class="col-lg-12 positon-relative">
+                                                    <label class="top-head py-2" for="vPhysicalAssetValue">Website or Online Presence</label>
                                                     <div class="input-error-type">
                                                         <input type="text" class="form-control rounded-pill" name="vWebsiteLink" id="vWebsiteLink" class="form-control numeric money" placeholder="Provide the URL of your business website or any relevant online presence" value="@if(isset($investment)){{$investment->vWebsiteLink}}@endif">
                                                             <div class="validination-info">
@@ -236,9 +291,10 @@ if (isset($documents)) {
                                 </div>
                             </div>
                             <br>
-                            <div class="card">
-                                <div class="card-header"><p><b>Business Location</b></p></div>
-                                <div class="card-body">
+                            <div class="add-card">
+                                <div class="add-card-body">
+                                <div class="add-card-header"><p class="add-card-title"><b>Business Location</b></p></div>
+
                                     <div class="detail-form">
                                         <div class="row">
                                         {{--
@@ -301,7 +357,7 @@ if (isset($documents)) {
                                                 </div>
                                             --}}
                                             <div class="col-lg-6 mb-2 form-group custom-select positon-relative">
-                                                <label class="top-head">Select Country</label>
+                                                <label class="top-head pb-2">Select Country</label>
                                                 <select id="country_id" name="iCountryId" class="add_select2 form-control">
                                                     <option value="">Select Country</option>
                                                     @foreach ($countries as $value)
@@ -313,9 +369,11 @@ if (isset($documents)) {
                                                 </div>
                                                 <div id="iCountryId_error" class="error mt-1" style="color:red;display: none;">Please Select Country name</div>
                                             </div>
+                                            
                                             <input type="hidden" id="selected_region_id" value="@if(isset($selected_location)){{$selected_location[1]->iLocationId . '_' . $selected_location[1]->vLocationName}}@endif">
+                                            
                                             <div class="col-lg-6 mb-2 form-group custom-select positon-relative">
-                                                <label class="top-head">Select Region</label>
+                                                <label class="top-head pb-2">Select Region</label>
                                                 <select id="iRegionId" name="iRegionId" class="add_select2 form-control with-border">
                                                     <option value="">Select Region</option>
                                                 </select>
@@ -326,8 +384,9 @@ if (isset($documents)) {
                                             </div>
 
                                             <input type="hidden" id="selected_county_id" value="@if(isset($selected_location)){{$selected_location[2]->iLocationId . '_' . $selected_location[2]->vLocationName}}@endif">
+                                            
                                             <div class="col-lg-6 mb-2 form-group custom-select positon-relative">
-                                                <label class="top-head">Select County</label>
+                                                <label class="top-head pb-2">Select County</label>
                                                 <select id="iCountyId" name="iCountyId" class="add_select2 form-control with-border">
                                                     <option value="">Select County</option>
                                                 </select>
@@ -336,9 +395,11 @@ if (isset($documents)) {
                                                 </div>
                                                 <div id="county_id_error" class="error mt-1" style="color:red;display: none;">Please Select County name</div>
                                             </div>
+
                                             <input type="hidden" id="selected_sub_county_id" value="@if(isset($selected_location)){{$selected_location[3]->iLocationId . '_' . $selected_location[3]->vLocationName}}@endif">
+                                            
                                             <div class="col-lg-6 mb-2 form-group custom-select positon-relative">
-                                                <label class="top-head">Select Sub County</label>
+                                                <label class="top-head pb-2">Select Sub County</label>
                                                 <select id="iSubCountyId" name="iSubCountyId" class="add_select2 form-control with-border">
                                                     <option value="">Select Sub County</option>
                                                 </select>
@@ -347,26 +408,25 @@ if (isset($documents)) {
                                                 </div>
                                                 <div id="sub_county_id_error" class="error mt-1" style="color:red;display: none;">Please Select Sub County name</div>
                                             </div>
-
-                                            
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <br>        
-                            <div class="card">
-                                <div class="card-header"><p><b>Team Members</div>
-                                    <div class="card-body">
+                            <div class="add-card">
+                                <div class="add-card-body">
+                                    <div class="add-card-header"><p class="add-card-title"><b>Team Members</div>
+
                                     <div class="detail-form member-data">
                                     <div class = "member-1" style = "display:none;">
                                         <div class="row ">
                                             <div class="col-md-5 positon-relative">
-                                                <label for="floatingPassword">Member</label>
+                                                <label for="floatingPassword" class="pb-2">Member</label>
                                                 <input type="text" class="form-control rounded-pill"  name="vMemberName[]" placeholder="Member name" value="">                                                
                                             </div>
 
                                             <div class="col-md-5 positon-relative">
-                                                <label for="floatingPassword">Role</label>
+                                                <label for="floatingPassword" class="pb-2">Role</label>
                                                 <input type="text" class="form-control rounded-pill"  name="vMemberRole[]" placeholder="Member Role" value="">
                                                 <div class="validination-info">
                                                     <i class="" ></i>
@@ -402,22 +462,25 @@ if (isset($documents)) {
                                         @endforeach
                                     @else
                                         <div class="row ">
-                                            <div class="col-md-5 positon-relative">
-                                                <label for="floatingPassword">Member</label>
+                                            <div class="col-md-6 positon-relative">
+                                                <label for="floatingPassword" class="pb-2">Member</label>
                                                 <input type="text" class="form-control rounded-pill"  name="vMemberName[]" placeholder="Member name" value="">
-                                                
                                             </div>
 
-                                            <div class="col-md-5 positon-relative">
-                                                <label for="floatingPassword">Role</label>
+                                            <div class="col-md-6 positon-relative">
+                                                <label for="floatingPassword" class="pb-2">Role</label>
+                                                
                                                 <input type="text" class="form-control rounded-pill"  name="vMemberRole[]" placeholder="Member Role" value="">
+                                                
                                                 <div class="validination-info">
                                                     <i class="" ></i>
                                                 </div>
-                                                
                                             </div>
+                                            
                                             <div class="memeber-role col-md-2" style="margin-top:25px;cursor:pointer">
-                                                <i class="fa fa-plus"></i> Add New
+                                                <button class="add-new border-0">
+                                                    <i class="fa fa-plus"></i> Add New
+                                                </button>
                                             </div>                                            
                                         </div>
                                         @endif
@@ -426,13 +489,14 @@ if (isset($documents)) {
                             </div>
                            
                             <br>
-                            <div class="card">
-                                <div class="card-header"><p><b>Contact Information</div>
-                                    <div class="card-body">
+                            <div class="add-card">
+                                <div class="add-card-body">
+                                    <div class="add-card-header"><p class="add-card-title"><b>Contact Information</div>
+
                                     <div class="detail-form">
                                         <div class="row">
                                             <div class="col-md-6 positon-relative">
-                                                <label for="floatingPassword">First Name</label>
+                                                <label for="floatingPassword" class="pb-2">First Name</label>
                                                 <input type="text" class="form-control rounded-pill" id="vFirstName" name="vFirstName" placeholder="First name" value="@if(isset($investment)){{$investment->vFirstName}}@elseif(!empty($userData)) {{$userData->vFirstName}}@else{{$session_data['vFirstName']}}@endif">
                                                 <div class="validination-info">
                                                     <i class="" id="fNameError"></i>
@@ -441,7 +505,7 @@ if (isset($documents)) {
                                             </div>
 
                                             <div class="col-md-6 positon-relative">
-                                                <label for="floatingPassword">Last Name</label>
+                                                <label for="floatingPassword" class="pb-2">Last Name</label>
                                                 <input type="text" class="form-control rounded-pill" id="vLastName" name="vLastName" placeholder="Last Name" value="@if(isset($investment)){{$investment->vLastName}}@elseif(!empty($userData)) {{$userData->vLastName}}@else{{$session_data['vLastName']}}@endif">
                                                 <div class="validination-info">
                                                     <i class="" id="lNameError"></i>
@@ -450,7 +514,7 @@ if (isset($documents)) {
                                             </div>
 
                                             <div class="col-md-6 positon-relative">
-                                                <label for="floatingPassword">Email Address</label>
+                                                <label for="floatingPassword" class="pb-2">Email Address</label>
                                                 <input type="text" class="form-control rounded-pill" id="vEmail" name="vEmail" placeholder="Email" value="@if(isset($investment)){{$investment->vEmail}}@else{{$session_data['vEmail']}}@endif">
                                                 <div class="validination-info">
                                                     <i class="" id="vEmailError"></i>
@@ -461,7 +525,7 @@ if (isset($documents)) {
                                             </div>
 
                                             <div class="col-md-6 positon-relative">
-                                                <label for="floatingPassword">Phone Number</label>
+                                                <label for="floatingPassword" class="pb-2">Phone Number</label>
                                                 <input type="text" class="form-control rounded-pill numeric" id="vPhone" maxlength="10" name="vPhone" placeholder="Phone No." value="@if(isset($investment)){{$investment->vPhone}}@elseif(!empty($userData)) {{$userData->vPhone}}@else{{$session_data['vPhone']}}@endif">
                                                 <div class="validination-info">
                                                     <i class="" id="vPhoneError"></i>
@@ -474,18 +538,35 @@ if (isset($documents)) {
                                 
                             </div>
                             <br>
-                            <div class="card">
-                                <div class="card-header"><p><b>Photos, Documents & Proof</b></p><p>Photos are an important part of your profile and are publicly displayed. Documents help us verify and approve your profile faster. Documents names entered here are publicly visible but are accessible only to introduced members.</p></div>
-                                <div class="card-body">    
-                                <input type="hidden" name="documentId" id="documentId">                                    
+                            <div class="add-card">
+                                <div class="add-card-body">   
+                                    <div class="add-card-header"><p class="add-card-title"><b>Photos, Documents & Proof</b></p><p style="font-size: 14px; line-height: 16px; color: #313538; opacity: 0.6;">Photos are an important part of your profile and are publicly displayed. Documents help us verify and approve your profile faster. Documents names entered here are publicly visible but are accessible only to introduced members.</p></div>
+                                    
+                                    <input type="hidden" name="documentId" id="documentId">   
+
                                     <div class="detail-form">
                                             <div class="row">
-                                                <div class="col-lg-12 d-flex-contain positon-relative">
-                                                    <label class="mb-1">Business Plan or Pitch Deck</label>
-                                                    <div class="input-error-type">
-                                                    <div style="font-weight:normal" id="business_plan_dropzone" name='business_plan_dropzone' class="dropzone mb-2"></div>
-                                                    <input type="file" name="file_business_plan[]" id="file_business_plan" class="d-none">
-                                                </div>
+                                                <div class="col-lg-12  positon-relative">
+                                                    <label class="mb-1 pb-2" style="color: #313538; font-size: 16px !important;">Business Plan or Pitch Deck</label>
+                                                    <div class="input-error-type text-center">
+                                                        <div style="font-weight:normal; 
+                                                                    border:1px dashed #2B7292 !important; 
+                                                                    color: #2B7292; 
+                                                                    font-size:18px; 
+                                                                    font-weight: 500;" 
+                                                            id="business_plan_dropzone" 
+                                                            name='business_plan_dropzone' 
+                                                            class="dropzone 
+                                                                    mb-2 
+                                                                    d-flex 
+                                                                    align-items-center 
+                                                                    justify-content-center
+                                                                    position-relative">
+                                                            <img src="{{ asset('/front/assets/images/upload_logo.svg') }}" class="position-absolute" style="pointer-events:none; top:30px;">
+                                                        </div>
+                            
+                                                        <input type="file" name="file_business_plan[]" id="file_business_plan" class="d-none">
+                                                    </div>
                                                 <!-- start display image code -->
                                                 <div class="file-upload-img">
                                                     <ul>
@@ -520,37 +601,67 @@ if (isset($documents)) {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                           <br>
-                                            <!-- close display image code -->
-                                   
+
                                     <div class="term-accpet">
                                         <ul>
                                             <li>
                                                 <label for="eFindersFee">
                                                     <input type="checkbox" name="eFindersFee" id="eFindersFee" value="Yes" @if(isset($investment)){{'checked'}}@endif />
-                                                    <p>I accept 1% finder's fee (payable post transaction) and other <a href="#"> Terms of engagement</a></p>
+                                                    <p style="font-size:14px;">I accept 1% finder's fee (payable post transaction) and other <a href="#" style="text-decoration:underline;"> Terms of engagement</a></p>
                                                 </label>
                                             </li>
                                                 <div id="eFindersFee_error" class="error mt-1" style="color:red;display: none;">Please accept terms of engagement</div>
                                         </ul>
-                                        <span style="font-size:15pt;font-weight:bold;color:red">Subscribe to both services now, and get a 20% discount</span>
+                                        <span style="font-size:16px; font-weight:bold; color:#313538;">Subscribe to both services now, and get a 20% discount</span>
                                         <ul>
                                             <li>
-                                                <label for="isNewsletterService">
-                                                    <input class="prices" amount="@if(isset($payment_setting['NEWSLETTER_SERVICE_PRICE'])){{$payment_setting['NEWSLETTER_SERVICE_PRICE']['vValue']}}@endif" onclick="checkPrice()" type="checkbox" name="isNewsletterService" id="isNewsletterService" value="1" @if(isset($investment) && $investment->isNewsletterService == 1){{'checked disabled'}}@endif />
-                                                    <p><b>Service : NewsLetter<br> Price: @if(isset($payment_setting['NEWSLETTER_SERVICE_PRICE'])) {{$payment_setting['NEWSLETTER_SERVICE_PRICE']['vValue']}} (KES)   @endif</b> <br>Pitch Investors is now offering an exclusive opportunity to feature your business in our monthly newsletter, which is sent to a growing community of over 300 investors.
-<br><br>This premium package is designed to showcase your business to a wider audience of potential investors and increase your chances of securing the investment you need to grow your business. With this package, you will receive a dedicated feature in our monthly newsletter, highlighting the unique value proposition of your business and the potential for growth and profitability. </p>
+                                                <label for="isNewsletterService" class="d-block">
+                                                    
+                                                    <div class="d-flex pt-2 justify-content-between">
+                                                        <div class="d-flex align-items-center">
+                                                            <input class="prices" amount="@if(isset($payment_setting['NEWSLETTER_SERVICE_PRICE'])){{$payment_setting['NEWSLETTER_SERVICE_PRICE']['vValue']}}@endif" onclick="checkPrice()" type="checkbox" name="isNewsletterService" id="isNewsletterService" value="1" @if(isset($investment) && $investment->isNewsletterService == 1){{'checked disabled'}}@endif />
+
+                                                            <p style="font-weight: 500; color:#313538; margin:0; font-size:16px;">Service : NewsLetter</p> 
+                                                        </div>
+
+                                                        <p style="font-weight: 500; color:#2B7292; margin:0; font-size:16px;">
+                                                            Price: @if(isset($payment_setting['NEWSLETTER_SERVICE_PRICE'])) {{$payment_setting['NEWSLETTER_SERVICE_PRICE']['vValue']}} (KES)   @endif
+                                                        </p>
+                                                    </div>
+
+                                                    <p style="font-size:14px;">
+                                                        Pitch Investors is now offering an exclusive opportunity to feature your business in our monthly newsletter, which is sent to a growing community of over 300 investors.
+                                                    </p>
+
+                                                    <p style="font-size:14px;">
+                                                        This premium package is designed to showcase your business to a wider audience of potential investors and increase your chances of securing the investment you need to grow your business. With this package, you will receive a dedicated feature in our monthly newsletter, highlighting the unique value proposition of your business and the potential for growth and profitability. 
+                                                    </p>
+                                                    
                                                 </label>
                                             </li>
                                                 
                                         </ul>
                                         <ul>
                                             <li>
-                                                <label for="isSocialMediaService">
-                                                    <input class="prices" amount="@if(isset($payment_setting['SOCIAL_MEDIA_SERVICE_PRICE'])){{$payment_setting['SOCIAL_MEDIA_SERVICE_PRICE']['vValue']}}@endif" onclick="checkPrice()"  type="checkbox" name="isSocialMediaService" id="isSocialMediaService" value="1" @if(isset($investment) && $investment->isSocialMediaService == 1){{'checked disabled'}}@endif />
-                                                    <p><b>Service : Soical Media <br>Price: @if(isset($payment_setting['SOCIAL_MEDIA_SERVICE_PRICE'])) {{$payment_setting['SOCIAL_MEDIA_SERVICE_PRICE']['vValue']}} (KES)   @endif</b> <br>Pitch Investors is excited to offer an exclusive opportunity to promote your business to our network of investors through our social media channels. With our premium package, we will share your business on our LinkedIn, Facebook, and Twitter pages, connecting you with potential investors who are actively seeking new opportunities.<br><br>Our social media platforms are a powerful tool for expanding your reach and building credibility with potential investors. By featuring your business on our channels, you can tap into our network of followers and increase your visibility to a wider audience of potential investors.
+                                                <label for="isSocialMediaService" class="d-block">
+                                                    <div class="d-flex pt-2 justify-content-between">
+                                                        <div class="d-flex align-items-center">
+                                                            <input class="prices" amount="@if(isset($payment_setting['SOCIAL_MEDIA_SERVICE_PRICE'])){{$payment_setting['SOCIAL_MEDIA_SERVICE_PRICE']['vValue']}}@endif" onclick="checkPrice()"  type="checkbox" name="isSocialMediaService" id="isSocialMediaService" value="1" @if(isset($investment) && $investment->isSocialMediaService == 1){{'checked disabled'}}@endif />
+
+                                                            <p style="font-weight: 500; color:#313538; margin:0; font-size:16px;">Service : Soical Media</p> 
+                                                        </div>
+
+                                                        <p style="font-weight: 500; color:#2B7292; margin:0; font-size:16px;">
+                                                            Price: @if(isset($payment_setting['SOCIAL_MEDIA_SERVICE_PRICE'])) {{$payment_setting['SOCIAL_MEDIA_SERVICE_PRICE']['vValue']}} (KES)   @endif
+                                                        </p>
+                                                    </div>
+
+                                                    <p style="font-size:14px;">
+                                                        Pitch Investors is excited to offer an exclusive opportunity to promote your business to our network of investors through our social media channels. With our premium package, we will share your business on our LinkedIn, Facebook, and Twitter pages, connecting you with potential investors who are actively seeking new opportunities.
+                                                    </p>
+
+                                                    <p style="font-size:14px;">
+                                                        Our social media platforms are a powerful tool for expanding your reach and building credibility with potential investors. By featuring your business on our channels, you can tap into our network of followers and increase your visibility to a wider audience of potential investors.
                                                     </p>
                                                 </label>
                                             </li>
@@ -558,10 +669,12 @@ if (isset($documents)) {
                                         </ul>
                                         <span id="price_cont" style="display:none">Total amount to pay: <span id="total_price"></span> KES <span id="discount" style="display:none; color:red">(20% discount applied)</span></span>
                                     </div>
-                                    <div class="row margin-left-button" id="submit">
+                                    <div class="row margin-left-button d-flex justify-content-center" id="submit">
                                         <label class="save-detail"><a href="javascript:;" >Save</a></label>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
                         
                         </form>
                     </div>
