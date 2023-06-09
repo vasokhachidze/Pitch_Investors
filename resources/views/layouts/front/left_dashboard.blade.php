@@ -47,9 +47,6 @@ $display_dashboard_left_page = 'style=display:block;';
                             <img style="border-radius:50%;" src="{{ $image }}" alt="">
                         </div>
                         
-                        <div style="color:#313538; font-size: 16px; font-weight: 500;" class="text-center pt-3" >
-                        shota sgvilava
-                        </div>
                         @if (isset($userData->vFirstName) && isset($userData->vLastName))
                         <div class="profile-heading text-center">
                             <a href="{{ route('front.dashboard.dashboard') }}" style="color:#313538; font-size: 16px; font-weight: 500;">

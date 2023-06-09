@@ -141,28 +141,32 @@
 .select-icon  .select2-search--dropdown {
     display: none;
 }
+
+.listing-titles{
+    color:#2B7292;
+}
     </style>
 @endsection
 
 @section('content')
     <!-- banner section start -->
-    <section class="bread-camp">
+    <!-- <section class="bread-camp">
         <div class="container">
             <div class="bread-text-head">
                 <h4><a class="bread-tag-hover" href="{{ route('front.home') }}">Home</a> / Investments</h4>
                 <h1>Investments</h1>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- banner section end -->
 
     <!-- business warap section start -->
-    <section class="business-sale-warap investment">
+    <section class="business-sale-warap investment" style="padding-top:100px;">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-12">
                     <div class="heding">
-                        <h3>Filters</h3>
+                        <h3 class="mt-0">Filters</h3>
                     </div>
 
                     <div class="business-option pt-2">
