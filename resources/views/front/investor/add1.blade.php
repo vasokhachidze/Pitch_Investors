@@ -28,24 +28,78 @@
 @section('content')
 <style type="text/css">
     .fileupload-main-ul {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    list-style: none;
-    margin-top: 30px;
-    padding: 0px;
-}
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        list-style: none;
+        margin-top: 30px;
+        padding: 0px;
+        }
+
+    .add-investor-card{
+        background: #FFFFFF; 
+        border-bottom: 2px solid #2B7292; 
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background-color:#fff;
+    }
+
+    .prefered-ul li label{
+        font-size:12px !important;
+    }
+
+    .prefered-ul li input{
+        margin-right:7px !important;
+    }
+
+    .add-investor-section label{
+        font-size:14px !important;
+    }
+
+    .add-investor-section label{
+        color: #313538; 
+        font-weight:500;
+        padding:8px 0;
+    }
+
+    .add-investor-card-heade p{
+        margin-bottom:0 !important;
+        color: #2B7292 !important;
+    }   
+
+    .term-accpet li label{
+        font-size:14px !important;
+        font-weight:normal;
+    }
+
+    .add-investor-section .form-select {
+        overflow: hidden;
+        overflow: -moz-hidden-unscrollable !important;
+        background: url('/front/assets/images/arrow.svg' ) no-repeat right white;
+        background-position:right 10px center;
+    }
+
+    .form-check label{
+        padding:0 !important;
+        font-weight:normal !important; 
+        margin-bottom:0 !important;
+        font-size:12px !important;
+    }
+
+    .validination-info .fa-check-circle{
+        margin-top:18px !important;
+    }
+
 </style>
-    <section class="add-edit-detail lite-gray investor-edit-detail">
-        <div class="adit-detail-step">
+    <section class="add-edit-detail lite-gray investor-edit-detail add-investor-section">
+        <div class="adit-detail-step border-0 pb-0">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="steps-in">
-                            <ul>
-                                <li><a id="first-tab" data-id='first-step' class="active investorHeader">Profile</a></li>
+                            <ul class>
+                                <li><a id="first-tab" data-id='first-step' class="active investorHeader" style="font-size:18px">Profile</a></li>
                                 {{-- 
                                     <li><a id="second-tab" data-id='second-step' class="investorHeader">About Company</a> </li>
                                     <li><a id="third-tab" data-id='third-step' class="investorHeader">Investor Interest</a></li>
@@ -57,37 +111,42 @@
                 </div>
             </div>
         </div>
-        <div class="add-step-detail">
+        <div class="add-step-detail  pt-sm-3 pt-0">
             <div class="container">
                 <div class="row">
                     @include('layouts.front.left_dashboard')
                     <div class="col-lg-9">
-                        <form action="{{ url('investor-store') }}" name="frm" id="frm" method="post" enctype="multipart/form-data">
+                        <form action="{{ url('investor-store') }}" name="frm" id="frm" method="post" enctype="multipart/form-data" class="bg-transparent p-0">
                             @csrf
                             <input type="hidden" id="vUniqueCode" name="vUniqueCode" value="@if(isset($investor)){{$investor->vUniqueCode}}@endif">
                             <input type="hidden" id="iTempId" name="iTempId" value="@if (isset($iTempId)){{$iTempId}}@endif">
                             <input type="hidden" id="iInvestorProfileId" name="iInvestorProfileId" value="@if (isset($investor->iInvestorProfileId)){{$investor->iInvestorProfileId}}@endif">
                             <!-- frist-step -->
                             <div id="first-step" class="other-detail investor_forms first-steps">
-                                
-                                    <h5>{{ isset($investor) ? 'Edit' : 'Add' }} Investors</h5>
-                                    <div class="main-text">
-                                        <h3>Are you an investor looking for an investment opportunity?</h3>
-                                        <p style="text-align: justify;"> Are you looking to find a way to grow your wealth over time while minimizing risk? PitchInvestors offers a range of investment options that are carefully selected to meet the needs of investors like you. Whether you seek a long-term investment or a shorter-term opportunity, we have something to suit your needs. Explore our offerings today and take the first step towards achieving your financial goals.</p>
+                                <div class="add-investor-card bg-white p-4" >
+                                    <h5 style="color: #2B7292;">{{ isset($investor) ? 'Edit' : 'Add' }} Investors</h5>
 
-                                        <div class="image-avtar">
+                                    <div class="p-0">
+                                        <!-- <h3>Are you an investor looking for an investment opportunity?</h3> -->
+                                        <p style="text-align: justify; font-size: 14px; color: #313538; opacity: 0.6;"> Are you looking to find a way to grow your wealth over time while minimizing risk? PitchInvestors offers a range of investment options that are carefully selected to meet the needs of investors like you. Whether you seek a long-term investment or a shorter-term opportunity, we have something to suit your needs. Explore our offerings today and take the first step towards achieving your financial goals.</p>
+
+                                        <!-- <div class="image-avtar">
                                             <img src="{{ asset('uploads/front/investor/profile1.png') }}" alt="">
-                                        </div>
+                                        </div> -->
                                     </div>
-                                <br>
-                                <div class="card">
-                                    <div class="card-header"><p><b>Personal Information</b></p></div>                                
-                                    <div class="card-body">                                
-                                        <div class="detail-form">
+
+                                    <div class="add-investor-card-header">
+                                        <p class="mb-0">
+                                            <b style="color: #2B7292;" class="mb-0">Personal Information</b>
+                                        </p>
+                                    </div>   
+
+                                    <div class="add-investor-card-body">                                
+                                        <div class="detail-form mt-2">
                                             <div class="row">                                      
-                                                <div class="col-md-6 positon-relative">
+                                                <div class="col-md-12 positon-relative">
                                                     <div>
-                                                        <label for="floatingFirstname">Full name</label>
+                                                        <label for="floatingFirstname" style="color: #313538; font-weight:500;" class="py-2">Full name</label>
                                                         <input type="text" class="form-control" id="vFullName" name="vFullName" placeholder="Full name" value="@if(isset($investor)){{$investor->vFullName}}@elseif(!empty($loginuserdata)) {{$loginuserdata->vFirstName.' '.$loginuserdata->vLastName}}@else{{$session_data['vFirstName'].' '.$session_data['vLastName']}}@endif">
                                                             <div class="validination-info">
                                                                 <i class="" id="vFullNameError"></i>
@@ -96,9 +155,9 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-6 positon-relative">
+                                                <div class="col-md-12 positon-relative">
                                                     <div>
-                                                        <label for="floatingEmail">Email</label>
+                                                        <label for="floatingEmail" style="color: #313538; font-weight:500;" class="py-2">Email</label>
                                                         <input type="text" class="form-control" id="vEmail" name="vEmail" placeholder="Email" value="@if(isset($investor)){{$investor->vEmail}}@else{{$session_data['vEmail']}}@endif">
                                                         <div class="validination-info">
                                                             <i class="" id="vEmailError"></i>
@@ -108,9 +167,9 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-6 positon-relative">
+                                                <div class="col-md-12 positon-relative">
                                                     <div>
-                                                        <label for="floatingPhoneNo">Phone No.</label>
+                                                        <label for="floatingPhoneNo" style="color: #313538; font-weight:500;" class="py-2">Phone No.</label>
                                                         <input type="text" class="form-control numeric" minlength="10" maxlength="10" id="vPhone" name="vPhone" placeholder="Phone No." value="@if(isset($investor)){{$investor->vPhone}}@elseif(!empty($loginuserdata)) {{$loginuserdata->vPhone}}@else{{$session_data['vPhone']}}@endif">
                                                         <div class="validination-info">
                                                             <i class="" id="vPhoneError"></i>
@@ -122,17 +181,24 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <br>
-                                <div class="card">
-                                    <div class="card-header"><p><b>Investment Preferences</b></p></div>                                
-                                    <div class="card-body">
-                                        <div class="detail-form">
+                                
+                                <div class="add-investor-card p-4">
+                                    <div class="add-investor-card-header">
+                                        <p style="color: #2B7292;" class="mb-0">
+                                            <b>Investment Preferences</b>
+                                        </p>
+                                    </div>  
+                                                                  
+                                    <div class="add-investor-card-body">
+                                        <div class="detail-form mt-2">
                                             <div class="row">
-                                                <div class="col-md-12 positon-relative">
+                                                <div class="col-md-6 positon-relative">
                                                     <div>
-                                                        <label for="floatingIdentification No">Investment Amount Range</label>
+                                                        <label for="floatingIdentification No" style="color: #313538; font-weight:500;" class="py-2">Investment Amount Range</label>
                                                         
-                                                    <select class="form-select" aria-label="Default select example" id="vHowMuchInvest" name="vHowMuchInvest">
+                                                    <select class="form-select mb-1" aria-label="Default select example" id="vHowMuchInvest" name="vHowMuchInvest" style="border: 1px solid #D1D7DC;">
                                                     <option  value="">Select Amount Range</option>
                                                     <option <?php if(isset($investor) && $investor->vHowMuchInvest == '100K - 1M'){ echo 'selected';  } ?> value="100K - 1M">100K - 1M</option>
                                                     <option <?php if(isset($investor) && $investor->vHowMuchInvest == '1M - 5M'){ echo 'selected';  } ?> value="1M - 5M">1M - 5M</option>
@@ -147,8 +213,8 @@
                                                 </div>
 
                                                 <div class="col-md-6 positon-relative">
-                                                    <label>Investment Stage</label>
-                                                    <select class="form-select" aria-label="Default select example" id="vInvestmentStage" name="vInvestmentStage">
+                                                    <label style="color: #313538; font-weight:500;" class="py-2">Investment Stage</label>
+                                                    <select class="form-select mb-1" aria-label="Default select example" id="vInvestmentStage" name="vInvestmentStage" style="border: 1px solid #D1D7DC;">
                                                     <option  value="">Select Stage</option>
                                                     <option <?php if(isset($investor) && $investor->vInvestmentStage == 'Early-stage'){ echo 'selected';  } ?> value="Early-stage">Early-stage</option>
                                                     <option <?php if(isset($investor) && $investor->vInvestmentStage == 'Growth'){ echo 'selected';  } ?> value="Growth">Growth</option>
@@ -160,9 +226,9 @@
                                                     <div id="vInvestmentStage_error" class="error mt-1" style="color:red;display: none;">Select your preferred investment stage</div>
                                                 </div>
 
-                                                <div class="col-md-6 positon-relative">
-                                                    <label>Investment Timeline</label>
-                                                    <select class="form-select" aria-label="Default select example" id="vInvestmentTimeline" name="vInvestmentTimeline">
+                                                <div class="col-md-12 positon-relative">
+                                                    <label style="color: #313538; font-weight:500;" class="py-2">Investment Timeline</label>
+                                                    <select class="form-select mb-1 " aria-label="Default select example" id="vInvestmentTimeline" name="vInvestmentTimeline" style="border: 1px solid #D1D7DC;">
                                                     <option  value="">Select Timeline</option>
                                                     <option <?php if(isset($investor) && $investor->vInvestmentTimeline == 'Short-term'){ echo 'selected';  } ?> value="Short-term">Short-term</option>                                                    
                                                     <option <?php if(isset($investor) && $investor->vInvestmentTimeline == 'Medium-term'){ echo 'selected';  } ?> value="Medium-term">Medium-term</option>                                                    
@@ -175,34 +241,34 @@
                                                 </div>
 
                                                 <div class="col-md-12 positon-relative">
-                                                    <label>Preferred Investment Sectors</label>
-                                                    <ul>
-                                                        <li style="display:inline-block; min-width:30% !important">
+                                                    <label style="color: #313538; font-weight:500;" class="py-2">Preferred Investment Sectors</label>
+                                                    <ul class="prefered-ul">
+                                                        <li style="min-width:30% !important" class="d-sm-inline-block d-block">
                                                             <label for="eAcquiringBusiness"><input type="checkbox" style = "margin-right: 2px;" class="intrestCheckbox" id="eAcquiringBusiness" name="eAcquiringBusiness" value="Yes" @if (isset($investor) and $investor->eAcquiringBusiness == 'Yes') {{ 'checked' }} @endif />
                                                                 Acquiring / Buying a Business</label>
                                                         </li>
-                                                        <li style="display:inline-block;min-width:30% !important">
+                                                        <li style="min-width:30% !important" class="d-sm-inline-block d-block">
                                                             <label for="eInvestingInBusiness"><input type="checkbox" style = "margin-right: 2px;" class="intrestCheckbox" id="eInvestingInBusiness" name="eInvestingInBusiness" value="Yes" @if (isset($investor) and $investor->eInvestingInBusiness == 'Yes') {{ 'checked' }} @endif />
                                                                 Investing in a Business</label>
                                                         </li>
-                                                        <li style="display:inline-block;min-width:30% !important">
+                                                        <li style="min-width:30% !important" class="d-sm-inline-block d-block">
                                                             <label for="eLendingToBusiness"><input type="checkbox" style = "margin-right: 2px;" class="intrestCheckbox" id="eLendingToBusiness" name="eLendingToBusiness" value="Yes" @if (isset($investor) and $investor->eLendingToBusiness == 'Yes') {{ 'checked' }} @endif />
                                                                 Lending to a Business</label>
                                                         </li>
-                                                        <li style="display:inline-block;min-width:30% !important">
+                                                        <li style="min-width:30% !important" class="d-sm-inline-block d-block">
                                                             <label for="eBuyingProperty"><input type="checkbox" style = "margin-right: 2px;" class="intrestCheckbox" id="eBuyingProperty" name="eBuyingProperty" value="Yes" @if (isset($investor) and $investor->eBuyingProperty == 'Yes') {{ 'checked' }} @endif />
                                                                 Buying Property</label>
                                                         </li> 
-                                                        <li style="display:inline-block;min-width:30% !important">
+                                                        <li style="min-width:30% !important" class="d-sm-inline-block d-block">
                                                             <label for="eCorporateInvestor"><input type="checkbox" style = "margin-right: 2px;" class="intrestCheckbox" id="eCorporateInvestor" name="eCorporateInvestor" value="Yes" @if (isset($investor) and $investor->eCorporateInvestor == 'Yes') {{ 'checked' }} @endif />Corporate Investors</label>
                                                         </li>
-                                                        <li style="display:inline-block;min-width:30% !important">
+                                                        <li style="min-width:30% !important" class="d-sm-inline-block d-block">
                                                             <label for="eVentureCapitalFirms"><input type="checkbox" style = "margin-right: 2px;" class="intrestCheckbox" id="eVentureCapitalFirms" name="eVentureCapitalFirms" value="Yes" @if (isset($investor) and $investor->eVentureCapitalFirms == 'Yes') {{ 'checked' }} @endif />Venture Capital Firms</label>
                                                         </li>
-                                                        <li style="display:inline-block;min-width:30% !important">
+                                                        <li style="min-width:30% !important" class="d-sm-inline-block d-block">
                                                             <label for="ePrivateEquityFirms"><input type="checkbox" style = "margin-right: 2px;" class="intrestCheckbox" id="ePrivateEquityFirms" name="ePrivateEquityFirms" value="Yes" @if (isset($investor) and $investor->ePrivateEquityFirms == 'Yes') {{ 'checked' }} @endif />Private Equity Firms</label>
                                                         </li>
-                                                        <li style="display:inline-block;min-width:30% !important">
+                                                        <li style="min-width:30% !important" class="d-sm-inline-block d-block">
                                                             <label for="eFamilyOffices"><input type="checkbox" style = "margin-right: 2px;" class="intrestCheckbox" id="eFamilyOffices" name="eFamilyOffices" value="Yes" @if (isset($investor) and $investor->eFamilyOffices == 'Yes') {{ 'checked' }} @endif />Family Offices</label>
                                                         </li>
                                                     </ul>
@@ -213,10 +279,15 @@
                                     </div>
                                 </div>
                                 <br>
-                                <div class="card">
-                                    <div class="card-header"><p><b>Investment Experience</b></p></div>                                
-                                    <div class="card-body">
-                                        <div class="detail-form">
+                                <div class="add-investor-card p-4">
+                                    <div class="add-investor-card-header">
+                                        <p style="color: #2B7292;" class="mb-0">
+                                            <b>Investment Experience</b>
+                                        </p>
+                                    </div>  
+
+                                    <div class="add-investor-card-body">
+                                        <div class="detail-form mt-2">
                                             <div class="row">
                                                 <div class="col-md-6 positon-relative">
                                                     <label>Previous Investment Experience</label>
@@ -245,14 +316,18 @@
                                     </div>                                    
                                 </div>
                                 <br>
-                                <div class="card">
-                                    <div class="card-header"><p><b>Risk Appetite</b></p></div>                                
-                                    <div class="card-body">
-                                        <div class="detail-form">
+                                <div class="add-investor-card p-4">
+                                    <div class="add-investor-card-header">
+                                        <p style="color:#2B7292;" class="mb-0">
+                                            <b>Risk Appetite</b>
+                                        </p>
+                                    </div>                                
+                                    <div class="add-investor-card-body">
+                                        <div class="detail-form mt-2">
                                             <div class="row">
                                             <div class="col-md-6 positon-relative">                                            
                                                 <label for="tInvestorProfileDetail">Risk Tolerance Level</label>
-                                                <select class="form-select" aria-label="Default select example" id="vRiskToleranceLevel" name="vRiskToleranceLevel">
+                                                <select class="form-select" aria-label="Default select example" id="vRiskToleranceLevel" name="vRiskToleranceLevel" style="border: 1px solid #D1D7DC;">
                                             <option  value="">Select Risk Tolerance Level</option>
                                             <option <?php if(isset($investor) && $investor->vRiskToleranceLevel == 'Conservative'){ echo 'selected';  } ?> value="Conservative">Conservative</option>
                                             <option <?php if(isset($investor) && $investor->vRiskToleranceLevel == 'Moderate'){ echo 'selected';  } ?> value="Moderate">Moderate</option>
@@ -267,7 +342,7 @@
                                        
                                         <div class="col-md-6 positon-relative">                                                                                        
                                             <label for="tAboutCompany">Expected Investment Returns</label>
-                                                <select class="form-select" aria-label="Default select example" id="vExpectedInvestmentReturns" name="vExpectedInvestmentReturns">
+                                                <select class="form-select" aria-label="Default select example" id="vExpectedInvestmentReturns" name="vExpectedInvestmentReturns" style="border: 1px solid #D1D7DC;">
                                                     <option  value="">Select Investment Returns</option>
                                                     <option <?php if(isset($investor) && $investor->vExpectedInvestmentReturns == '100K-10M'){ echo 'selected';  } ?> value="100K-10M">100K-10M</option>
                                                     <option <?php if(isset($investor) && $investor->vExpectedInvestmentReturns == '10M-100M'){ echo 'selected';  } ?> value="10M-100M">10M-100M</option>
@@ -283,10 +358,15 @@
                                     </div>
                                 </div>
                                 <br>
-                                <div class="card">
-                                    <div class="card-header"><p><b>Financial Capacity</b></p></div>                                
-                                    <div class="card-body">
-                                        <div class="detail-form">
+                                <div class="add-investor-card p-4">
+                                    <div class="add-investor-card-header">
+                                        <p style="color:#2B7292;" class="mb-0">
+                                            <b>Financial Capacity</b>
+                                        </p>
+                                    </div>     
+
+                                    <div class="add-investor-card-body">
+                                        <div class="detail-form mt-2">
                                             <div class="row">
                                                 <div class="col-md-12 positon-relative">
                                                     <div>
@@ -301,21 +381,25 @@
                                                 </div>
                                                 <div class="col-md-12 positon-relative">                                                
                                                     <label for="vAvailabilityOfInvestableFunds">Availability of Investable Funds</label>
-                                                        <textarea class="form-control no-space-control" placeholder="Specify the availability of funds for investment" id="tAvailabilityOfInvestableFunds" name="tAvailabilityOfInvestableFunds" style="height: 120px">@if (isset($investor)){{ $investor->tAvailabilityOfInvestableFunds }}@endif</textarea>
-                                                        <div class="validination-info">
-                                                            <i class="" id="tAvailabilityOfInvestableFundsError"></i>
-                                                        </div>
-                                                        <div id="tAvailabilityOfInvestableFunds_error" class="error mt-1" style="color:red;display: none; font-size: small;">Specify the availability of funds for investment</div>                                                
+                                                    <textarea class="form-control no-space-control" placeholder="Specify the availability of funds for investment" id="tAvailabilityOfInvestableFunds" name="tAvailabilityOfInvestableFunds" style="height: 120px">@if (isset($investor)){{ $investor->tAvailabilityOfInvestableFunds }}@endif</textarea>
+                                                    <div class="validination-info">
+                                                        <i class="" id="tAvailabilityOfInvestableFundsError"></i>
+                                                    </div>
+                                                    <div id="tAvailabilityOfInvestableFunds_error" class="error mt-1" style="color:red;display: none; font-size: small;">Specify the availability of funds for investment</div>                                                
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <br>
-                                <div class="card">
-                                    <div class="card-header"><p><b>Expertise and Industry Knowledge</b></p></div>                                
-                                    <div class="card-body">
-                                        <div class="detail-form">
+                                <div class="add-investor-card p-4">
+                                    <div class="add-investor-card-header">
+                                        <p style="color:#2B7292;" class="mb-0">
+                                            <b>Expertise and Industry Knowledge</b>
+                                        </p>
+                                    </div>                                
+                                    <div class="add-investor-card-body">
+                                        <div class="detail-form mt-2">
                                             <div class="row">
                                             <div class="col-md-12 positon-relative">                                            
                                                 <div>
@@ -342,14 +426,19 @@
                                     </div>
                                 </div>
                                 <br>
-                                <div class="card">
-                                    <div class="card-header"><p><b>Geographic Preferences</b></p></div>                                
-                                    <div class="card-body">
-                                        <div class="detail-form">
+                                <div class="add-investor-card p-4">
+                                    <div class="add-investor-card-header">
+                                        <p style="color:#2B7292;" class="mb-0">
+                                            <b>Geographic Preferences</b>
+                                        </p>
+                                    </div>     
+
+                                    <div class="add-investor-card-body">
+                                        <div class="detail-form mt-2">
                                             <div class="row">
                                             <div class="col-md-12 positon-relative">
                                                 <label>Preferred Investment Location</label>
-                                                <select class="form-select" aria-label="Default select example" id="vInvestmentLocation" name="vInvestmentLocation">
+                                                <select class="form-select" aria-label="Default select example" id="vInvestmentLocation" name="vInvestmentLocation" style="border: 1px solid #D1D7DC;">
                                                 <option  value="">Select Investment Location</option>
                                                 <option <?php if(isset($investor) && $investor->vInvestmentLocation == 'Local'){ echo 'selected';  } ?> value="Local">Local</option>
                                                 <option <?php if(isset($investor) && $investor->vInvestmentLocation == 'National'){ echo 'selected';  } ?> value="National">National</option>
@@ -365,65 +454,68 @@
                                     </div>
                                 </div>
                                 <br>
-                                <div class="card">
-                                    <div class="card-header"><p><b>Additional Comments or Criteria</b></p></div>                                
-                                    <div class="card-body">
-                                        <div class="detail-form">
+                                <div class="add-investor-card p-4">
+                                    <div class="add-investor-card-header">
+                                        <p style="color:#2B7292;" class="mb-0">
+                                            <b>Additional Comments or Criteria</b>
+                                        </p>
+                                    </div>                                
+                                    <div class="add-investor-card-body">
+                                        <div class="detail-form mt-2">
                                             <div class="row">
                                                 <div class="col-md-12 mt-3 positon-relative">                                                                                            
                                                     <label for="tAdditionalComments">Additional Comments or Criteria</label>
-                                                    <textarea class="form-control no-space-control" placeholder="Additional Comments or Criteria" id="tAdditionalComments" name="tAdditionalComments" style="height: 120px">@if (isset($investor)){{ $investor->tAdditionalComments }}@endif</textarea>                                                
+                                                    <textarea class="form-control no-space-control mb-0" placeholder="Additional Comments or Criteria" id="tAdditionalComments" name="tAdditionalComments" style="height: 120px">@if (isset($investor)){{ $investor->tAdditionalComments }}@endif</textarea>                                                
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>                            
 
-                       
-                            <!-- fourth step -->
-                            <div id="fourth-step" class="other-detail investor_forms fourth-steps">
-                                <div class="detail-form">
-                               
-                                    <div class="term-accpet" style="margin-bottom:20px">
-                                        <ul>
-                                            <li>
-                                                <label>
-                                                    <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox" value="1" @if(isset($investor)){{'checked'}}@endif /></span>
-                                                    I confirm that the information provided in my investor profile is accurate and up-to-date.
-                                                </label>
-                                            </li>                                                
-                                            <li>
-                                                <label>
-                                                    <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox"  value="1" @if(isset($investor)){{'checked'}}@endif /></span>
-                                                    I acknowledge that the due diligence performed by PitchInvestors is not a substitute for my own assessment of the investment opportunities.
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox" value="1" @if(isset($investor)){{'checked'}}@endif /></span>
-                                                    I agree to use the information and reports provided by PitchInvestors solely for the purpose of evaluating investment opportunities on the platform.
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox" value="1" @if(isset($investor)){{'checked'}}@endif /></span>
-                                                    I understand that my investments on PitchInvestors are subject to the terms and conditions set forth by the individual businesses I choose to invest in.
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox" value="1" @if(isset($investor)){{'checked'}}@endif /></span>
-                                                    I agree to comply with all applicable laws and regulations related to investments and financial transactions.
-                                                </label>
-                                            </li>
-                                        </ul>
-                                        <div id="termsrule_error" class="error mt-1" style="color:red;display: none; font-size: small;">Please accept terms of engagement</div>
-                                    </div>
-                                    <div class="row margin-left-button" id="submit">
-                                       <label class="save-detail mt-0"><a href="javascript:;">Save</a></label>
-                                    </div>
+                                        <div id="fourth-step" class="other-detail investor_forms fourth-steps">
+                                            <div class="detail-form mt-2">
+                                        
+                                                <div class="term-accpet" style="margin-bottom:20px">
+                                                    <ul>
+                                                        <li>
+                                                            <label class="d-flex">
+                                                                <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox" value="1" @if(isset($investor)){{'checked'}}@endif /></span>
+                                                                <span class="d-block ps-1">I confirm that the information provided in my investor profile is accurate and up-to-date.</span>
+                                                            </label>
+                                                        </li>                                                
+                                                        <li>
+                                                            <label class="d-flex">
+                                                                <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox"  value="1" @if(isset($investor)){{'checked'}}@endif /></span>
+                                                                <span class="d-block ps-1">I acknowledge that the due diligence performed by PitchInvestors is not a substitute for my own assessment of the investment opportunities.</span>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <label class="d-flex">
+                                                                <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox" value="1" @if(isset($investor)){{'checked'}}@endif /></span>
+                                                                <span class="d-block ps-1">I agree to use the information and reports provided by PitchInvestors solely for the purpose of evaluating investment opportunities on the platform.</span>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <label class="d-flex">
+                                                                <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox" value="1" @if(isset($investor)){{'checked'}}@endif /></span>
+                                                                <span class="d-block ps-1">I understand that my investments on PitchInvestors are subject to the terms and conditions set forth by the individual businesses I choose to invest in.</span>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <label class="d-flex">
+                                                                <span style="margin-right:5px"><input onclick='$("#termsrule_error").hide();' class = "terms_conditions" type="checkbox" value="1" @if(isset($investor)){{'checked'}}@endif /></span>
+                                                                <span class="d-block ps-1">I agree to comply with all applicable laws and regulations related to investments and financial transactions.</span>
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                    <div id="termsrule_error" class="error mt-1" style="color:red;display: none; font-size: small;">Please accept terms of engagement</div>
+                                                </div>
+
+                                                <div class="row margin-left-button" id="submit">
+                                                    <label class="save-detail mt-0 m-auto" style="width:163px;"><a href="javascript:;">Save</a></label>
+                                                </div>
+                                            </div>
+                                        </div>
                                 </div>
-                            </div>
+                            </div> 
                         </form>
                     </div>
                 </div>

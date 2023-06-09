@@ -34,8 +34,8 @@
     padding: 0px;
 }
 </style>
-    <section class="add-edit-detail lite-gray investor-edit-detail">
-        <div class="adit-detail-step">
+    <section class="add-edit-detail lite-gray investor-edit-detail " >
+        <div class="adit-detail-step border-0" >
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -53,12 +53,12 @@
                 </div>
             </div>
         </div>
-        <div class="add-step-detail">
+        <div class="add-step-detail pt-2">
             <div class="container">
                 <div class="row">
                     @include('layouts.front.left_dashboard')
                     <div class="col-lg-9">
-                        <form action="{{ url('investor-store') }}" name="frm" id="frm" method="post" enctype="multipart/form-data">
+                        <form action="{{ url('investor-store') }}" name="frm" id="frm" method="post" enctype="multipart/form-data" class="pt-4 bg-transparent">
                             @csrf
                             <input type="hidden" id="vUniqueCode" name="vUniqueCode" value="@if(isset($investor)){{$investor->vUniqueCode}}@endif">
                             <input type="hidden" id="iTempId" name="iTempId" value="@if (isset($iTempId)){{$iTempId}}@endif">
@@ -66,14 +66,14 @@
                             <!-- frist-step -->
                             <div id="first-step" class="other-detail investor_forms first-steps">
                                 
-                                    <h5>{{ isset($investor) ? 'Edit' : 'Add' }} Investors</h5>
-                                    <div class="main-text">
-                                        <h3>Are you an investor looking for an investment opportunity?</h3>
-                                        <p style="text-align: justify;"> Are you looking to find a way to grow your wealth over time while minimizing risk? PitchInvestors offers a range of investment options that are carefully selected to meet the needs of investors like you. Whether you seek a long-term investment or a shorter-term opportunity, we have something to suit your needs. Explore our offerings today and take the first step towards achieving your financial goals.</p>
+                                    <h5 style="color: #2B7292;">{{ isset($investor) ? 'Edit' : 'Add' }} Investors</h5>
+                                    <div class="bg-transparent p-0">
+                                        <!-- <h3>Are you an investor looking for an investment opportunity?</h3> -->
+                                        <p style="text-align: justify; font-size: 14px; color: #313538; opacity: 0.6;"> Are you looking to find a way to grow your wealth over time while minimizing risk? PitchInvestors offers a range of investment options that are carefully selected to meet the needs of investors like you. Whether you seek a long-term investment or a shorter-term opportunity, we have something to suit your needs. Explore our offerings today and take the first step towards achieving your financial goals.</p>
 
-                                        <div class="image-avtar">
+                                        <!-- <div class="image-avtar">
                                             <img src="{{ asset('uploads/front/investor/profile1.png') }}" alt="">
-                                        </div>
+                                        </div> -->
                                     </div>
                                 
 

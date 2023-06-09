@@ -93,11 +93,11 @@ $display_dashboard_left_page = 'style=display:block;';
                     </div>
                 </div>
 
-                <div class="accordion-item left-side-acc-rdion mt-4 add-card" style="border-radius:0;">
+                <div class="accordion-item left-side-acc-rdion mt-4 add-card add-card-lbl" style="border-radius:0; border-bottom:2px solid #2B7292">
                     <h2 class="accordion-header" id="headingtwo">
                         <button class="accordion-button border-top" style="padding-left:15px; " type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwo" aria-expanded="true" aria-controls="collapseOne">
                             <div class="heading">
-                                <span class="add-card-title" style="font-size:18px;"><b>Connection</b></span>
+                                <span class="add-card-title" style="font-size:18px; color: #2B7292;"><b>Connection</b></span>
                             </div>
                         </button>
                         <div class="px-3">
@@ -108,17 +108,17 @@ $display_dashboard_left_page = 'style=display:block;';
                         <div class="accordion-body m-0" style="cursor:pointer;">
                             <div class="in-detail">
                                 <a href="{{ route('front.dashboard.investmentDashboardTabview') }}">
-                                    <div class="form-check bg-transparent">
+                                    <div class="form-check bg-transparent mb-0">
                                         <label class="form-check-label" for="1" style=""> Business Connection </label>
                                     </div>
                                 </a>
                                 <a href="{{ route('front.dashboard.advisorDashboardTabview') }}">
-                                    <div class="form-check bg-transparent">
+                                    <div class="form-check bg-transparent mb-0">
                                         <label class="form-check-label" for="2" style=""> Advisor Connection </label>
                                     </div>
                                 </a>
                                 <a href="{{ route('front.dashboard.investorDashboardTabview') }}">
-                                    <div class="form-check bg-transparent">
+                                    <div class="form-check bg-transparent mb-0">
                                          <label class="form-check-label" for="3" style=""> Investor Connection </label>
                                     </div>
                                 </a>
