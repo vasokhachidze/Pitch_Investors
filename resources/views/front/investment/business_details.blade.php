@@ -68,7 +68,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="sell-yiur-bussinrs-activity-listing margin-top-foruthy">
-                                            <div class="left-text">
+                                            <div class="left-text"> 
                                                 
                                                 <p style = "margin:10px">
                                                 Welcome to PitchInvestors! We're excited to have you join our community of business owners and

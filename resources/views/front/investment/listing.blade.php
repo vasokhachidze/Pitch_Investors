@@ -144,6 +144,17 @@
 
 .listing-titles{
     color:#2B7292;
+    font-size:20px;
+}
+
+.listing-titles-mini{
+    color:#2B7292;
+    font-size:16px;
+    font-weight:500;
+}
+
+.line_horizontal{
+    border-bottom: 1px solid #D1D7DC;
 }
     </style>
 @endsection
@@ -164,11 +175,32 @@
     <section class="business-sale-warap investment" style="padding-top:100px;">
         <div class="container">
             <div class="row">
-                <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-12">
+                <div class="heading-second">
                     <div class="heding">
-                        <h3 class="mt-0">Filters</h3>
+                        <h3 class="mt-0 listing-titles">Filters</h3>
                     </div>
 
+                    <div class="left-text">
+                        <p style="color: #313538; font-size:14px; ">Businesses for Sale and Investment Opportunities. Buy or Invest in a Business.</p>
+                    </div>
+                    
+                    <div class="right-text">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color: #4E4D50; font-size: 16px; width:150px;">
+                                Sort By
+                            </button>
+                            <ul class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item sort" data-id="a-z" href="javascript:;" style="color: #4E4D50; font-size: 14px; font-weight:500;">Name</a></li>
+                                <li><a class="dropdown-item sort" data-id="EBITDA" href="javascript:;"style="color: #4E4D50; font-size: 14px !important; font-weight:500;">EBITDA</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-12">
                     <div class="business-option pt-2">
                         <div class="row row-padding">
                             <div class="col-lg-12 col-md-12">
@@ -179,15 +211,19 @@
                                                 data-bs-target="#collapseOne" aria-expanded="true"
                                                 aria-controls="collapseOne">
                                                 <div class="heading">
-                                                    <img src="{{ asset('uploads/front/investment/Vector1.png') }}"><span>Transaction Types</span>
+                                                    <span class="listing-titles-mini">Transaction Types</span>
                                                 </div>
                                             </button>
                                         </h2>
+
+                                        <div class="px-3">
+                                            <div class="line_horizontal"></div>
+                                        </div>
+
                                         <div id="collapseOne" class="accordion-collapse collapse show"
                                             aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
+                                            <div class="accordion-body mt-0 border-0    ">
                                                 <div class="in-detail">
-
                                                     <div class="form-check">
                                                         <input class="form-check-input intrestCheckbox filterCheckbox"
                                                             type="checkbox" value="eFullSaleBusiness" id="eFullSaleBusiness"
@@ -351,27 +387,11 @@
                 </div>
 
                 <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-12">
-                    <div class="heading-second">
-                        <div class="left-text">
-                            <p>Businesses for Sale and Investment Opportunities. Buy or Invest in a Business.</p>
-                        </div>
-                        <div class="right-text">
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Sort By
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                    <li><a class="dropdown-item sort" data-id="a-z" href="javascript:;">Name</a></li>
-                                    <li><a class="dropdown-item sort" data-id="EBITDA" href="javascript:;">EBITDA</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bussines-sale-box pt-4">
+                    <div class="bussines-sale-box pt-3">
                         <div class="row" id="investment_list_row">
                             <!-- item-1 -->
                         </div>
+                        
                         <div class="text-center" id="investment-listing-ajax-loader">
                             <img src="{{ asset('admin/assets/images/ajax-loader.gif') }}" width="100px" height="auto">
                         </div>
