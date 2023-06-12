@@ -30,7 +30,7 @@
             }
         @endphp
         <a href="{{url('investmentDashboard')}}">
-            <div class="profile-box-warp investment-businss">
+            <div class="profile-box-warp investment-businss" style="background: #FFFFFF; border-bottom: 2px solid #2B7292; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
                 <div class="profile-box-detail">
                     <div class="btn-group dropstart my-change-dropdown" role="group">
                     <!--  <a type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +49,7 @@
                         <h2>{{$investment_header_count}}</h2>
                     </div>
                     <div class="profile-heading">
-                        <h1>Businesses</h1>
+                        <h1 class="mt-0" style="color: #2B7292; font-size:20px;">Businesses</h1>
                     </div>
                     <div class="other-detail" >
                         <p class="investment-detail-info" style="min-height: 0px; overflow: inherit;">
@@ -58,7 +58,7 @@
                     </div>
                     <div class="final-button" style="margin-top: 160px;">
                         <!--<a href="{{url($investment_link)}}" class="btn btn-primary bg-orange">{{$investment_link_text}}</a>-->
-                        <a href="{{url($investment_link)}}" class="btn btn-primary bg-orange">Add Business</a>
+                        <a href="{{url($investment_link)}}" class="btn btn-primary bg-green">Add Business</a>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
         @endphp
         
         <a href="{{url($advisor_link)}}">
-            <div class="profile-box-warp become-advisor">
+            <div class="profile-box-warp become-advisor" style="background: #FFFFFF; border-bottom: 2px solid #2B7292; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
                 <div class="profile-box-detail">
                     {{-- <div class="btn-group dropstart my-change-dropdown" role="group">
                         <a type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
@@ -97,25 +97,29 @@
                             </li>
                         </ul>
                     </div> --}}
+                    
                     <div class="profile-number d-none">
                         <h2>{{$advisor_count}}</h2>
                     </div>
+
                     <div class="profile-heading">
-                        <h1>Advisor</h1>
+                        <h1 class="mt-0" style="color: #2B7292; font-size:20px;">Advisor</h1>
                     </div>
+
                     <div class="other-detail">
                         <p class="investment-detail-info" style="min-height: 0px; overflow: inherit;">
                            Create a new advisor profile on PitchInvestors and tap into a network of entrepreneurs and businesses seeking expert guidance. By clicking the "Add Advisor Profile" button, you can showcase your skills, experience, and specialties to potential clients and start earning as a freelance advisor. Join PitchInvestors and start earning today!
                         </p>
                     </div>
+                    
                     <div class="final-button" style="margin-top: 160px;">
                         <a href="{{url($advisor_link)}}" class="btn btn-primary bg-green">{{$advisor_link_text}}</a>
                     </div>
                 </div>
             </div>
         </a>
-        
     </div>
+
     <div class="col-lg-4 col-md-4 col-sm-12" data-bs-toggle="tooltip" data-bs-placement="top" title="My Investor profile connections">
         <a href="{{'investorDashboard'}}">
             @php
@@ -127,7 +131,7 @@
                 }
             @endphp
         
-            <div class="profile-box-warp sell-your-businss">
+            <div class="profile-box-warp sell-your-businss" style="background: #FFFFFF; border-bottom: 2px solid #2B7292; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
                 <div class="profile-box-detail">
                     {{-- <div class="btn-group dropstart my-change-dropdown" role="group">
                         <a type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
@@ -150,17 +154,21 @@
                             
                         </ul>
                     </div> --}}
+                    
                     <div class="profile-number d-none">
                         <h2>{{$investor_count}}</h2>
                     </div>
+
                     <div class="profile-heading">
-                        <h1>Investor</h1>
+                        <h1 class="mt-0" style="color: #2B7292; font-size:20px;">Investor</h1>
                     </div>
+
                     <div class="other-detail">
                         <p class="investment-detail-info" style="min-height: 0px; overflow: inherit;">
                            Join the world of investment opportunities with PitchInvestors. By clicking the "Add Investor" button, you can create a profile and gain access to a diverse range of businesses and entrepreneurs seeking funding. Explore and invest in the projects that align with your interests and goals. Start your investment journey with PitchInvestors today!
                         </p>
                     </div>
+
                     <div class="final-button"  style="margin-top: 160px;">
                        {{--  @if (!empty($investor_profile_count))
                             <a href="{{url('investorDashboard')}}" class="btn btn-primary bg-blue">Invest Now</a>
@@ -168,7 +176,7 @@
                             <a href="{{url($investor_link)}}" class="btn btn-primary bg-blue">{{$investor_link}}</a>
                         @endif --}}
                         <!--<a href="{{url($investor_link)}}" class="btn btn-primary bg-blue">{{$investor_link_text}}</a>-->
-                        <a href="{{url($investor_link)}}" class="btn btn-primary bg-blue">Add Investor</a>
+                        <a href="{{url($investor_link)}}" class="btn btn-primary bg-green">Add Investor</a>
                     </div>
                 </div>
             </div>

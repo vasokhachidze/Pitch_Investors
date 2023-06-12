@@ -524,11 +524,22 @@
                                         <div id="file_investor_profile_image_dropzone" name='file_investor_profile_image_dropzone' class="dropzone education-dropzon"></div> -->
                                     </div>
                                     <lable class="save-detail submit"><a href="javascript:;">Save</a></lable>
-                                    <a href="javascript:;" class="btn btn-primary loading" style="display: none;">
+                                    
+                                    <a href="javascript:;" class="btn btn-primary loading" style="display: none;"></a>
                                 </form>
+
+                                <div class="secondary-chat col-12 d-lg-none d-block" >
+                                    <div>
+                                        @if ($session_data !== '')
+                                            @include('layouts.front.chat_inbox_connection_listing')
+                                        @endif
+                                    </div>
+                                </div>
+                                
                         <!-- End frist step -->
                     </div> {{-- end col-lg-9 --}}
                 </div> {{-- End row --}}
+                
             </div> {{-- End container --}}
         </div> {{-- End add-step-detail --}}
     </section>

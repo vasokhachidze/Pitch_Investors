@@ -936,10 +936,20 @@ if (isset($documents)) {
                                     </div>
                                 </div>
                             </div>
-                        
                         </form>
+
+                        <div class="secondary-chat col-12 d-lg-none d-block pt-2">
+                            <div>
+                                @if ($session_data !== '')
+                                    @include('layouts.front.chat_inbox_connection_listing')
+                                @endif
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
+
+                
             </div>
         </div>
     </section>

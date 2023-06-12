@@ -10,42 +10,57 @@ $favicon = $general_favicon['COMPANY_FAVICON']['vValue'];
         input:-webkit-autofill {
             -webkit-text-fill-color: white !important;
         }
+
+        .login-page{
+        background:none !important;
+    }
+
+    input:-webkit-autofill {
+        -webkit-text-fill-color: #313538 !important;
+        }
     </style>
 @endsection
 @section('content')
     <section class="login-page">
-        <div class="loging-detail">
-            <div class="logo">
-                <a href="{{ route('front.home') }}"><img src="{{ asset('uploads/front/white-logo.png') }}" alt=""></a>
-            </div>
-            <div class="text-p">
-                <p>Reset Password</p>
-            </div>
-            <form id="frm" action="{{ url('reset-password') }}" method="Post">
-                @csrf
-				<input type="hidden" name="auth" id="auth" value="{{$code}}">
-                <div class="form-control">
-                    <input type="password" class="form-control" id="vPassword" name="vPassword" minlength="6"
-                        placeholder="Enter New Password">
-                    <div id="vPassword_error" class="error mt-1" style="color:red;display: none;">Please Enter New Password
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="d-flex justify-content-center">
+                <div class="loging-detail position-relative top-0 start-0" style="transform: translate(0, 0); background:#fff; border-bottom: 2px solid #2B7292; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                    <div class="logo">
+                        <a href="{{ route('front.home') }}"><img src="{{ asset('/front/assets/images/lginLogo.svg') }}" class=""></a>
                     </div>
-                    <div id="vPassword_minLength_error" class="error mt-1" style="color:red;display: none;">Please enter
-                        minimum 6 digit Password.</div>
+
+                    <div class="text-p">
+                        <p class="text-start mb-0" style="color: #2B7292; padding:0 12px; font-size:20px;">Reset Password</p>
+                    </div>
+
+                    <form id="frm" action="{{ url('reset-password') }}" method="Post">
+                        @csrf
+                        <input type="hidden" name="auth" id="auth" value="{{$code}}">
+                        <div class="form-control mb-0">
+                            <label for="vEmail" style="color: #313538; font-weight:500; font-size:14px;" class="py-2">New Password</label>
+                            <input style="border: 1px solid #D1D7DC; color: #313538; font-size:14px;" class="p-2" type="password" class="form-control" id="vPassword" name="vPassword" minlength="6">
+                            <div id="vPassword_error" class="error mt-1" style="color:red;display: none;">Please Enter New Password</div>
+                            <div id="vPassword_minLength_error" class="error mt-1" style="color:red;display: none;">Please enter minimum 6 digit Password.</div>
+                        </div>
+
+                        <div class="form-control mt-0">
+                            <label for="vEmail" style="color: #313538; font-weight:500; font-size:14px;" class="py-2">Confirm Password</label>
+                            <input style="border: 1px solid #D1D7DC; color: #313538; font-size:14px;" class="p-2" type="password" class="form-control" id="vConfirmPassword" name="vConfirmPassword" minlength="6">
+                            <div id="vConfirmPassword_error" class="error mt-1" style="color:red;display: none;">Please Enter Confirm Password</div>
+                            <div id="vConfirmPassword_match_error" class="error mt-1" style="color:red;display: none;">Password and Confirm Password does not match.</div>
+                            <div id="vConfirmPassword_minLength_error" class="error mt-1" style="color:red;display: none;">Please enter minimum 6 digit Password.</div>
+                        </div>
+
+                        <div class="verify-button mt-3" id="submit">
+                            <a href="javascript:;" class="submit" style="font-size:14px;">Save</a>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-control">
-                    <input type="password" class="form-control" id="vConfirmPassword" name="vConfirmPassword" minlength="6"
-                        placeholder="Enter Confirm Password">
-                    <div id="vConfirmPassword_error" class="error mt-1" style="color:red;display: none;">Please Enter
-                        Confirm Password</div>
-                    <div id="vConfirmPassword_match_error" class="error mt-1" style="color:red;display: none;">Password and
-                        Confirm Password does not match.</div>
-                    <div id="vConfirmPassword_minLength_error" class="error mt-1" style="color:red;display: none;">Please
-                        enter minimum 6 digit Password.</div>
+
+                <div class="d-xl-block d-none">
+                    <img src="{{ asset('/front/assets/images/login_image.png') }}" class="" style="pointer-events:none; top:30px;">
                 </div>
-                <div class="verify-button" id="submit">
-                    <a href="javascript:;" class="submit">Save</a>
-                </div>
-            </form>
+            </div>
         </div>
     </section>
 @endsection

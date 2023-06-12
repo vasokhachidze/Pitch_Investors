@@ -58,7 +58,7 @@
                 <div class="row">
                     @include('layouts.front.left_dashboard')
                     <div class="col-lg-9">
-                        <form action="{{ url('investor-store') }}" name="frm" id="frm" method="post" enctype="multipart/form-data" class="pt-4 bg-transparent">
+                        <form action="{{ url('investor-store') }}" name="frm" id="frm" method="post" enctype="multipart/form-data" class="pt-4">
                             @csrf
                             <input type="hidden" id="vUniqueCode" name="vUniqueCode" value="@if(isset($investor)){{$investor->vUniqueCode}}@endif">
                             <input type="hidden" id="iTempId" name="iTempId" value="@if (isset($iTempId)){{$iTempId}}@endif">
@@ -67,7 +67,7 @@
                             <div id="first-step" class="other-detail investor_forms first-steps">
                                 
                                     <h5 style="color: #2B7292;">{{ isset($investor) ? 'Edit' : 'Add' }} Investors</h5>
-                                    <div class="bg-transparent p-0">
+                                    <div class=" p-0">
                                         <!-- <h3>Are you an investor looking for an investment opportunity?</h3> -->
                                         <p style="text-align: justify; font-size: 14px; color: #313538; opacity: 0.6;"> Are you looking to find a way to grow your wealth over time while minimizing risk? PitchInvestors offers a range of investment options that are carefully selected to meet the needs of investors like you. Whether you seek a long-term investment or a shorter-term opportunity, we have something to suit your needs. Explore our offerings today and take the first step towards achieving your financial goals.</p>
 
@@ -777,6 +777,14 @@
                                 </div>
                             </div>
                         </form>
+
+                        <div class="secondary-chat col-12 d-lg-none d-block" >
+                            <div>
+                                @if ($session_data !== '')
+                                    @include('layouts.front.chat_inbox_connection_listing')
+                                @endif
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

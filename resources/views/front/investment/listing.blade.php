@@ -156,6 +156,17 @@
 .line_horizontal{
     border-bottom: 1px solid #D1D7DC;
 }
+
+.form-check-label-style{
+    font-size:15px !important;
+    color: #313538;
+}
+
+.card_box{
+    background: #FFFFFF;
+    border-bottom: 2px solid #2B7292;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
     </style>
 @endsection
 
@@ -172,7 +183,7 @@
     <!-- banner section end -->
 
     <!-- business warap section start -->
-    <section class="business-sale-warap investment" style="padding-top:100px;">
+    <section class="business-sale-warap investment mt-sm-4" style="padding-top:40px;">
         <div class="container">
             <div class="row">
                 <div class="heading-second">
@@ -181,10 +192,10 @@
                     </div>
 
                     <div class="left-text">
-                        <p style="color: #313538; font-size:14px; ">Businesses for Sale and Investment Opportunities. Buy or Invest in a Business.</p>
+                        <p style="color: #313538; font-size:14px; padding-top:10px;">Businesses for Sale and Investment Opportunities. Buy or Invest in a Business.</p>
                     </div>
                     
-                    <div class="right-text">
+                    <div class="right-text mt-1">
                         <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2"
                                 data-bs-toggle="dropdown" aria-expanded="false" style="color: #4E4D50; font-size: 16px; width:150px;">
@@ -205,7 +216,7 @@
                         <div class="row row-padding">
                             <div class="col-lg-12 col-md-12">
                                 <div class="accordion" id="accordionExample">
-                                    <div class="accordion-item">
+                                    <div class="accordion-item card_box">
                                         <h2 class="accordion-header" id="headingOne">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseOne" aria-expanded="true"
@@ -228,12 +239,12 @@
                                                         <input class="form-check-input intrestCheckbox filterCheckbox"
                                                             type="checkbox" value="eFullSaleBusiness" id="eFullSaleBusiness"
                                                             name="transaction_type">
-                                                        <label class="form-check-label" for="eFullSaleBusiness">
+                                                        <label class="form-check-label form-check-label-style" for="eFullSaleBusiness">
                                                             Full sale of business
                                                         </label>
                                                     </div>
 
-                                                    <div class="form-check">
+                                                    <div class="form-check form-check-label-style">
                                                         <input class="form-check-input intrestCheckbox filterCheckbox"
                                                             type="checkbox" value="eLoanForBusiness" id="eLoanForBusiness"
                                                             name="transaction_type">
@@ -241,7 +252,8 @@
                                                             Loan for business
                                                         </label>
                                                     </div>
-                                                    <div class="form-check">
+
+                                                    <div class="form-check form-check-label-style">
                                                         <input class="form-check-input intrestCheckbox filterCheckbox"
                                                             type="checkbox" value="ePartialSaleBusiness"
                                                             id="ePartialSaleBusiness" name="transaction_type">
@@ -249,7 +261,7 @@
                                                             sale of business/Investment </label>
                                                     </div>
 
-                                                    <div class="form-check">
+                                                    <div class="form-check form-check-label-style">
                                                         <input class="form-check-input intrestCheckbox filterCheckbox"
                                                             type="checkbox" value="eBailout" id="eBailout"
                                                             name="transaction_type">
@@ -258,7 +270,7 @@
                                                         </label>
                                                     </div>
 
-                                                    <div class="form-check">
+                                                    <div class="form-check form-check-label-style">
                                                         <input class="form-check-input intrestCheckbox filterCheckbox"
                                                             type="checkbox" value="Yes" id="eBusinessAsset"
                                                             name="transaction_type">
@@ -270,14 +282,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="accordion-item">
+                                    <div class="accordion-item card_box">
                                         <h2 class="accordion-header" id="headingtwo">
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapsetwo" aria-expanded="false"
                                                 aria-controls="collapseOne">
                                                 <div class="heading">
-                                                    <img
-                                                        src="{{ asset('uploads/front/investment/location.png') }}"><span>Location</span>
+                                                    <!-- <img src="{{ asset('uploads/front/investment/location.png') }}"> -->
+                                                    <span class="listing-titles-mini">Location</span>
                                                 </div>
                                             </button>
                                         </h2>
@@ -321,7 +333,7 @@
                                           
                                                 
                                                 <div class="col-lg-12 mb-2 form-group custom-select positon-relative"  id="div_iRegionId">
-                                                    <label>Select Region</label>
+                                                    <label class="py-2 pt-0" style="font-size:14px; font-weight:500;">Select Region</label>
                                                     <select id="iRegionId" name="iRegionId" class="add_select2 form-control with-border" >
                                                         <option value="">Select Region</option>
                                                          @foreach ($Region as $value)
@@ -348,12 +360,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="accordion-item">
+                                    <div class="accordion-item card_box">
                                         <h2 class="accordion-header" id="headingthree">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethree" aria-expanded="false" aria-controls="collapseOne">
                                                 <div class="heading">
-                                                    <img
-                                                        src="{{ asset('uploads/front/investment/industri.png') }}"><span>Industries</span>
+                                                    <!-- <img src="{{ asset('uploads/front/investment/industri.png') }}"> -->
+                                                        <span class="listing-titles-mini">Industries</span>
                                                 </div>
                                             </button>
                                         </h2>

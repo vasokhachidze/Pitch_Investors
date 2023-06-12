@@ -10,31 +10,50 @@ $favicon         = $general_favicon['COMPANY_FAVICON']['vValue'];
     input:-webkit-autofill {
         -webkit-text-fill-color: white !important;
     }
+
+    .login-page{
+        background:none !important;
+    }
+
+    input:-webkit-autofill {
+        -webkit-text-fill-color: #313538 !important;
+        }
 </style>
 @endsection
 @section('content')
     <section class="login-page">
-        <div class="loging-detail">
-            <div class="logo">
-                <a href="{{route('front.home')}}"><img src="{{asset('uploads/front/white-logo.png')}}" alt=""></a>
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="d-flex justify-content-center">
+                <div class="loging-detail position-relative top-0 start-0" style="transform: translate(0, 0); background:#fff; border-bottom: 2px solid #2B7292; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                    <div class="logo">
+                        <a href="{{route('front.home')}}"><img src="{{ asset('/front/assets/images/lginLogo.svg') }}" class=""></a>
+                    </div>
+
+                    <div class="text-p">
+                        <p class="text-start mb-0 mt-4" style="color: #2B7292; padding:0 12px; font-size:20px;">Forgot Password</p>
+                    </div>
+
+                    <form id="frm" action="{{url('forgotpassword_action')}}" method="Post">
+                        @csrf
+                        <div class="form-control">
+                            <label for="vEmail" style="color: #313538; font-weight:500; font-size:14px;" class="py-2">Email</label>
+                            <input class="p-2" style="border: 1px solid #D1D7DC; color: #313538; font-size:14px;" type="text" name="vEmail" id="vEmail" required>
+                            <div id="vEmail_error" class="error_show" style="font-size:14px;">Please Enter Email</div>
+                            <div id="vEmail_valid_error" class="error_show" style="font-size:14px;">Please Enter Valid Email</div>
+                        </div>
+                        <div class="verify-button mt-3" id="submit">
+                            <a href="javascript:;" class="submit" style="font-size:14px;">Get Reset Link in Email</a>
+                        </div>
+                        <div class="forget mt-3">
+                            <a style="color:#69B965; font-size:14px; font-weight:500; text-decoration:underline;" href="{{ route('front.login.index') }}">Login Instead Here</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="d-xl-block d-none">
+                    <img src="{{ asset('/front/assets/images/login_image.png') }}" class="" style="pointer-events:none; top:30px;">
+                </div>
             </div>
-            <div class="text-p">
-                <p>Forgot Password</p>
-            </div>
-            <form id="frm" action="{{url('forgotpassword_action')}}" method="Post">
-                @csrf
-                <div class="form-control">
-                    <input type="text" name="vEmail" id="vEmail" placeholder="Enter Email" required>
-                    <div id="vEmail_error" class="error_show">Please Enter Email</div>
-                    <div id="vEmail_valid_error" class="error_show">Please Enter Valid Email</div>
-                </div>
-                <div class="verify-button" id="submit">
-                    <a href="javascript:;" class="submit">Get Reset Link in Email</a>
-                </div>
-                <div class="forget">
-                    <a href="{{ route('front.login.index') }}">Login</a>
-                </div>
-            </form>
         </div>
     </section>
 @endsection

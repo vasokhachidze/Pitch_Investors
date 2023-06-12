@@ -34,11 +34,12 @@
 }
 
 </style>
+
 <section class="my-dashbord">
     <div class="container">
         <div class="row">
             @include('layouts.front.left_dashboard')
-           
+            
             <div class="col-lg-9 box2">
                 <div class="right-panal-side">
                     @include('layouts.front.header_dashboard')
@@ -52,10 +53,12 @@
                                     <div>
                                         <h3 class="activity-hading">Sell Your business (6)</h3>
                                     </div>
+                                    
                                     <div class="add-bussines-new">
                                         <a href="#"><i class="far fa-plus"></i>Add Business</a>
                                     </div>
                                 </div>
+
                                 <div class="row">
                                     <div class=" col-xl-4 col-lg-6 col-md-6 col-12 mt-3">
                                         <div class="sell-busi-box-warp">
@@ -68,6 +71,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="col-xl-4 col-lg-6 col-md-6 col-12 mt-3">
                                         <div class="sell-busi-box-warp">
                                             <div class="bussines-sell-box-detail">
@@ -79,6 +83,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="col-xl-4 col-lg-6 col-md-6 col-12 mt-3">
                                         <div class="sell-busi-box-warp">
                                             <div class="bussines-sell-box-detail">
@@ -90,6 +95,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class=" col-xl-4 col-lg-6 col-md-6 col-12 mt-3">
                                         <div class="sell-busi-box-warp">
                                             <div class="bussines-sell-box-detail">
@@ -101,6 +107,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class=" col-xl-4 col-lg-6 col-md-6 col-12 mt-3">
                                         <div class="sell-busi-box-warp">
                                             <div class="bussines-sell-box-detail">
@@ -112,6 +119,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class=" col-xl-4 col-lg-6 col-md-6 col-12 mt-3">
                                         <div class="sell-busi-box-warp">
                                             <div class="bussines-sell-box-detail">
@@ -123,7 +131,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
 
                                 <div class="row">
@@ -150,6 +157,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="col-lg-4 mt-3">
                                         <div class="business-detail-box sell-bussines-box">
                                             <div class="frist-box">
@@ -157,6 +165,7 @@
                                                     <div class="business-box-img">
                                                         <img src="{{asset('front/assets/images/hexa-1.png')}}" alt="">
                                                     </div>
+
                                                     <ul class="business-box-text">
                                                         <li class="rating">
                                                             <p class="m-0"><i class="fas fa-star" style="color: var(--yellowcolor);"></i>8.5</p>
@@ -169,11 +178,59 @@
                                                 <a href="" class="main-title">
                                                     <h2>John Doe </h2>
                                                 </a>
+
                                                 <p class="investment-detail-info mb-0">
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu auctor
                                                     sollicitudin dolor scelerisque mauris viverra. Pellentesque lectus
                                                     tincidunt dignissim
                                                 </p>
+
+                                                <div class="view-peofile-btn">
+                                                    <a href="#" class="sell-busines-view-profile">View Profile</a>
+                                                </div>
+                                            </div>
+
+                                            <ul class="box-wrapper">
+                                                <li class="contact-btn">
+                                                    <ul class="d-flex">
+                                                        <li style="border-right: 1px solid #C4C4C4;"><a href="" class="text-green"><i class="fal fa-check"></i>Accept</a>
+                                                        </li>
+                                                        <li><a href="" class="text-gray"><i class="fal fa-times"></i>Reject</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 mt-3">
+                                        <div class="business-detail-box sell-bussines-box">
+                                            <div class="frist-box">
+                                                <div class="frist-box-part">
+                                                    <div class="business-box-img">
+                                                        <img src="{{asset('front/assets/images/hexa-1.png')}}" alt="">
+                                                    </div>
+
+                                                    <ul class="business-box-text">
+                                                        <li class="rating">
+                                                            <p class="m-0"><i class="fas fa-star" style="color: var(--yellowcolor);"></i>8.5</p>
+                                                        </li>
+
+                                                        <li class="location pt-2">
+                                                            <p class="m-0"><i class="fas fa-map-marker-alt" style="color: #939292;"></i>kenya 9</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <a href="" class="main-title">
+                                                    <h2>John Doe </h2>
+                                                </a>
+
+                                                <p class="investment-detail-info mb-0">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu auctor
+                                                    sollicitudin dolor scelerisque mauris viverra. Pellentesque lectus
+                                                    tincidunt dignissim
+                                                </p>
+
                                                 <div class="view-peofile-btn">
                                                     <a href="#" class="sell-busines-view-profile">View Profile</a>
                                                 </div>
@@ -196,10 +253,12 @@
                                                     <div class="business-box-img">
                                                         <img src="{{asset('front/assets/images/hexa-1.png')}}" alt="">
                                                     </div>
+
                                                     <ul class="business-box-text">
                                                         <li class="rating">
                                                             <p class="m-0"><i class="fas fa-star" style="color: var(--yellowcolor);"></i>8.5</p>
                                                         </li>
+
                                                         <li class="location pt-2">
                                                             <p class="m-0"><i class="fas fa-map-marker-alt" style="color: #939292;"></i>kenya 9</p>
                                                         </li>
@@ -208,50 +267,13 @@
                                                 <a href="" class="main-title">
                                                     <h2>John Doe </h2>
                                                 </a>
+
                                                 <p class="investment-detail-info mb-0">
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu auctor
                                                     sollicitudin dolor scelerisque mauris viverra. Pellentesque lectus
                                                     tincidunt dignissim
                                                 </p>
-                                                <div class="view-peofile-btn">
-                                                    <a href="#" class="sell-busines-view-profile">View Profile</a>
-                                                </div>
-                                            </div>
-                                            <ul class="box-wrapper">
-                                                <li class="contact-btn">
-                                                    <ul class="d-flex">
-                                                        <li style="border-right: 1px solid #C4C4C4;"><a href="" class="text-green"><i class="fal fa-check"></i>Accept</a>
-                                                        </li>
-                                                        <li><a href="" class="text-gray"><i class="fal fa-times"></i>Reject</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 mt-3">
-                                        <div class="business-detail-box sell-bussines-box">
-                                            <div class="frist-box">
-                                                <div class="frist-box-part">
-                                                    <div class="business-box-img">
-                                                        <img src="{{asset('front/assets/images/hexa-1.png')}}" alt="">
-                                                    </div>
-                                                    <ul class="business-box-text">
-                                                        <li class="rating">
-                                                            <p class="m-0"><i class="fas fa-star" style="color: var(--yellowcolor);"></i>8.5</p>
-                                                        </li>
-                                                        <li class="location pt-2">
-                                                            <p class="m-0"><i class="fas fa-map-marker-alt" style="color: #939292;"></i>kenya 9</p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <a href="" class="main-title">
-                                                    <h2>John Doe </h2>
-                                                </a>
-                                                <p class="investment-detail-info mb-0">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu auctor
-                                                    sollicitudin dolor scelerisque mauris viverra. Pellentesque lectus
-                                                    tincidunt dignissim
-                                                </p>
+
                                                 <div class="view-peofile-btn">
                                                     <a href="#" class="sell-busines-view-profile">View Profile</a>
                                                 </div>
@@ -285,18 +307,22 @@
                                                     <div class="business-box-img">
                                                         <img src="{{asset('front/assets/images/hexa-1.png')}}" alt="">
                                                     </div>
+
                                                     <ul class="business-box-text">
                                                         <li class="rating">
                                                             <p class="m-0"><i class="fas fa-star" style="color: var(--yellowcolor);"></i>8.5</p>
                                                         </li>
+
                                                         <li class="location pt-2">
                                                             <p class="m-0"><i class="fas fa-map-marker-alt" style="color: #939292;"></i>kenya 9</p>
                                                         </li>
                                                     </ul>
                                                 </div>
+
                                                 <a href="" class="main-title">
                                                     <h2> Lorem ipsum dolor sit amet tetur elit. </h2>
                                                 </a>
+
                                                 <p class="investment-detail-info mb-0">
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu auctor
                                                     sollicitudin dolor scelerisque mauris viverra. Pellentesque lectus
@@ -308,17 +334,21 @@
                                                     <p class="mb-0">Financial Investment </p>
                                                     <h3 class="mb-0"> KES 12</h3>
                                                 </li>
+
                                                 <li class="second-box">
                                                     <p class="mb-0">Run Rate Sales </p>
                                                     <h5 class="mb-0"> 12 % </h5>
                                                 </li>
+
                                                 <li class="second-box">
                                                     <p class="mb-0">EBITDA Margin </p>
                                                     <h5 class="mb-0"> 2 %</h5>
                                                 </li>
+
                                                 {{-- <li class="second-box add-to-bookmark yellow-color">
                                                     <a href="#" class="active"><i class="far fa-bookmark icon-bookmark"></i>Add to Bookmark</a>
                                                 </li> --}}
+
                                                 <li class="contact-btn">
                                                     <ul class="d-flex">
                                                         <li style="border-right: 1px solid #C4C4C4;"><a href="" class="text-green"><i class="fal fa-check"></i>Accept</a>
@@ -336,10 +366,12 @@
                                                     <div class="business-box-img">
                                                         <img src="{{asset('front/assets/images/hexa-1.png')}}" alt="">
                                                     </div>
+
                                                     <ul class="business-box-text">
                                                         <li class="rating">
                                                             <p class="m-0"><i class="fas fa-star" style="color: var(--yellowcolor);"></i>8.5</p>
                                                         </li>
+
                                                         <li class="location pt-2">
                                                             <p class="m-0"><i class="fas fa-map-marker-alt" style="color: #939292;"></i>kenya 9</p>
                                                         </li>
@@ -739,12 +771,14 @@
                     </div>
                 </div>
             </div>
-            
         </div>
-       <div class="row secondary-chat" style="display:none">
-            @if ($session_data !== '')
-            @include('layouts.front.chat_inbox_connection_listing')
-            @endif
+        
+        <div class="secondary-chat col-12" style="display:none">
+            <div>
+                @if ($session_data !== '')
+                    @include('layouts.front.chat_inbox_connection_listing')
+                @endif
+            </div>
         </div>
     </div>
 </section>

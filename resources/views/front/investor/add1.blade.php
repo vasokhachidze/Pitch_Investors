@@ -517,6 +517,14 @@
                                 </div>
                             </div> 
                         </form>
+
+                        <div class="secondary-chat col-12 d-lg-none d-block" >
+                                    <div>
+                                        @if ($session_data !== '')
+                                            @include('layouts.front.chat_inbox_connection_listing')
+                                        @endif
+                                    </div>
+                                </div>
                     </div>
                 </div>
             </div>

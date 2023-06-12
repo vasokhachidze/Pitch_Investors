@@ -124,12 +124,12 @@ $display_dashboard_left_page = 'style=display:block;';
                     </div>
                 </div>
             </div>
-            <div class="primary-chat">
-            @if ($session_data !== '')
-            @include('layouts.front.chat_inbox_connection_listing')
-            @endif
+            
+            <div class="primary-chat d-lg-block d-none">
+                @if ($session_data !== '')
+                @include('layouts.front.chat_inbox_connection_listing')
+                @endif
             </div>
-           
         </div>
     </div>
 </div>
