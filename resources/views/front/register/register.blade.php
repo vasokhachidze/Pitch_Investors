@@ -69,12 +69,6 @@ $favicon         = $general_favicon['COMPANY_FAVICON']['vValue'];
                             <a href="{{ url('login') }}" style="color: #313538; font-size:14px; font-weight: 500;">Already have an Account?</a>
                             <span style="color: #69B965; font-size:14px; text-decoration:underline font-weight: 500;">Login Here</span>
                         </div>
-
-                        <div class="text-center pt-3">
-                            <span style="font-size:14px; text-decoration:underline; font-weight: 500;">
-                                Forgot Password?
-                            </span>
-                        </div>
                     </form>
                 </div>
 

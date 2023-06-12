@@ -183,7 +183,7 @@
     <!-- banner section end -->
 
     <!-- business warap section start -->
-    <section class="business-sale-warap investment mt-sm-4" style="padding-top:40px;">
+    <section class="business-sale-warap investment mt-sm-4" style="padding-top:61px;">
         <div class="container">
             <div class="row">
                 <div class="heading-second">
