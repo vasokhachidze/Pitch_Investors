@@ -35,7 +35,10 @@
 
         <div class="col-xxl-4 col-xl-6 col-lg-6 col-md-6 mb-4">
             <div class="business-detail-box border-0">
-                <img src="{{ asset('/front/assets/images/image_test.png') }}" style="pointer-events:none; top:30px; width: 100%;">
+                <div style="pointer-events:none; top:30px; width: 100%; height:160px; overflow:hidden;">
+                    <img src="{{ asset('/front/assets/images/image_test.png') }}" class="w-100">
+                </div>
+
                 <div class="frist-box" style="cursor: pointer;">
                     <!-- <div class="status-bar-name">
                         <a href=""><i class="fas fa-circle"></i> Serviced Apartment Investment Opportunity in Pune, India</a>

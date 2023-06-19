@@ -42,6 +42,82 @@
 #exampleModal10 .modal-dialog{
   max-width: 680px !important;
 }
+
+.remove_nav .owl-nav{
+    display:none !important; 
+}
+
+.remove_nav .owl-dots{
+    display:block !important; 
+    padding-top:10px; 
+}
+
+.remove_nav .owl-dot span{
+    background-color:#2B7090 !important;
+    width:16px !important;
+    height:16px !important;
+}
+.catergorie-list{
+    position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+    .catergorie-list::before{
+        content:'';
+        position:absolute;
+        width:1px;
+        height:65%;
+        background-color:#2B7090;
+        bottom:1;
+        transform:rotate(64deg);
+        transform-origin: bottom center;
+    }
+
+    .catergorie-list::after{
+        content:'';
+        position:absolute;
+        width:1px;
+        height:65%;
+        background-color:#2B7090;
+        bottom:1;
+        transform:rotate(-64deg);
+        transform-origin: bottom center;
+    }
+}
+
+@media only screen and (max-width: 2500px) {
+    .catergorie-list::before{
+        content:'';
+        position:absolute;
+        width:1px;
+        height:65%;
+        background-color:#2B7090;
+        bottom:1;
+        transform:rotate(60deg);
+        transform-origin: bottom center;
+    }
+
+    .catergorie-list::after{
+        content:'';
+        position:absolute;
+        width:1px;
+        height:65%;
+        background-color:#2B7090;
+        bottom:1;
+        transform:rotate(-60deg);
+        transform-origin: bottom center;
+    }
+
+    .testmonail-item::before{
+        display:none !important;
+    }
+
+    .testmonail-item{
+        background: #FFFFFF;
+        border-bottom: 2px solid #2B7292;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+}
 </style>
 @section('content')
 <div id="transparent-bg" style="display: none;"></div>
@@ -59,33 +135,41 @@
                     }
                 @endphp
                 <div class="item">
-                    <div class="main-banner" style="background-image:url('{{ $Bannerimage }}')">
-                        <div class="container">
+                    <div class="main-banner mb-0" style="background-image:url('{{ $Bannerimage }}');">
+                        <div style="padding-left:100px;">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 me-auto">
                                     <div class="left-text" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
                                         <h1>{{ $vbanner->vBannerTitle }}</h1>
-                                        <p style="text-align: justify;"> {{ $vbanner->vSubTitle }}</p>
+                                        <h4 class="pb-2">Welcome to PitchInvestors, the leading platform</h4>
 
-                                        <div class="topbtn-group">
+                                        <p style="text-align: justify; font-size: 14px;"> {{ $vbanner->vSubTitle }}</p>
+
+                                        <div class="" style="background-color:#66BA62; width: 255px; height:45px;">
+                                            <a class="w-100 h-100 signup d-flex align-items-center justify-content-center text-white" style="color:#313538; font-size:18px; font-weight: 500;" href="{{ url('register') }}">Sign Up Now</a>
+                                        </div>
+
+                                        <!-- <div class="topbtn-group">
                                             <ul class="m-0 p-0 list-unstyled">
                                                 <li>
                                                     <a href="{{ url('investment') }}" class="yellow-btn">
                                                         Investments
                                                     </a>
                                                 </li>
+
                                                 <li>
                                                     <a href="{{ url('advisor') }}" class="green-btn">
                                                         Advisors
                                                     </a>
                                                 </li>
+                                                
                                                 <li>
                                                     <a href="{{ url('investor') }}" class="blue-btn">
                                                         Investors
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -108,10 +192,10 @@
                     }
                 @endphp
                 <div class="item">
-                    <div class="main-banner">
+                    <div class="main-banner" style="padding-top:49px; height:85% !important;">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 me-auto">
+                                <div class="col-lg-6 col-md-6 me-auto p-0">
                                     <div class="main-image-banner">
                                         <img src="{{ $Bannerimage }}" alt="">
                                     </div>
@@ -119,9 +203,13 @@
                                 <div class="col-lg-6 col-md-6 me-auto">
                                     <div class="left-text" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
                                         <h1>{{ $vbanner->vBannerTitle }}.</h1>
-                                        <p> {{ $vbanner->vSubTitle }}.</p>
+                                        <p style="text-align: justify; font-size: 14px;"> {{ $vbanner->vSubTitle }}.</p>
 
-                                        <div class="topbtn-group">
+                                        <div class="d-flex justify-content-center" style="background-color:#66BA62; width: 255px; height:45px;">
+                                            <a class="w-100 h-100 signup d-flex align-items-center justify-content-center text-white" style="color:#313538; font-size:18px; font-weight: 500;" href="{{ url('register') }}">Sign Up Now</a>
+                                        </div>
+
+                                        <!-- <div class="topbtn-group">
                                             <ul class="m-0 p-0 list-unstyled">
                                                 <li>
                                                     <a href="{{ url('investment') }}" class="yellow-btn">
@@ -139,7 +227,7 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -152,124 +240,190 @@
     </a>
     <!-- banner End -->
     <!-- banner second start-->
-    <section class="banner-second right-shape">
+    <section class="banner-second right-shape pt-3" style="background: #F0F0F0;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 me-auto" data-aos="fade-down" data-aos-duration="800">
+                <div class="col-lg-10 text-center m-auto" data-aos="fade-down" data-aos-duration="800">
                     <h2>
                         Explore our pre-approved investors and get in touch today
                     </h2>
+
                     <p>The first step in getting investors is letting them know about your business. Explore a list of pre-approved investors who have been carefully vetted and are looking for opportunities to invest in businesses that align with their goals and criteria.
                     </p>
                 </div>
-                <div class="col-lg-2 text-end" data-aos="fade-down" data-aos-duration="800">
+            </div>
+            <!-- mid-counter section -->
+            <div class="mid-counter-main mb-4">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 align-self-end">
+                        <div class="min-count-wrapper p-4 py-5 d-flex justify-content-center" style="background: #FFFFFF; border-bottom: 2px solid #2B7292; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                            <div class="right-desc">
+                                <h3 class="yellow-color text-center">{{ $investment_count[0]->total_investment }} +</h3>
+
+                                <p class="text-center">
+                                    Investments to choose from
+                                </p>
+
+                                <div class="left-img-1 text-center" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
+                                    <img style="width:100px; height:100px;" src="{{ asset('/front/assets/images/explore_icon_one.svg') }}" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 align-self-end">
+                        <div class="min-count-wrapper p-4 py-5 d-flex justify-content-center" style="background: #FFFFFF; border-bottom: 2px solid #2B7292; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                            <div class="right-desc">
+                                <h3 class="yellow-color text-center">{{ $investor_count[0]->total_investor }} +</h3>
+
+                                <p class="text-center">
+                                    Investors on our website
+                                </p>
+
+                                <div class="left-img-1 text-center" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
+                                    <img style="width:100px; height:100px;" src="{{ asset('/front/assets/images/explore_icon_third.svg') }}" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 align-self-end">
+                        <div class="min-count-wrapper p-4 py-5 d-flex justify-content-center" style="background: #FFFFFF; border-bottom: 2px solid #2B7292; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                            <div class="right-desc">
+                                <h3 class="yellow-color text-center">{{ $advisor_count[0]->total_advisor }} +</h3>
+
+                                <p class="text-center">
+                                    Advisors to choose from
+                                </p>
+
+                                <div class="left-img-1 text-center" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
+                                    <img style="width:100px; height:100px;" src="{{ asset('/front/assets/images/explore_icon_second.svg') }}" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 text-end m-auto pt-sm-5" data-aos="fade-down" data-aos-duration="800">
                     <a href="{{ url('investor') }}" class="green-btn">
                         Explore Investors
                     </a>
                 </div>
             </div>
-            <!-- mid-counter section -->
-            <div class="mid-counter-main">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-12 align-self-end">
-                        <div class="min-count-wrapper">
-                            <div class="left-img-1" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
-                                <img src="{{ asset('uploads/front/count/green-count.jpg') }}" alt="">
-                            </div>
-                            <div class="right-desc">
-                                <h3 class="yellow-color">{{ $investment_count[0]->total_investment }} +</h3>
-                                <p>
-                                    Investments to choose from
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 align-self-end">
-                        <div class="min-count-wrapper">
-                            <div class="left-img-2" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
-                                <img src="{{ asset('uploads/front/count/blue-count.jpg') }}" alt="">
-                            </div>
-                            <div class="right-desc">
-                                <h3 class="blue-color">{{ $investor_count[0]->total_investor }} +</h3>
-                                <p>
-                                    Investors on our website
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 align-self-end">
-                        <div class="min-count-wrapper">
-                            <div class="left-img-3" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
-                                <img src="{{ asset('uploads/front/count/yellow-count.jpg') }}" alt="">
-                            </div>
-                            <div class="right-desc">
-                                <h3 class="green-color">{{ $advisor_count[0]->total_advisor }} +</h3>
-                                <p>
-                                    Advisors to choose from
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- mid-counter End -->
         </div>
+
         <div class="col-xl-4 col-lg-12 mt-2">
-                    <div class="row">
-                        <input type="hidden" name="vUniqueCode" id="vUniqueCode" value="">
-                        <div class="modal  contact-business-model-frist" id="exampleModal10" style = "display:none;" tabindex="-1" aria-labelledby="exampleModalLabel" >
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close closeModel" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body contact-business-model p-0">
-                                        <div class="row">                                                
-                                            <div class="col-lg-12">                                                    
-                                                <div class="contace-business-model-detail">
-                                                    <h2 style="text-align:center">Get Access to Exclusive Investment Opportunities!</h2>                                                       
-                                                    <p class="mb-2" style="text-align:center">Join our investment community and stay up-to-date on the latest investment opportunities, news, and events. Sign up today to get exclusive insights and resources to help you make informed investment decisions</p>   
-                                                    <div style="margin-top:40px">
-                                                        <div class="mb-2 mt-2">                                                                    
-                                                            <div class="form-check mt-3">
-                                                                <label class="fon-weight-bold sub-label">Name </label>
-                                                                <input class="form-control rounded-pill" id="name" name="name" type="text" placeholder="Name" onkeyup="if($(this).val() != ''){ $('#sub_name').hide()}">
-                                                                <span id="sub_name" style="color: red;margin-left:57px;display:none"></span>
-                                                            </div>
-                                                        </div>                                                        
-                                                        <div class="mb-2 mt-4">                                                                    
-                                                            <div class="form-check mt-3">
-                                                                <label class="fon-weight-bold sub-label">Email </label>
-                                                                <input class="form-control rounded-pill" id="email" name="email" type="text"placeholder="Email" onkeyup="if($(this).val() != ''){ $('#sub_email').hide()}">
-                                                                <span id="sub_email" style="color: red;margin-left:57px;display:none"></span>
-                                                            </div>
-                                                        </div>
+            <div class="row">
+                <input type="hidden" name="vUniqueCode" id="vUniqueCode" value="">
+                <div class="modal  contact-business-model-frist" id="exampleModal10" style = "display:none;" tabindex="-1" aria-labelledby="exampleModalLabel" >
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close closeModel" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body contact-business-model p-0">
+                                <div class="row">                                                
+                                    <div class="col-lg-12">                                                    
+                                        <div class="contace-business-model-detail">
+                                            <h2 style="text-align:center">Get Access to Exclusive Investment Opportunities!</h2>                                                       
+                                            <p class="mb-2" style="text-align:center">Join our investment community and stay up-to-date on the latest investment opportunities, news, and events. Sign up today to get exclusive insights and resources to help you make informed investment decisions</p>   
+                                            <div style="margin-top:40px">
+                                                <div class="mb-2 mt-2">                                                                    
+                                                    <div class="form-check mt-3">
+                                                        <label class="fon-weight-bold sub-label">Name </label>
+                                                        <input class="form-control rounded-pill" id="name" name="name" type="text" placeholder="Name" onkeyup="if($(this).val() != ''){ $('#sub_name').hide()}">
+                                                        <span id="sub_name" style="color: red;margin-left:57px;display:none"></span>
                                                     </div>
-                                                    <div id="vEmail_error" class="error mt-1" style="color:red;display: none;">Please Enter Email </div>
-                                                    <div id="vEmail_valid_error" class="error_show" style="color:red;display: none;">Please Enter Valid Email</div>
-                                                    <div class="send-model-btn text-center">
-                                                        <a href="javascript:;" onclick="subscribe()" id="sendConnection" class="submit">Subscribe</a>
-                                                    </div>                                                    
+                                                </div>                                                        
+                                                <div class="mb-2 mt-4">                                                                    
+                                                    <div class="form-check mt-3">
+                                                        <label class="fon-weight-bold sub-label">Email </label>
+                                                        <input class="form-control rounded-pill" id="email" name="email" type="text"placeholder="Email" onkeyup="if($(this).val() != ''){ $('#sub_email').hide()}">
+                                                        <span id="sub_email" style="color: red;margin-left:57px;display:none"></span>
+                                                    </div>
                                                 </div>
-                                                
                                             </div>
+                                            <div id="vEmail_error" class="error mt-1" style="color:red;display: none;">Please Enter Email </div>
+                                            <div id="vEmail_valid_error" class="error_show" style="color:red;display: none;">Please Enter Valid Email</div>
+                                            <div class="send-model-btn text-center">
+                                                <a href="javascript:;" onclick="subscribe()" id="sendConnection" class="submit">Subscribe</a>
+                                            </div>                                                    
                                         </div>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!---close model--->
                     </div>
                 </div>
+                <!---close model--->
+            </div>
+        </div>
     </section>
+    <!-- why choose section -->
+    <section class="pt-xl-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 order-xl-1 order-2 pt-xl-0 pt-4">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h2 style="color: #2B7090; font-weight:500;" class="d-flex align-items-center">
+                                <div class="green_block me-3" style="width: 30px; height:30px; background: #66BA62;"></div>
+                                Why Choose Pitchinvestors
+                            </h2>
+                        </div>
+
+                        <div class="col-12">
+                            <h4 style="font-size: 19px;">Preapproved and Confirmed Businesses</h4>
+
+                            <p style="font-size: 15px;">Our platform ensures that all businesses listed on PitchInvestors are thoroughly vetted, preapproved, and confirmed on the ground. This means that you can trust that the businesses you find on our platform have gone through a rigorous screening process, giving you confidence in their credibility and potential.</p>
+                        </div>
+
+                        <div class="col-12">
+                            <h4 style="font-size: 19px;">Access to a Wide Network of Investors</h4>
+
+                            <p style="font-size: 15px;">By listing your business on PitchInvestors, you gain access to a diverse community of investors actively seeking investment opportunities. Our platform connects you with potential investors who are interested in supporting and growing businesses like yours, increasing your chances of securing funding.</p>
+                        </div>
+
+                        <div class="col-12">
+                            <h4 style="font-size: 19px;">Expert Guidance and Support</h4>
+
+                            <p style="font-size: 15px;">We provide valuable resources, guidance, and tools to help you refine your business pitch and effectively communicate the potential of your venture to investors. Our team is dedicated to supporting you throughout the process, offering insights and advice to enhance your chances of success</p>
+                        </div>
+
+                        <div class="col-12">
+
+                        <h4 style="font-size: 19px;">Increased Visibility and Exposure</h4>
+
+                        <p style="font-size: 15px;">By showcasing your business on PitchInvestors, you gain greater visibility and exposure to a targeted audience of investors specifically looking for investment opportunities. This exposure can significantly expand your reach and increase your chances of attracting potential investors who align with your business goals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6 order-xl-2 order-1">
+                    <img class="w-100" src="{{ asset('/front/assets/images/comp.png') }}" >
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- why choose section end -->
+
     <!-- banner secon end -->
     @if (count($investment_data) > 0)
         <!-- Business for sale slider -->
-        <section class="business-slider-wrapper mini-sliders yellow-slider left-shape">
+        <section class="business-slider-wrapper mini-sliders yellow-slider left-shape py-5 mb-0" style="background: #F0F0F0;">
             <div class="container">
                 <div class="row">
+                    <div class="col-12">
+                        <h2 style="color: #2B7090; font-weight:500;" class="d-flex align-items-center mb-3">
+                            <div class="green_block me-3" style="width: 30px; height:30px; background: #66BA62;"></div>
+                            Investments
+                        </h2>
+                    </div>
+
                     <div class="col-lg-5 col-md-5 col-sm-12">
-                        <div class="business-for-sale-slider owl-carousel owl-theme" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
+                        <div class="business-for-sale-slider owl-carousel owl-theme remove_nav" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
                             <!-- item-1 -->
                             @foreach ($investment_data as $key => $value)
                                 @php
@@ -286,6 +440,7 @@
                                         $current_image = 'uploads/no-image.png';
                                     @endphp
                                 @endif
+
                                 @php
                                     $locationName = 'N/A';
                                     foreach ($location_investment as $key_1 => $value_location) {
@@ -296,6 +451,7 @@
                                         }
                                     }
                                 @endphp
+                                
                                 <div class="item">
                                     <div class="row g-12">
                                         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -346,6 +502,7 @@
                                                         </li>
                                                     </ul>
                                                 </div>
+
                                                 <div class="box-body yellow-1">
                                                     <p class="m-0">Financial Investment</p>
                                                     <h5 class="left-title">
@@ -356,6 +513,7 @@
                                                         @endif
                                                     </h5>
                                                 </div>
+
                                                 <div class="box-body yellow-2">
                                                     <p class="m-0">Run Rate Sales</p>
                                                     <h5 class="left-title">
@@ -380,25 +538,42 @@
                                                     </h5>
                                                 </div>
                                             </div> --}}
-                                            <div class="business-detail-box">
+
+                                            <div class="business-detail-box border-0">
+                                                <img src="{{ asset('/front/assets/images/image_test.png') }}" style="pointer-events:none; top:30px; width: 100%;">
                                                 <div class="frist-box" style="cursor: pointer;">
+                                                    <!-- <div class="status-bar-name">
+                                                        <a href=""><i class="fas fa-circle"></i> Serviced Apartment Investment Opportunity in Pune, India</a>
+                                                    </div> -->
+                                                    
+
                                                     <a class='detailPageLink' href="{{ route('front.investment.detail', $value->vUniqueCode) }}">
-                                                        <h2>
+                                                        <h2 class="listing-titles mb-0 py-2" style="color: #2B7292; font-size: 20px; min-height:24px;">
                                                             @if (!empty($value->vBusinessProfileName))
-                                                                {{ strlen($value->vBusinessProfileName) > 25 ? substr($value->vBusinessProfileName, 0, 25) . '...' : $value->vBusinessProfileName }}
+                                                            {{(strlen($value->vBusinessProfileName) > 25) ? substr($value->vBusinessProfileName,0,25).'...' : $value->vBusinessProfileName}}
                                                             @else
                                                                 {{ 'N/A' }}
                                                             @endif
                                                         </h2>
                                                     </a>
-                                                    <div class="social-info-detail detailPageLink" data-id="{{ route('front.investment.detail', $value->vUniqueCode) }}">
+
+                                                    <span style="font-size:14px; font-weight:500;" class="d-block">
+                                                        Name Placeholder
+                                                    </span>
+
+                                                    <span style="color: #2B7292; font-size:12px;" class="pb-2">
+                                                        Computers and information System
+                                                    </span>
+                                                    <!-- <div class="social-info-detail detailPageLink" data-id="{{ route('front.investment.detail', $value->vUniqueCode) }}">
                                                         <ul>
                                                             <li><a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Email Verified"><i class="fal fa-envelope"></i>Email</a></li>
                                                             <li><a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Phone Verified"><i class="far fa-phone-alt"></i>Phone</a></li>
+                                                            {{-- <li><a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Google Verified"><i class="fab fa-google-plus-g"></i> Google</a></li>
+                                                            <li><a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="Not Linkdin Verified" class="disable"><i class="fab fa-linkedin"></i> Linkdin</a></li> --}}
                                                         </ul>
-                                                    </div>
+                                                    </div>                     -->
                                                     <div class="new-box-detail-img detailPageLink" data-id="{{ route('front.investment.detail', $value->vUniqueCode) }}">
-                                                        <p class="investment-detail-info-read {{ $current_image_status }}">
+                                                        <p class="investment-detail-info-read {{$current_image_status}}" style="color: #313538;">
                                                             @if (!empty($value->tBusinessProfileDetail))
                                                                 {{ strip_tags($value->tBusinessProfileDetail) }}
                                                             @else
@@ -411,35 +586,51 @@
                                                             </div>
                                                         @endif
                                                     </div>
+
+                                                    <div class="pt-3">
+                                                        <!-- if Pitchinvestors Valuation Certified -->
+                                                        <div style="color: #3A945E; font-size:14px; font-weight:700;" class="d-flex align-items-center">
+                                                            <img style="width:17px; height:17px;" src="{{ asset('/front/assets/images/pitch.svg') }}" alt="" class="me-2">
+                                                            <span>Pitchinvestors Valuation Certified</span>
+                                                        </div>
+
+                                                        <!-- else -->
+                                                        <div style="color: #9E9E9E;font-weight: 700; font-size: 12px;">Verification Pending</div>
+                                                    </div>
+
                                                     <ul class="business-box-text detailPageLink" data-id="{{ route('front.investment.detail', $value->vUniqueCode) }}">
-                                                        <li class="rating">
+                                                        <!-- <li class="rating">
                                                             <p class="m-0"><i class="fas fa-star" style="color: var(--yellowcolor);"></i>
-                                                                @if ($value->vAverageRating == null || $value->vAverageRating == 0)
-                                                                    {{ 'No Rating' }}
+                                                                @if($value->vAverageRating == NULL || $value->vAverageRating == 0)
+                                                                    {{'No Rating'}}
                                                                 @else
-                                                                    {{ $value->vAverageRating }}
-                                                                @endif
-                                                            </p>
-                                                        </li>
-                                                        <li class="location">
-                                                            <p class="m-0"><i class="fas fa-map-marker-alt" style="color: #939292;"></i> {{ $locationName }}</p>
+                                                                    {{$value->vAverageRating}}
+                                                                @endif 
+                                                                </p>
+                                                        </li> -->
+                                                        <li class="location d-flex align-items-center justify-content-between w-100">
+                                                                <span style="color: #313538; font-size:14px; font-weight:500;">Location</span>
+
+                                                                <p class="m-0" style="color: #313538; font-size:14px; font-weight:500;"> {{$locationName}}</p>
                                                         </li>
                                                     </ul>
                                                     <div class="next-step-new detailPageLink" data-id="{{ route('front.investment.detail', $value->vUniqueCode) }}">
                                                         <ul>
-                                                            <li class="second-box">
-                                                                <p>Annual Revenue </p>
-                                                                <h3>
+                                                            <li class="second-box bg-transparent" style="padding:0 !important;">
+                                                                <span style="color: #313538; font-size:14px; font-weight:500;">Business Valuation</span>
+
+                                                                <h3 class="m-0" style="color: #313538; font-size:14px; font-weight:500;">
                                                                     @if (!empty($value->vAverateMonthlySales))
-                                                                        <label class="kes">KES</label> {{ \App\Helper\GeneralHelper::rupees_format_thaousand_billion_million($value->vAverateMonthlySales) }}
+                                                                        <label class="kes m-0" style="color: #313538; font-size:14px; font-weight:500;">KES</label> {{ \App\Helper\GeneralHelper::rupees_format_thaousand_billion_million($value->vAverateMonthlySales) }}
                                                                     @else
                                                                         {{ 'N/A' }}
                                                                     @endif
                                                                 </h3>
                                                             </li>
-                                                            <li class="second-box">
-                                                                <p>EBITDA Margin </p>
-                                                                <h5>
+                                                            <li class="second-box bg-transparent mt-2" style="padding:0 !important;">
+                                                                <span style="color: #313538; font-size:14px; font-weight:500;">Founding Amount (USD)</span>
+
+                                                                <h5 class="kes m-0" style="color: #313538; font-size:14px; font-weight:500;">
                                                                     @if (!empty($value->vProfitMargin))
                                                                         {{ $value->vProfitMargin }} %
                                                                     @else
@@ -449,9 +640,10 @@
                                                             </li>
                                                         </ul>
                                                     </div>
+
                                                     <div class="final-step-detail">
                                                         <ul>
-                                                            <li class="second-box">
+                                                            <!-- <li class="second-box">
                                                                 <p>Financial Investment </p>
                                                                 <h3>
                                                                     @if (!empty($value->vInvestmentAmountStake))
@@ -460,14 +652,47 @@
                                                                         {{ 'N/A' }}
                                                                     @endif
                                                                 </h3>
-                                                            </li>
-                                                            <li class="line"></li>
-                                                            <li class="contact-btn investment_ajax_listing_button">
+                                                            </li> -->
+                                                            <!-- <li class="line"></li> -->
+                                                            <li class="contact-btn investment_ajax_listing_button" style="width:100%; background: #69B965;">
                                                                 <a href="{{ route('front.investment.detail', $value->vUniqueCode) }}">Contact Business</a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                 </div>
+                                                <ul class="-box-wrapper">
+                                                    {{-- <li class="second-box">
+                                                        <p>Financial Investment </p>
+                                                        <h3>
+                                                            @if (!empty($value->vInvestmentAmountStake))
+                                                                {{ \App\Helper\GeneralHelper::rupees_format_thaousand_billion_million($value->vInvestmentAmountStake) }}
+                                                            @else
+                                                                {{ 'N/A' }}
+                                                            @endif
+                                                        </h3>
+                                                    </li> --}}
+                                                    {{-- <li class="second-box">
+                                                        <p>Annual Revenue </p>
+                                                        <h5>
+                                                            @if (!empty($value->vAverateMonthlySales))
+                                                                {{ number_format($value->vAverateMonthlySales,) }}
+                                                            @else
+                                                                {{ 'N/A' }}
+                                                            @endif
+                                                        </h5>
+                                                    </li> --}}
+                                                    {{-- <li class="second-box">
+                                                        <p>EBITDA Margin </p>
+                                                        <h5>
+                                                            @if (!empty($value->vProfitMargin))
+                                                                {{ $value->vProfitMargin }} %
+                                                            @else
+                                                                {{ 'N/A' }}
+                                                            @endif
+                                                        </h5>
+                                                    </li> --}}
+                                                
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -475,35 +700,69 @@
                             @endforeach
                         </div>
                     </div>
+
                     <div class="col-lg-7 col-md-7 col-sm-12">
                         <div class="box-height">
                             <div class="box-bussines-right">
-                                <h5 class="left-title">Investments</h5>
-                                <p style="text-align: justify;" class="mt-4">Are you a startup looking for investors to take your business to the next level? Are you looking for an investor to inject some capital to help the company stabilize? Are you looking to find a buyer for your business? </p>
-                                <p style="text-align: justify;" class="mt-4">
-                                PitchInvestors connects you with a network of investors and advisors who are ready to support your growth and success. With PitchInvestors, you'll have access to the resources and expertise you need to take your business to the next level. Don't let a lack of capital or guidance hold you back any longer. Sign up today and start realizing your full potential by engaging with potential investors.
+                                <p style="text-align: justify; font-size: 15px;" class="mt-4">Are you a startup looking for investors to take your business to the next level? Are you looking for an investor to inject some capital to help the company stabilize? Are you looking to find a buyer for your business? </p>
+                                <p style="text-align: justify; font-size: 15px;" class="mt-4">
+                                    PitchInvestors connects you with a network of investors and advisors who are ready to support your growth and success. With PitchInvestors, you'll have access to the resources and expertise you need to take your business to the next level. Don't let a lack of capital or guidance hold you back any longer. Sign up today and start realizing your full potential by engaging with potential investors.
                                 </p>
                             </div>
+
                             <div class="box-footer-wrapper">
-                                <div class="row g-5">
-                                    <div class="col-md-6">
-                                        <div class="box-right-footer">
-                                            <div class="footer-img">
-                                                <img src="{{ asset('uploads/front/roket.png') }}" alt="" class="img-fluid">
-                                            </div>
-                                            <h5>Startup</h5>
-                                            <p style="text-align: justify;" class="m-0">Click here to find angel investors interested in startups with high growth potential.</p>
-                                            <a href="#" class="box-view-btn">View More</a>
+                                <div class="d-md-block d-none">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h5 style="color: #4E4D50; font-weight: 600;">Startup</h5>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <h5 style="color: #4E4D50; font-weight: 600;">Growth</h5>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="box-right-footer">
-                                            <div class="footer-img">
-                                                <img src="{{ asset('uploads/front/frame.png') }}" alt="" class="img-fluid">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Click here to find angel investors interested in startups with high growth potential.
+                                        </div>
+
+                                        <div class="col-6">
+                                            Explore your funding options today and find the solution that best fits your needs. Take your business to the next level
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="text-center pt-3 col-6">
+                                            <a style="color: #2B7090; text-decoration:underline;" href="#" class="box-view-btn">View More</a>
+                                        </div>
+
+                                        <div class="text-center pt-3 col-6">
+                                            <a style="color: #2B7090; text-decoration:underline;" href="#" class="box-view-btn">View More</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-md-none d-block">
+                                    <div class="row g-5">
+                                        <div class="col-md-6">
+                                            <div>
+                                                <h5 style="color: #4E4D50; font-weight: 600;" class="d-md-none d-block">Startup</h5>
+                                                <p style="text-align: justify; font-size: 15px;" class="m-0">Click here to find angel investors interested in startups with high growth potential.</p>
+                                                <div class="text-center pt-3">
+                                                    <a style="color: #2B7090; text-decoration:underline;" href="#" class="box-view-btn">View More</a>
+                                                </div>
                                             </div>
-                                            <h5>Growth</h5>
-                                            <p style="text-align: justify;" class="m-0">Explore your funding options today and find the solution that best fits your needs. Take your business to the next level</p>
-                                            <a href="#" class="box-view-btn">View More</a>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div>
+                                                <h5 style="color: #4E4D50; font-weight: 600;" class="d-md-none d-block">Growth</h5>
+                                                <p style="text-align: justify; font-size: 15px;" class="m-0">Explore your funding options today and find the solution that best fits your needs. Take your business to the next level</p>
+                                                <div class="text-center pt-3">
+                                                    <a style="color: #2B7090; text-decoration:underline;" href="#" class="box-view-btn">View More</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -538,6 +797,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-5 col-md-5 col-sm-12">
                         <div class="business-for-sale-slider owl-carousel owl-theme" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
                             <!-- item-1 -->
@@ -706,6 +966,7 @@
                                                         <img src="{{ asset($current_image) }}" alt="{{ asset('uploads/business-advisor/profile/' . $value->vImage) }}">
                                                     </div>
                                                 </div>
+
                                                 <div class="frist-box-part detailPageLink" data-id="{{ url('advisor-detail', $value->vUniqueCode) }}">
                                                     <ul class="business-box-text mt-3">
                                                         <li class="rating">
@@ -722,6 +983,7 @@
                                                         </li>
                                                     </ul>
                                                 </div>
+                                                
                                                 <div class="next-step-new detailPageLink" data-id="{{ url('advisor-detail', $value->vUniqueCode) }}">
                                                     <ul>
                                                         <li class="second-box">
@@ -768,6 +1030,7 @@
                                                                 @endif
                                                             </h5>
                                                         </li>
+
                                                         <li class="second-box">
                                                             <p>Industries </p>
                                                             <h5>
@@ -809,6 +1072,7 @@
                                                         </li>
                                                     </ul>
                                                 </div>
+
                                                 <div class="final-step-detail">
                                                     <ul class="justify-content-start">
                                                         <!--  <li class="second-box">
@@ -847,7 +1111,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-12">
-
                         <div class="business-for-sale-slider owl-carousel owl-theme">
                             <!-- item-1 -->
                             @foreach ($investor_data as $key => $value)
@@ -1111,13 +1374,61 @@
         <!-- Business Investors slider end-->
     @endif
 
+    <section class="pt-xl-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <h2 style="color: #2B7090; font-weight:500;" class="d-flex align-items-center">
+                        <div class="green_block me-3" style="width: 30px; height:30px; background: #66BA62;"></div>
+                        Characteristics of Businesses Accepted by PitchInvestors
+                    </h2>
+                </div>
+
+                <div class="col-xl-6 order-xl-1 order-2 pt-xl-0 pt-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 style="font-size: 19px;">Strong Revenue Generation:</h4>
+
+                            <p style="font-size: 15px;">PitchInvestors welcomes businesses that have demonstrated a consistent track record of generating substantial revenue, showcasing their viability and growth potential.</p>
+                        </div>
+
+                        <div class="col-12">
+                            <h4 style="font-size: 19px;">Established Operations:</h4>
+
+                            <p style="font-size: 15px;"> We prioritize businesses that have been in operation for a significant period, typically six months or more. This requirement ensures that the companies listed on our platform have laid a solid foundation and have gained valuable market experience.</p>
+                        </div>
+
+                        <div class="col-12">
+                            <h4 style="font-size: 19px;">Scalability and Growth Potential:</h4>
+
+                            <p style="font-size: 15px;">We seek businesses with the potential for scalability and expansion. Whether through innovative products, unique market positioning, or promising industry trends, we aim to connect investors with ventures that can grow and thrive.</p>
+                        </div>
+
+                        <div class="col-12">
+
+                        <h4 style="font-size: 19px;">Registration and Compliance:</h4>
+
+                        <p style="font-size: 15px;">PitchInvestors values transparency and legitimacy. Therefore, we require businesses to be properly registered and compliant with applicable laws and regulations. This ensures a trustworthy and regulated environment for both investors and businesses.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6 order-xl-2 order-1">
+                    <img class="w-100" src="{{ asset('/front/assets/images/desk_second.png') }}" >
+                </div>
+            </div>
+        </div>
+    </section>
+
     @if (count($industries) > 0)
         <!-- Categories start -->
         <section class="Categories">
             <div class="container">
-                <h3 class="mid-title">
+                <h2 style="color: #2B7090; font-weight:500;" class="d-flex align-items-center mb-4">
+                    <div class="green_block me-3" style="width: 30px; height:30px; background: #66BA62;"></div>
                     Categories
-                </h3>
+                </h2>
+
                 <div class="cat-wrapper" data-aos="fade-down" data-aos-duration="800" data-aos-easing="ease-in-sine">
                     @php
                         $start = 1;
@@ -1162,31 +1473,37 @@
 
     @if (count($testimonial) > 0)
         <!--  Testimonial start-->
-        <section class="testimonial right-shape">
-            <h3 class="mid-title">
-                Testimonial
-            </h3>
+        <section class="testimonial right-shape pt-5 mb-0 mt-5" style="background: #F0F0F0; padding-bottom:100px;">
             <div class="container">
+                <h2 style="color: #2B7090; font-weight:500;" class="d-flex align-items-center mb-4">
+                    <div class="green_block me-3" style="width: 30px; height:30px; background: #66BA62;"></div>
+                    Testimonial
+                </h2>
+
                 <div class="testmonial-slider owl-carousel">
                     <!-- item-1 -->
                     @foreach ($testimonial as $key => $value)
                         <div class="testmonial-wrapper" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="900">
-                            <div class="testmonail-item">
-                                
+                            <div class="testmonail-item" style="">
                                 @if (!empty($value->vImage))
                                     <img src="{{ asset('uploads/front/testimonial/' . $value->vImage) }}">
+                                    <h6 class="m-0">{{ $value->vName }}</h6>
                                 @else
-                                    <div class="test-icon">
-                                        <img src="{{ asset('uploads/front/testimonial/slider-cmt.png') }}" alt="">
+                                    <div class="d-flex justify-content-start align-items-center py-2 pb-3">
+                                        <div class="test-icon d-flex m-0">
+                                            <img src="{{ asset('uploads/front/testimonial/slider-cmt.png') }}" alt="">
+                                        </div>
+
+                                        <div class="ps-3"> 
+                                            <h6 class="m-0">{{ $value->vName }}</h6>
+                                        </div>
                                     </div>
                                 @endif
-                                <p class="m-0 text-center testimonial-write">
+                                <p class="m-0 testimonial-write">
                                     {{ strip_tags($value->tDescription) }}
                                 </p>
                             </div>
-                            <div class="test-content text-center">
-                                <h6 class="m-0">{{ $value->vName }}</h6>
-                            </div>
+                            
                         </div>
                     @endforeach
                 </div>
